@@ -3,5 +3,8 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.model.MemberDAO">
-	
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="com.smhrd.model.Member">
+		insert into tbl_member values(#{id}, #{pw}, #{name}, #{nickname}, #{gender}, #{age})
+	</insert>
 </mapper>

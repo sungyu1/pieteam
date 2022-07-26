@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>JoinCon</servlet-name>
+  	<display-name>JoinCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.JoinCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginCon</servlet-name>
+  	<display-name>LoginCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.LoginCon</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JoinCon</servlet-name>
+  	<url-pattern>/JoinCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginCon</servlet-name>
+  	<url-pattern>/LoginCon</url-pattern>
+  </servlet-mapping>
 </web-app>

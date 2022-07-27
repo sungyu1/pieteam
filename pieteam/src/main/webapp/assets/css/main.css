@@ -921,11 +921,11 @@ input, select, textarea {
 			}
 
 				ul.icons li a:hover {
-					background-color: rgba(255, 255, 255, 0.075);
+					background-color: rgba(255, 175, 0, 0.5);
 				}
 
 				ul.icons li a:active {
-					background-color: rgba(255, 255, 255, 0.175);
+					background-color: rgba(255, 175, 0, 0.5);
 				}
 
 /* Table */
@@ -1011,17 +1011,17 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
+		background-color: #FFB432;/*버튼 안에 색깔*/
 		border-radius: 4px;
 		border: 0;
-		box-shadow: inset 0 0 0 1px #ffffff;
-		color: #ffffff !important;
+		box-shadow: inset 0 0 0 1px #FFB432;/*버튼테두리색깔*/
+		color: #0c0c0c !important;
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8rem;
-		font-weight: 300;
-		height: 2.75rem;
-		letter-spacing: 0.2rem;
+		font-size: 0.8rem;  /*폰트사이즈*/
+		font-weight: 600;   /*폰트 굵기*/
+		height: 2.75rem;    /*버튼크기*/
+		letter-spacing: 0.2rem; /*글짜간격*/
 		line-height: 2.75rem;
 		outline: 0;
 		padding: 0 1.25rem 0 1.35rem;
@@ -1035,8 +1035,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
-		.button:hover {
-			background-color: rgba(255, 255, 255, 0.075);
+		.button:hover { /* 마우스 버튼 색깔*/
+			background-color: rgba(255, 175, 0, 0.5);
 		}
 
 		input[type="submit"]:active,
@@ -1044,7 +1044,7 @@ input, select, textarea {
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: rgba(255, 255, 255, 0.175);
+			background-color: rgba(255, 175, 0, 0.5);
 		}
 
 		input[type="submit"].icon:before,
@@ -1283,7 +1283,7 @@ input, select, textarea {
 				left: calc(50% - 1px);
 				width: 1px;
 				height: calc(3.5rem + 1px);/*아래로*/
-				background: #ffffff;
+				background: #FFAF00;
 			}
 
 		#header > :first-child {
@@ -1299,7 +1299,7 @@ input, select, textarea {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid 1px #ffffff;
+			border: solid 1px #FFAF00;
 			border-radius: 100%;
 		}
 
@@ -1309,7 +1309,7 @@ input, select, textarea {
 
 		#header .content { /*위에 가로줄*/
 			border-style: solid;
-			border-color: #ffffff
+			border-color: #FFAF00
 			;
 			border-top-width: 1px;
 			border-bottom-width: 1px;
@@ -1349,13 +1349,13 @@ input, select, textarea {
 			margin-bottom: 0;
 			list-style: none;
 			padding-left: 0;
-			border: solid 1px #ffffff;
+			border: solid 1px #FFAF00;/*로그인 박스*/
 			border-radius: 4px;
 		}
 
 			#header nav ul li {
 				padding-left: 0;
-				border-left: solid 1px #ffffff;
+				border-left: solid 1px #FFAF00;
 			}
 
 				#header nav ul li:first-child {
@@ -1374,12 +1374,12 @@ input, select, textarea {
 					border-bottom: 0;
 				}
 
-					#header nav ul li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
+					#header nav ul li a:hover {/*마우스 선택색상*/
+						background-color: rgba(255, 175, 0, 0.5);
 					}
 
 					#header nav ul li a:active {
-						background-color: rgba(255, 255, 255, 0.175);
+						background-color: rgba(255, 175, 0, 0.5);
 					}
 
 		#header nav.use-middle:after {
@@ -1390,7 +1390,7 @@ input, select, textarea {
 			left: calc(50% - 1px);
 			width: 1px;
 			height: 100%;
-			background: #ffffff;
+			background: #FFAF00;
 		}
 
 		#header nav.use-middle ul li.is-middle {

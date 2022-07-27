@@ -17,11 +17,12 @@
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="is-preload">
-		<%
+<%
 		// session 값 가지고 오기
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
-		%>
+%>
+							
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -29,26 +30,26 @@
 					<header id="header">
 						<div class="logo">
 							<!-- 표지판-->
-							<i class="fa-solid fa-signs-post fa-2x" top=""></i>
+							<i class="fa-solid fa-signs-post fa-2x" style="color: #FFAF00;"></i>
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>안.길</h1>
-								<p>안전하게 가족에게 돌아가 안기길</a>
+								<h1 style="color:#FFB432 ">안.길</h1>
+								<p style="color:#FFAF00 ">안전하게 가족에게 돌아가 안기길</a>
 								
 							</div>
 						</div>
 						<nav>
 							<ul>
 							<%if(loginMember == null){ %>
-								<li><a href="#Login">로그인</a></li>
-								<li><a href="#Join">회원가입</a></li>
+								<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
+								<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
 							<%}else{ %>
-								<li><a href="LogoutCon">로그아웃</a></li>
-								<li><a href="update.jsp">개인정보수정</a></li>
+								<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
+								<li><a href="update.jsp" ><b style="color:#FFAF00 ">개인정보수정</b></a></li>
 							<%} %>
-								<li><a href="#safe">안심경로</a></li>
-								<li><a href="#community">커뮤니티</a></li>
+								<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
+								<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -60,7 +61,7 @@
 							<!-- Member 로그인-->
 							<article id="Login"><!-- intro -->
 								<!-- <h2 class="major">로그인</h2> -->
-								<h2 class="major">로그인</h2>
+								<h2 class="login" style="color:#FFB432">로그인</h2>
 								<!--<span class="image main"><img src="images/pic01.jpg" alt=""/></span>--> 
 								
 								<!-- 로그인 -->
@@ -69,7 +70,7 @@
 										<form action="LoginCon" method="post">
 									 		<input type="text"  placeholder="id을 입력하세요" name="id">
 											<input type="password"  placeholder="PW를 입력하세요" name="pw"><br>
-											<input type="submit" value="LogIn" class="button fit">
+											<input type="submit" value="LogIn" style="color:#FFB432;" class="button fit">
 										</form>
 									</ul>
 								</nav>	
@@ -79,7 +80,7 @@
 						<!-- 회원가입 -->
 						<!-- Join -->
 							<article id="Join"><!-- work -->
-								<h2 class="major">회원가입</h2>
+								<h2 class="major" style="color:#FFB432 ">회원가입</h2>
 								
 								
 								<form action="JoinCon" method="post">
@@ -96,21 +97,21 @@
 									<option value="M">남</option>
 									<option value="W">여</option>
 								</select>
-								<input type="submit" value="JoinUs" class="button fit">
+								<input type="submit" value="JoinUs"  style="color:#FFB432;" class="button fit">
 								</form>
 								
 							</article>
 
 						<!-- safe -->
 							<article id="safe"><!-- about -->
-								<h2 class="major">안심경로</h2>
+								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
 								<span class="image main"><img src="" alt="" /></span>
 								
 							</article>
 
 						<!-- community -->
 							<article id="community"><!--contact  -->
-								<h2 class="major">커뮤니티</h2>
+								<h2 class="major" style="color:#FFB432 ">커뮤니티</h2>
 								<form method="post" action="#">
 									<div class="fields">
 										<div class="field half">
@@ -385,7 +386,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; 안.길</p>
+						<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
 					</footer>
 
 			</div>
@@ -402,3 +403,4 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+

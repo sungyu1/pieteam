@@ -1,8 +1,10 @@
 package com.smhrd.controll;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +35,13 @@ public class JoinCon extends HttpServlet {
 		
 		if(cnt>0) { // 회원가입 성공
 			System.out.println("회원가입 성공");
+			RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
+			/* request.setAttribute("joinMember", vo); */
+			request.setAttribute("joinMember", vo);
+			rd.forward(request, response);
 		}else { // 회원가입 실패
 			System.out.println("회원가입 실패");
+			response.sendRedirect("main.jsp#Join");
 		}
 	}
 

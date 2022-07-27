@@ -28,4 +28,37 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+	
+	// 로그인
+	public Member selectMember(Member vo) {
+		Member loginMember = null;
+		try {
+			loginMember = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectMember",vo);
+			// select - commit/rollback 생략
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return loginMember;
+	}
+	
+	// 개인정보수정
+	public int updateMember(Member vo) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.model.MemberDAO.updateMember",vo);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

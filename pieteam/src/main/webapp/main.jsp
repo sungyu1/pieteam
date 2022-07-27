@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
@@ -14,7 +17,11 @@
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
 	<body class="is-preload">
-
+		<%
+		// session 값 가지고 오기
+		Member loginMember = (Member)session.getAttribute("loginMember");
+		
+		%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -33,8 +40,13 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#Member">로그인</a></li>
+							<%if(loginMember == null){ %>
+								<li><a href="#Login">로그인</a></li>
 								<li><a href="#Join">회원가입</a></li>
+							<%}else{ %>
+								<li><a href="LogoutCon">로그아웃</a></li>
+								<li><a href="update.jsp">개인정보수정</a></li>
+							<%} %>
 								<li><a href="#safe">안심경로</a></li>
 								<li><a href="#community">커뮤니티</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
@@ -46,9 +58,9 @@
 						<div id="main">
 
 							<!-- Member 로그인-->
-							<article id="Member"><!-- intro -->
+							<article id="Login"><!-- intro -->
 								<!-- <h2 class="major">로그인</h2> -->
-								<h2 class="login">로그인</h2>
+								<h2 class="major">로그인</h2>
 								<!--<span class="image main"><img src="images/pic01.jpg" alt=""/></span>--> 
 								
 								<!-- 로그인 -->

@@ -5,25 +5,35 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class LoginCon
- */
+import com.smhrd.model.Member;
+import com.smhrd.model.MemberDAO;
+
 public class LoginCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public LoginCon() {
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		Member vo = new Member(id, pw);
+		
+		MemberDAO dao = new MemberDAO();
+		Member loginMember = dao.selectMember(vo);
+		
+		if(loginMember != null) {
+			System.out.println("로그인 성공");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("loginMember", loginMember);
+			response.sendRedirect("main.jsp");
+		}else {
+			System.out.println("로그인 실패");
+			response.sendRedirect("main.html#Member");
+		}
 	}
 
 }

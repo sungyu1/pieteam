@@ -1,6 +1,8 @@
 package com.smhrd.controll;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +24,7 @@ public class JoinCon extends HttpServlet {
 		String name = request.getParameter("name");
 		String nickname = request.getParameter("nickname");
 		String gender = request.getParameter("gender");
-		String age = request.getParameter("age");
+		BigDecimal age = new BigDecimal(request.getParameter("age"));
 		
 		Member vo = new Member(id, pw, name, nickname, gender, age);
 		

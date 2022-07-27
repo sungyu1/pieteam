@@ -5,6 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.model.MemberDAO">
 	<!-- 회원가입 -->
 	<insert id="insertMember" parameterType="com.smhrd.model.Member">
-		insert into tbl_member values(#{id}, #{pw}, #{name}, #{nickname}, #{gender}, #{age})
+		insert into tbl_member values(#{m_id}, #{m_pw}, #{m_name}, #{m_nick}, #{m_gender}, #{m_age}, 'u', sysdate)
 	</insert>
 </mapper>

@@ -1141,11 +1141,15 @@ input, select, textarea {
 			transition-delay: 0.75s;
 			/* background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png"); */
 			/* 여기서 색깔 바꾸기 */
-			background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			/*background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);*/
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
+			
 		}
 
 		#bg:after {
@@ -1157,11 +1161,12 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			/* background-image: url("../../images/배경.png"); */
+			background-image: url("../../images/길거리.png" );/*전체배경*/
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
+			opacity: 0.5;
 		}
 
 		body.is-article-visible #bg:after {
@@ -1274,10 +1279,10 @@ input, select, textarea {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);
+				top: calc(-3.5rem - 1px);/*위로*/
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);
+				height: calc(3.5rem + 1px);/*아래로*/
 				background: #ffffff;
 			}
 
@@ -1289,7 +1294,7 @@ input, select, textarea {
 				display: none;
 			}
 
-		#header .logo {
+		#header .logo { /* 원*/
 		
 			width: 5.5rem;
 			height: 5.5rem;
@@ -1302,9 +1307,10 @@ input, select, textarea {
 				font-size: 4rem;
 			}
 
-		#header .content {
+		#header .content { /*위에 가로줄*/
 			border-style: solid;
-			border-color: #ffffff;
+			border-color: #ffffff
+			;
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
@@ -1479,9 +1485,9 @@ input, select, textarea {
 					max-width: 100%;
 				}
 
-					#header nav ul li {
+					#header nav ul li { /*상자가로줄*/
 						border-left: 0;
-						border-top: solid 1px #ffffff;
+						border-top: solid 3px #ffffff;
 					}
 
 						#header nav ul li:first-child {
@@ -1546,8 +1552,8 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			/* 여기가 로그인 누르면 뜨는 그 네모 바뀌는 곳 */
-			background-color: /* rgba(27, 31, 34, 0.85) */ rgba(34,193,195,0.5);
+			/* 여기가 로그인 누르면 뜨는 그 회원가입네모 바뀌는 곳 */
+			background-color: /* rgba(27, 31, 34, 0.85) */ rgba(12, 12, 12,2 );
 			border-radius: 4px;
 			opacity: 0;
 		}

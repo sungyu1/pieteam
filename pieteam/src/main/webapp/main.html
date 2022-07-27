@@ -21,7 +21,8 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<i class="fa-solid fa-signs-post" width="4rem" height="4rem"></i>
+							<!-- 표지판-->
+							<i class="fa-solid fa-signs-post fa-2x" top=""></i>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -67,28 +68,33 @@
 						<!-- Join -->
 							<article id="Join"><!-- work -->
 								<h2 class="major">회원가입</h2>
-								<ul class="actions vertical">
-								<li><h5>회원가입</h5></li><br>
+								
+								
 								<form action="JoinCon" method="post">
 								<input type="text" id="inpute" placeholder="id을 입력하세요" name="id">
 								<input type="button" value="ID 중복체크" onclick="checKE()"><br>
 								
-								<span id ="resultCheck"></span></li>
+								<span id ="resultCheck"></span><br>
 								<input type="password"  placeholder="PW를 입력하세요" name="pw">
 								<input type="text"  placeholder="이름을입력해주세요." name="name">
 								<input type="text"  placeholder="닉네임입력해주세요." name="nickname">
+								<input type="text"  placeholder="나이입력해주세요." name="age">
 								<input type="text"  placeholder="성별을 입력하세요." name="gender">
-								<input type="text"  placeholder="나이를 입력하세요." name="age">
+								<select name="job">
+									<option value="">성별 선택</option>
+									<option value="M">남</option>
+									<option value="W">여</option>
+								</select>
 								<input type="submit" value="JoinUs" class="button fit">
 								</form>
-								</ul>
+								
 							</article>
 
 						<!-- safe -->
 							<article id="safe"><!-- about -->
 								<h2 class="major">안심경로</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<span class="image main"><img src="" alt="" /></span>
+								
 							</article>
 
 						<!-- community -->
@@ -368,7 +374,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; 안.길</p>
 					</footer>
 
 			</div>

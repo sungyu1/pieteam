@@ -33,8 +33,8 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1 style="color: #FFAF00 ">안.길</h1>
-								<p style="color:#FFAF00 ">안전하게 가족에게 돌아가 안기길</a>
+								<h1 >안.길</h1>
+								<p style="color: #FFAF00 "">안전하게 가족에게 돌아가 안기길</p>
 								
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 							<article id="Login"><!-- intro -->
 								<!-- <h2 class="major">로그인</h2> -->
 								<h2 class="login" style="color:#FFB432">로그인</h2>
-								<!--<span class="image main"><img src="images/pic01.jpg" alt=""/></span>--> 
+								
 								
 								<!-- 로그인 -->
 								<nav id="menu">	
@@ -83,7 +83,7 @@
 											<input type="submit" value="LogIn" style="color:#FFB432;" class="button fit">
 										</form>
 									</ul>
-									<a href="#Join"><h6>아이디가 없으신가요?</h6></a>
+									<a href="#Join" ><h6>아이디가 없으신가요?</h6><h6>비밀번호를 잊어버리셨나요?</h6></a>
 								</nav>	
 							</article>
 						 
@@ -91,12 +91,12 @@
 						<!-- 회원가입 -->
 						<!-- Join -->
 							<article id="Join"><!-- work -->
-								<h2 class="major" style="color:#FFB432 ">회원가입</h2>
+								<h2 class="major">회원가입</h2>
 								
 								
 								<form action="JoinCon" method="post">
-								<input type="text" id="inpute" placeholder="id을 입력하세요" name="id">
-								<input type="button" value="ID 중복체크" onclick="checKE()"><br>
+								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id">
+								<input type="button" value="ID 중복체크" style="color:#FFB432;" onclick="checKE()"><br>
 								<span id ="resultCheck"></span><br>
 								<input type="password"  placeholder="PW를 입력하세요" name="pw">
 								<input type="text"  placeholder="이름을입력해주세요." name="name">
@@ -128,13 +128,13 @@
 										
 										<table class="table">
 										  <tr>
-											  <th>글 제목</th>
-											  <th>작성자</th>
-											  <th>조회수</th>
+											  <th style="color:#FFB432 ">글 제목</th>
+											  <th style="color:#FFB432 ">작성자</th>
+											  <th style="color:#FFB432 ">조회수</th>
 										  </tr>
 										
 										</table>
-										<a href="#community"><button id="writeBtn">글작성</button></a>
+										<a href="#community"><button id="writeBtn" style="color:#FFB432 ">글작성</button></a>
 										</div>
 									
 									
@@ -435,7 +435,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<!-- id 중복체크 -->
 			<script>
 				function checKE() {
-					var inputID = $('#inpute').val()
+					var inputID = $('#inputID').val()
 					console.log(inputID)
 					
 					$.ajax({

@@ -44,13 +44,24 @@
 							<%if(loginMember == null){ %>
 								<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
 								<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
-							<%}else{ %>
-								<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
-								<li><a href="update.jsp" ><b style="color:#FFAF00 ">개인정보수정</b></a></li>
-							<%} %>
 								<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
 								<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+							<%}else{ %>
+								<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
+								<li><a href="update.jsp" ><b style="color:#FFAF00 ">정보수정</b></a></li>
+								<%if(loginMember.getM_id().equals("admin")){ %>
+									<li><a href="select.jsp" ><b style="color:#FFAF00">회원관리</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">CCTV</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">파출소</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">소방서</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">보호구역</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">위험관리</b></a></li>
+									<li><a href="#"><b style="color:#FFAF00">커뮤니티관리</b></a></li>
+								<%}else{ %>
+								<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
+								<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
+								<%} %>
+							<%} %>
 							</ul>
 						</nav>
 					</header>

@@ -32,7 +32,7 @@ public class LoginCon extends HttpServlet {
 			response.sendRedirect("main.jsp");
 		}else {
 			System.out.println("로그인 실패");
-			response.sendRedirect("main.html#Member");
+			response.sendRedirect("main.jsp#Login");
 		}
 	}
 

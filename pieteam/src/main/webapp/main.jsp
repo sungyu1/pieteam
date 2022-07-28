@@ -97,14 +97,12 @@
 								<form action="JoinCon" method="post">
 								<input type="text" id="inpute" placeholder="id을 입력하세요" name="id">
 								<input type="button" value="ID 중복체크" onclick="checKE()"><br>
-								
 								<span id ="resultCheck"></span><br>
 								<input type="password"  placeholder="PW를 입력하세요" name="pw">
 								<input type="text"  placeholder="이름을입력해주세요." name="name">
 								<input type="text"  placeholder="닉네임입력해주세요." name="nickname">
 								<input type="text"  placeholder="나이입력해주세요." name="age">
-								<input type="text"  placeholder="성별을 입력하세요." name="gender">
-								<select name="job">
+								<select name="gender">
 									<option value="">성별 선택</option>
 									<option value="M">남</option>
 									<option value="W">여</option>
@@ -433,6 +431,35 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- id 중복체크 -->
+			<script>
+				function checKE() {
+					var inputID = $('#inpute').val()
+					console.log(inputID)
+					
+					$.ajax({
+						// 요청 경로
+						url : 'IDCheckCon',
+						// 요청 데이터{키:실제값}
+						data : {'inputID':inputID},
+						// 요청 방식
+						type : 'get',
+						// 요청-응답 성공
+						success : function(data){
+							if(data=='true'){ // data가 true -> 사용할 수 없는 아이디
+								$('#resultCheck').text('사용할 수 없는 아이디입니다')
+							}else{ // data가 false -> 사용할 수 있는 아이디
+								$('#resultCheck').text('사용할 수 있는 아이디입니다')								
+							}
+						},
+						error : function(){
+							alert("통신실패!")
+						}
+						
+					})
+				}
+			</script>
 
 	</body>
 </html>

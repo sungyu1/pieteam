@@ -22,7 +22,6 @@
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
 %>
-							
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -30,39 +29,39 @@
 					<header id="header">
 						<div class="logo">
 							<!-- 표지판-->
-							<i class="fa-solid fa-signs-post fa-2x" style="color: #FFAF00;"></i>
+							 <i class="fa-solid fa-signs-post fa-2x" style="color: #FFAF00;"></i> 
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1 style="color:#FFB432 ">안.길</h1>
+								<h1 style="color: #FFAF00 ">안.길</h1>
 								<p style="color:#FFAF00 ">안전하게 가족에게 돌아가 안기길</a>
 								
 							</div>
 						</div>
 						<nav>
 							<ul>
-							<%if(loginMember == null){ %>
-								<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
-								<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
-								<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
-								<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
-							<%}else{ %>
-								<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
-								<li><a href="update.jsp" ><b style="color:#FFAF00 ">정보수정</b></a></li>
-								<%if(loginMember.getM_id().equals("admin")){ %>
-									<li><a href="select.jsp" ><b style="color:#FFAF00">회원관리</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">CCTV</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">파출소</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">소방서</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">보호구역</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">위험관리</b></a></li>
-									<li><a href="#"><b style="color:#FFAF00">커뮤니티관리</b></a></li>
+								<%if(loginMember == null){ %>
+									<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
+									<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
+									<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
+									<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
 								<%}else{ %>
-								<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
-								<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
+									<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
+									<li><a href="update.jsp" ><b style="color:#FFAF00 ">정보수정</b></a></li>
+									<%if(loginMember.getM_id().equals("admin")){ %>
+										<li><a href="select.jsp" ><b style="color:#FFAF00">회원관리</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">CCTV</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">파출소</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">소방서</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">보호구역</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">위험관리</b></a></li>
+										<li><a href="#"><b style="color:#FFAF00">커뮤니티관리</b></a></li>
+									<%}else{ %>
+									<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
+									<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
+									<%} %>
 								<%} %>
-							<%} %>
-							</ul>
+								</ul>
 						</nav>
 					</header>
 
@@ -84,6 +83,7 @@
 											<input type="submit" value="LogIn" style="color:#FFB432;" class="button fit">
 										</form>
 									</ul>
+									<a href="#Join"><h6>아이디가 없으신가요?</h6></a>
 								</nav>	
 							</article>
 						 
@@ -103,7 +103,8 @@
 								<input type="text"  placeholder="이름을입력해주세요." name="name">
 								<input type="text"  placeholder="닉네임입력해주세요." name="nickname">
 								<input type="text"  placeholder="나이입력해주세요." name="age">
-								<select name="gender">
+								<input type="text"  placeholder="성별을 입력하세요." name="gender">
+								<select name="job">
 									<option value="">성별 선택</option>
 									<option value="M">남</option>
 									<option value="W">여</option>
@@ -124,7 +125,23 @@
 							<article id="community"><!--contact  -->
 								<h2 class="major" style="color:#FFB432 ">커뮤니티</h2>
 								<form method="post" action="#">
-									<div class="fields">
+									<div class="container">
+
+										
+										<table class="table">
+										  <tr>
+											  <th>글 제목</th>
+											  <th>작성자</th>
+											  <th>조회수</th>
+										  </tr>
+										
+										</table>
+										<a href="#community"><button id="writeBtn">글작성</button></a>
+										</div>
+									
+									
+									
+									<!-- <div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
 											<input type="text" name="name" id="name" />
@@ -141,15 +158,20 @@
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
-									</ul>
+									</ul> -->
 								</form>
-								<ul class="icons">
+								<!-- <ul class="icons"> 인스타,페이스북 버튼위치
 									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+								</ul> -->
 							</article>
+
+							<!-- Writing -->
+							<article id="Writing"></article>
+
+
 
 						<!-- Elements -->
 							<article id="elements">

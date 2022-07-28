@@ -1019,7 +1019,7 @@ input, select, textarea {
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8rem;  /*폰트사이즈*/
-		font-weight: 600;   /*폰트 굵기*/
+		font-weight: 600;
 		height: 2.75rem;    /*버튼크기*/
 		letter-spacing: 0.2rem; /*글짜간격*/
 		line-height: 2.75rem;

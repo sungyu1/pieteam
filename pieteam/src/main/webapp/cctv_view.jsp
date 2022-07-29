@@ -49,8 +49,7 @@
 <img src="./images/동구.png" id="east" name="동구">
 </a>
  <a href="#" target="_blank">
-<img src="./images/남구.png" id="south" nam
-e="남구">
+<img src="./images/남구.png" id="south" name="남구">
 </a>
  <a href="#" target="_blank">
 <img src="./images/서구.png" id="west" name="서구">

@@ -16,6 +16,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
+	
 	<body class="is-preload">
 <%
 		// session 값 가지고 오기
@@ -61,7 +62,7 @@
 									<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
 									<%} %>
 								<%} %>
-								</ul>
+							</ul>
 						</nav>
 					</header>
 
@@ -95,14 +96,14 @@
 								
 								
 								<form action="JoinCon" method="post">
-								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id">
+								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id" required >
 								<input type="button" value="ID 중복체크" style="color:#FFB432;" onclick="checKE()"><br>
 								<span id ="resultCheck"></span><br>
-								<input type="password"  placeholder="PW를 입력하세요" name="pw">
-								<input type="text"  placeholder="이름을입력해주세요." name="name">
-								<input type="text"  placeholder="닉네임입력해주세요." name="nickname">
-								<input type="text"  placeholder="나이입력해주세요." name="age">
-								<select name="gender">
+								<input type="password"  placeholder="PW를 입력하세요" name="pw" required>
+								<input type="text"  placeholder="이름을입력해주세요." name="name" required>
+								<input type="text"  placeholder="닉네임입력해주세요." name="nickname" required>
+								<input type="text"  placeholder="나이입력해주세요." name="age" required onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+								<select name="gender" required>
 									<option value="">성별 선택</option>
 									<option value="M">남</option>
 									<option value="W">여</option>
@@ -111,11 +112,28 @@
 								</form>
 								
 							</article>
-
 						<!-- safe -->
 							<article id="safe"><!-- about -->
+							
 								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
-								<span class="image main"><img src="" alt="" /></span>
+								<div class="image main">
+								 <a href="#" target="_blank">
+									<img src="./images/북구.png" id="north" name="북구" >
+									</a>
+									 <a href="cctv.jsp" target="_blank">
+									<img src="./images/동구.png" id="east" name="동구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/남구.png" id="south" nam
+									e="남구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/서구.png" id="west" name="서구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/광산구.png" id="gs" name="광산구">
+									</a>
+								</div>
 								
 							</article>
 
@@ -460,7 +478,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					})
 				}
 			</script>
-
 	</body>
 </html>
 

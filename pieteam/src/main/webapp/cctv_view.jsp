@@ -75,6 +75,27 @@ div#back {
 	<!-- BG -->
 	<div id="bg"></div>
 
+<<<<<<< HEAD
+  
+ <a href="#" target="_blank">
+<img src="./images/북구.png" id="north" name="북구" >
+</a>
+ <a href="cctv.jsp" target="_blank">
+<img src="./images/동구.png" id="east" name="동구">
+</a>
+ <a href="#" target="_blank">
+<img src="./images/남구.png" id="south" name="남구">
+</a>
+ <a href="#" target="_blank">
+<img src="./images/서구.png" id="west" name="서구">
+</a>
+ <a href="#" target="_blank">
+<img src="./images/광산구.png" id="gs" name="광산구">
+</a>
+
+
+  </body>
+=======
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
@@ -82,4 +103,5 @@ div#back {
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
+>>>>>>> branch 'master' of https://github.com/sungyu1/pieteam.git
 </html>

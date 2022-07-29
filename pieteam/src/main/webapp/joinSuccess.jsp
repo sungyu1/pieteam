@@ -11,44 +11,46 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
-<body>
+<body class="is-preload">
 <%
 	Member joinMember = (Member)request.getAttribute("joinMember");
 %>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+
 		<!-- Menu -->
-		<nav id="Update"> <font size="8">회원가입성공</font>
-		<br>
-		정보를 확인하세요<br>
-		<br>
-		
-		<table>
-			<tr>
-				<td>ID</td>
-				<td><%=joinMember.getM_id() %></td>	
-			</tr>
-			<tr>
-				<td>NAME</td>
-				<td><%=joinMember.getM_name() %></td>	
-			</tr>
-		</table>
-		<a href="main.jsp"><input type="button" value="Main"></a> </nav>
+			<nav id="Update"> <font size="8">회원가입성공</font>
+				<br>
+				정보를 확인하세요<br>
+				<br>
+				
+				<table>
+					<tr>
+						<td>ID</td>
+						<td><%=joinMember.getM_id() %></td>	
+					</tr>
+					<tr>
+						<td>NAME</td>
+						<td><%=joinMember.getM_name() %></td>	
+					</tr>
+				</table>
+			<a href="main.jsp"><input type="button" value="Main"></a> </nav>
+
 			<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">&copy; 안.길</p>
 		</footer>
 	</div>
 	
-	<!-- BG -->
-	<div id="bg"></div>
+		<!-- BG -->
+			<div id="bg"></div>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -15,6 +15,43 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
+		  <style>
+
+      a{
+      text-decoration:none;
+      color:white;
+      display: inline-block;
+      }
+      img {
+      	position: absolute;
+      }
+    
+      img#north {
+   
+		top: 150px;
+      	left : 550px;
+      }
+      img#west {
+      	top: 305px;
+      	left : 500px;
+      }
+        img#east{
+      	top: 323px;
+      	left : 659px;
+      }
+         img#south {
+   
+      	top: 338px;
+      	left : 434px;
+      }
+        img#gs {
+
+      	top: 152px;
+      	left : 275px;
+      }
+  
+	
+    </style>
 	</head>
 	<body class="is-preload">
 <%
@@ -43,7 +80,7 @@
 								<%if(loginMember == null){ %>
 									<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
 									<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
-									<li><a href="#safe" ><b style="color:#FFAF00">안심경로</b></a></li>
+									<li><a href="cctv_view.jsp" ><b style="color:#FFAF00">안심경로</b></a></li>
 									<li><a href="#community"><b style="color:#FFAF00">커뮤니티</b></a></li>
 								<%}else{ %>
 									<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
@@ -115,7 +152,25 @@
 						<!-- safe -->
 							<article id="safe"><!-- about -->
 								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
-								<span class="image main"><img src="" alt="" /></span>
+								<span class="image main">
+						
+<!-- 								 <a href="#" target="_blank">
+									<img src="./images/북구.png" id="north" name="북구">
+									</a>
+									 <a href="cctv.jsp" target="_blank">
+									<img src="./images/동구.png" id="east" name="동구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/남구.png" id="south" name="남구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/서구.png" id="west" name="서구">
+									</a>
+									 <a href="#" target="_blank">
+									<img src="./images/광산구.png" id="gs" name="광산구">
+									</a> -->
+								
+								</span>
 								
 							</article>
 

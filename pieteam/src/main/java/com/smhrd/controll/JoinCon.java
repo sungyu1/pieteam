@@ -43,6 +43,7 @@ public class JoinCon extends HttpServlet {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("main.jsp#Join");
 		}
+		//ddd
 	}
 
 }

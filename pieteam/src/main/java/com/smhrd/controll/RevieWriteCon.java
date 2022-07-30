@@ -31,7 +31,7 @@ public class RevieWriteCon extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("작성성공");
-			response.sendRedirect("boardListPaging.jsp");
+			response.sendRedirect("reviewList.jsp");
 		}else {
 			System.out.println("작성실패");
 			response.sendRedirect("reviewWrite.jsp");

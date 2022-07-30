@@ -30,7 +30,7 @@
 <body>
 	<div id="wrapper">
 	<nav>
-	<h2 class="major" style="color:#FFB432 ">CCTV</h2>
+	<h2 class="major" style="color:#FFB432 ">소방서</h2>
 	<table class="table">	
 	
 							<tr>

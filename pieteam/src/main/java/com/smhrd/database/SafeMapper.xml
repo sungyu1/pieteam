@@ -1,1 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.SafeDAO">
+	<!-- 보호구역 페이징 -->
+	<select id="selectSafeList" resultType="com.smhrd.model.Safe" parameterType="int">
+		select * from tbl_safezone where sz_seq>=#{sz_seq} order by sz_seq
+	</select>
+	
+</mapper>

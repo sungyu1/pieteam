@@ -28,5 +28,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	<mapper resource="com/smhrd/database/GsMapper.xml"/>
     	<mapper resource="com/smhrd/database/PoliceMapper.xml"/>
     	<mapper resource="com/smhrd/database/ReviewMapper.xml"/>
+    	<mapper resource="com/smhrd/database/CCTVMapper.xml"/>
     </mappers>
 </configuration>

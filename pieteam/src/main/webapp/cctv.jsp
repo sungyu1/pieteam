@@ -42,12 +42,37 @@
 		
 <div id="map" style="width:1000px;height:600px;"></div>
 <p>
-    <button onclick="hideMarkers()">마커 감추기</button>
-    <button onclick="showMarkers()">마커 보이기</button>
+  	<button onclick="location='cctv.jsp'"> CCTV</button>
+    <button onclick="location='fire.jsp'"> 소방서</button>
+    <button onclick="location='police.jsp'"> 경찰서</button>
+    <button onclick="location='safe.jsp'"> 어린이보호구역</button>
+    <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
+<!--  <div id="mapwrap"> 
+지도가 표시될 div
+<div id="map" style="width:100%;height:350px;"></div>
+지도 위에 표시될 마커 카테고리
+<div class="category">
+    <ul>
+        <li id="coffeeMenu" onclick="changeMarker('coffee')">
+            <span class="ico_comm ico_coffee"></span>
+            커피숍
+        </li>
+        <li id="storeMenu" onclick="changeMarker('store')">
+            <span class="ico_comm ico_store"></span>
+            편의점
+        </li>
+        <li id="carparkMenu" onclick="changeMarker('carpark')">
+            <span class="ico_comm ico_carpark"></span>
+            주차장
+        </li>
+    </ul>
+</div>
+</div>  -->
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
         center: new kakao.maps.LatLng(35.16448618, 126.9180068), // 지도의 중심좌표
@@ -55,7 +80,6 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
 var imageSrc = './images/cctv.png', // 마커이미지의 주소입니다    
 imageSize = new kakao.maps.Size(15, 15), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
@@ -104,7 +128,6 @@ var clickedOverlay = null;
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 
 	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + '<br>' +
-	        '                <div class="jibun ellipsis">'+Lat[i]+', ' + Lon[i]+'</div>' + 
 	        '            </div>' + 
 	        '        </div>' + 
 	        '    </div>' +    
@@ -178,7 +201,7 @@ var clickedOverlay = null;
 
 	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
 	function showMarkers() {
-	    setMarkers(map)    
+		setMarkers(map);   
 	}
 
 	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다

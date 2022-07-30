@@ -211,7 +211,6 @@
 										  </tr>
 										
 										</table>
-										<a href="#community"><button id="writeBtn" style="color:#FFB432 ">글작성</button></a>
 										</div>
 									
 									
@@ -235,6 +234,7 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul> -->
 								</form>
+								<a href="reviewWrite.jsp"><button id="writeBtn" style="color:#FFB432 ">글작성</button></a>
 								<!-- <ul class="icons"> 인스타,페이스북 버튼위치
 									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>

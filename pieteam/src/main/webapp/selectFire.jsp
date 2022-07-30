@@ -34,7 +34,7 @@
 	<table class="table">	
 	
 							<tr>
-								<td>관리지역</td>
+								<td>소방서명</td>
 								<td>주소</td>
 								<td>위도</td>							
 								<td>경도</td>							
@@ -106,7 +106,7 @@ function button_create(data_list,startPage){
 function next_list(startRow,startPage){
 	$.ajax({
 		/* jsp 시작하면서 바로 border서블릿과 비동기 통신으로 DB 에있는 내용을 가져온다 */
-		url:'cctvListCon',
+		url:'FireListCon',
 		method:'post',
 		dataType :'json', // 응답데이터 형식 지정
 		data :{"num":startRow},/* 한 페이지 에서 가져와야하는 양이 정해저 있으므로 어디 페이지에서 요청했는지 알기위해 가져올DB의 시작 num을 같이 넘겨 준다 */

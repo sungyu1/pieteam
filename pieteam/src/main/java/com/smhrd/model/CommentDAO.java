@@ -7,16 +7,16 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.Sqlsessionmanager;
 
-public class ReviewDAO {
+public class CommentDAO {
 
 	SqlSessionFactory sqlSessionFactory = Sqlsessionmanager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 	
-	// 게시물 업로드
-	public int insertReview(Review vo) {
+	// 댓글 작성
+	public int insertComment(Comment vo) {
 		int cnt=0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.model.ReviewDAO.insertReview", vo);
+			cnt = sqlSession.insert("com.smhrd.model.CommentDAO.insertComment", vo);
 			
 			if(cnt>0) {
 				sqlSession.commit();
@@ -31,30 +31,16 @@ public class ReviewDAO {
 		return cnt;
 	}
 	
-	// 전체 게시물 페이징
-	public List<Review> selectReviewList(int num) {
-		List<Review> list = null;
+	// 리뷰에 댓글 표시
+	public List<Comment> selectComment(int boardnum) {
+		List<Comment> list = null;
 		try {
-			list = sqlSession.selectList("com.smhrd.model.ReviewDAO.selectReviewList", num);
+			list = sqlSession.selectList("com.smhrd.model.CommentDAO.selectComment", boardnum);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			sqlSession.close();
 		}
 		return list;
-	}
-	
-	// 게시물 하나 보여주기
-	public Review selectOne(int num) {
-		Review vo = null;
-		try {
-			vo = sqlSession.selectOne("com.smhrd.model.ReviewDAO.selectOne",num);
-			// select - commit/rollback 생략
-		}catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			sqlSession.close();
-		}
-		return vo;
 	}
 }

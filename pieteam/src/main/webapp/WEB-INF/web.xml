@@ -81,6 +81,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.SafeListCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CommentCon</servlet-name>
+  	<display-name>CommentCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.CommentCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -132,5 +138,9 @@
   <servlet-mapping>
   	<servlet-name>SafeListCon</servlet-name>
   	<url-pattern>/SafeListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CommentCon</servlet-name>
+  	<url-pattern>/CommentCon</url-pattern>
   </servlet-mapping>
 </web-app>

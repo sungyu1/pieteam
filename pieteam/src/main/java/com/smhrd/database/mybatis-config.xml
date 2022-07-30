@@ -30,5 +30,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	<mapper resource="com/smhrd/database/ReviewMapper.xml"/>
     	<mapper resource="com/smhrd/database/CCTVMapper.xml"/>
     	<mapper resource="com/smhrd/database/FireMapper.xml"/>
+    	<mapper resource="com/smhrd/database/CommentMapper.xml"/>
     </mappers>
 </configuration>

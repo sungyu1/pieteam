@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 <!-- 관리자 페이지 cctv 목록 -->	
 	<select id="selectcctvList" resultType="com.smhrd.model.CCTV" parameterType="int">
-		select * from tbl_cctv here cctv_seq>=#{cctv_seq} order by cctv_seq
+		select * from tbl_cctv where cctv_seq>=#{cctv_seq} order by cctv_seq
 
 	</select>
 <!-- 	<select id="selectAll" resultType="com.smhrd.model.CCTV">

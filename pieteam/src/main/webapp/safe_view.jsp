@@ -42,19 +42,19 @@
   <body>
 
   
- <a href="#" target="_blank">
+ <a href="safeN.jsp" target="_blank">
 <img src="./images/북구.png" id="north" name="북구" >
 </a>
- <a href="safe.jsp" target="_blank">
+ <a href="safeE.jsp" target="_blank">
 <img src="./images/동구.png" id="east" name="동구">
 </a>
- <a href="#" target="_blank">
+ <a href="safeS.jsp" target="_blank">
 <img src="./images/남구.png" id="south" name="남구">
 </a>
- <a href="#" target="_blank">
+ <a href="safeW.jsp" target="_blank">
 <img src="./images/서구.png" id="west" name="서구">
 </a>
- <a href="#" target="_blank">
+ <a href="safeGs.jsp" target="_blank">
 <img src="./images/광산구.png" id="gs" name="광산구">
 </a>
 

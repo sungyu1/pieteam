@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.Police"%>
-<%@page import="com.smhrd.model.PoliceDAO"%>
+<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -57,8 +57,8 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	PoliceDAO dao = new PoliceDAO();
-	List<Police> list = dao.selectAll();
+	AllDAO dao = new AllDAO();
+	List<Police> list = dao.selectAllpol();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>
@@ -93,7 +93,7 @@ var clickedOverlay = null;
             '                <img src="./images/경찰차.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
-	        '                <div class="ellipsis">주소 : '+ Name[i] + '</div>' + 
+	        '                <div class="ellipsis">주소 : '+ Name[i] + '</div>' + '<br>' + 
 	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
 	        '            </div>' + 
 	        '        </div>' + 

@@ -46,6 +46,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.cctvcon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>cctvListCon</servlet-name>
+  	<display-name>cctvListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.cctvListCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -73,5 +79,9 @@
   <servlet-mapping>
   	<servlet-name>cctvcon</servlet-name>
   	<url-pattern>/cctvcon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>cctvListCon</servlet-name>
+  	<url-pattern>/cctvListCon</url-pattern>
   </servlet-mapping>
 </web-app>

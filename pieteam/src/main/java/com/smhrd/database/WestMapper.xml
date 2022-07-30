@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.WestDAO">
+<!-- parameterType : sql 실행시 넘겨줄 파라미터의 실제 타입 -->
+
+<!--  	<select id="selectAll2" resultType="com.smhrd.model.VO" parameterType="String">
+		select * from cctv_gwanju where 관리기관명 like '%#{all}%'
+	</select> -->
+	<select id="selectAllfireW" resultType="com.smhrd.model.Fire" parameterType="String">
+		select * from tbl_firestation where f_addr like '%서구%'
+	</select>
+	
+	<select id="selectAllcctvW" resultType="com.smhrd.model.CCTV" parameterType="String">
+		select * from tbl_cctv where cctv_name='서구'
+	</select>
+		<select id="selectAllpolW" resultType="com.smhrd.model.Police" parameterType="String">
+		select * from tbl_police where p_addr like '%서구%'
+	</select>
+	<select id="selectAllsafeW" resultType="com.smhrd.model.Safe" parameterType="String">
+		select * from tbl_safezone where sz_addr like '%서구%'
+	</select>
+<!-- 	<select id="selectAll" resultType="com.smhrd.model.CCTV">
+		select * from tbl_cctv where cctv_name='동구'
+	</select> -->
+
+</mapper>

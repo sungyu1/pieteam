@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.Fire"%>
-<%@page import="com.smhrd.model.AllDAO"%>
+<%@page import="com.smhrd.model.NorthDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -41,7 +41,7 @@
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
-        center: new kakao.maps.LatLng(35.16448618, 126.9180068), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(35.1744502, 126.9259101), // 지도의 중심좌표
         level: 4 // 지도의 확대 레벨
     };
 
@@ -57,8 +57,8 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	AllDAO dao = new AllDAO();
-	List<Fire> list = dao.selectAllfire();
+	NorthDAO dao = new NorthDAO();
+	List<Fire> list = dao.selectAllfireN();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>

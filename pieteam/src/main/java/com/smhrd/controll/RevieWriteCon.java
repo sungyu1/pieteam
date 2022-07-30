@@ -20,6 +20,9 @@ public class RevieWriteCon extends HttpServlet {
 		
 		String id = vo.getM_id();
 		
+		String name = request.getParameter("name");
+		String review = request.getParameter("review");
+		
 	}
 
 }

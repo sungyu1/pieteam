@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.PoliceDAO">
+	<!-- 경찰서 페이징 -->
+	<select id="selectPoliceList" resultType="com.smhrd.model.Police" parameterType="int">
+		select * from tbl_police where p_seq>=#{p_seq} order by p_seq
+	</select>
+	
+</mapper>

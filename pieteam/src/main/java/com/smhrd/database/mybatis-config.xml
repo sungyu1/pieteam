@@ -25,5 +25,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	<mapper resource="com/smhrd/database/NorthMapper.xml"/>
     	<mapper resource="com/smhrd/database/SouthMapper.xml"/>
     	<mapper resource="com/smhrd/database/GsMapper.xml"/>
+    	<mapper resource="com/smhrd/database/PoliceMapper.xml"/>
     </mappers>
 </configuration>

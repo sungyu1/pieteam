@@ -11,6 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAll" resultType="com.smhrd.model.CCTV" parameterType="String">
 		select * from tbl_cctv where cctv_name='동구'
 	</select>
+<!-- 관리자 페이지 cctv 목록 -->	
+	<select id="selectCctvAll" resultType="com.smhrd.model.CCTV" parameterType="String">
+		select * from tbl_cctv order by cctv_seq
+	</select>
 <!-- 	<select id="selectAll" resultType="com.smhrd.model.CCTV">
 		select * from tbl_cctv where cctv_name='동구'
 	</select> -->

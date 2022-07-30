@@ -29,6 +29,20 @@ public class CCTVDAO {
 		return name;
 	}
 	
+	//관리자 페이지 CCTV 목록
+	
+	public List<CCTV> selectCctvAll() {
+		List<CCTV> list = null;
+		try {
+			list = sqlSession.selectList("com.smhrd.model.CCTV.selectCctvAll");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
 //	public List<CCTV> selectAll() {
 //		List<CCTV> name = null;
 //		try {

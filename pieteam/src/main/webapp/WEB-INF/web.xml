@@ -46,6 +46,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.cctvcon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RevieWriteCon</servlet-name>
+  	<display-name>RevieWriteCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.RevieWriteCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PoliceListCon</servlet-name>
+  	<display-name>PoliceListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.PoliceListCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -73,5 +85,13 @@
   <servlet-mapping>
   	<servlet-name>cctvcon</servlet-name>
   	<url-pattern>/cctvcon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RevieWriteCon</servlet-name>
+  	<url-pattern>/RevieWriteCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PoliceListCon</servlet-name>
+  	<url-pattern>/PoliceListCon</url-pattern>
   </servlet-mapping>
 </web-app>

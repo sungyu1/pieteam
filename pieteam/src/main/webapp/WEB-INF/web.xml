@@ -57,6 +57,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.PoliceListCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>cctvListCon</servlet-name>
+  	<display-name>cctvListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.cctvListCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReviewListCon</servlet-name>
+  	<display-name>ReviewListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.ReviewListCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -92,5 +104,13 @@
   <servlet-mapping>
   	<servlet-name>PoliceListCon</servlet-name>
   	<url-pattern>/PoliceListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>cctvListCon</servlet-name>
+  	<url-pattern>/cctvListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReviewListCon</servlet-name>
+  	<url-pattern>/ReviewListCon</url-pattern>
   </servlet-mapping>
 </web-app>

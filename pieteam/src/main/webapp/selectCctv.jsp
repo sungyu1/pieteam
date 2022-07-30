@@ -42,7 +42,7 @@
 								<td>관리자 아이디</td>							
 							</tr>
 							 
-						<c:forEach begin="0" end="10" step="1" varStatus="status">
+						<c:forEach begin="0" end="100" step="1" varStatus="status">
 							 
 							<tr>
 							  <td id="name${status.index}"></td>
@@ -78,7 +78,7 @@ next_list(1,1);
 
 var arr=null;
 var pageSize = 3;
-var maxRow=10;
+var maxRow=100;
 
 
 function button_create(data_list,startPage){
@@ -113,7 +113,7 @@ function next_list(startRow,startPage){
 		data :{"num":startRow},/* 한 페이지 에서 가져와야하는 양이 정해저 있으므로 어디 페이지에서 요청했는지 알기위해 가져올DB의 시작 num을 같이 넘겨 준다 */
 		success:function(data_list){
 			console.log(data_list)
-			if(data_list.length<10){/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
+			if(data_list.length<100){/* DB를 통해 가져왔는데 가져온 양이 테이블 행의 갯수인 10 보다 적으면 html의 테이블은 이전값을 가지고 있으므로 안보이게 .hide()를 사용해주어야 한다 */
 				list_write(data_list);
 				button_create(data_list,startPage);
 			}
@@ -146,14 +146,8 @@ function list_write(data_list){
 		$('#ad_id'+i).text(data_list[i].ad_id);
 	}
 	
-	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
-		$('#name'+i).hide(); 
-		$('#addr'+i).hide();
-		$('#lat'+i).hide();
-		$('#lon'+i).hide();
-		$('#tel'+i).hide();
-		$('#ad_id'+i).hide();
-	}
+	for(var i =data_list.length;i<100;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
+		$(' 
 	
 }
 
@@ -163,8 +157,8 @@ function list_write(data_list){
 //--->한 페이지 가 가지고 있는 배열안에서 그때그때 해당페이지 블럭을 클릭 한다면 거기 범위에 맞는 데이터를 가져오기 위해 슬라이싱 해줄 필요가 있다
 function page(currentPage){
 	
-	var startNum = (currentPage-1)*10+1;
-	var endNum = currentPage*10;
+	var startNum = (currentPage-1)*100+1;
+	var endNum = currentPage*100;
 	
 	var start_index=0;
 	var end_index=0;
@@ -209,7 +203,7 @@ function page(currentPage){
 
 //해당 게시물을 출력한다
 function print_list(data_list){
-	for(var i=0;i<10;i++){
+	for(var i=0;i<100;i++){
 		$('#name'+i).show();
 		$('#addr'+i).show();
 		$('#lat'+i).show();

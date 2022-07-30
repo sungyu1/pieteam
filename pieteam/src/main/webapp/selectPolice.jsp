@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +9,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-	<style>
+<style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
 		font-family: 'Do Hyeon', sans-serif;
@@ -28,32 +26,29 @@
 </style>
 </head>
 <body>
-	<div id="wrapper">
-	<nav>
-	<h2 class="major" style="color:#FFB432 ">CCTV</h2>
-	<table class="table">	
-	
-							<tr>
-								<td>관리지역</td>
-								<td>주소</td>
-								<td>위도</td>							
-								<td>경도</td>							
-								<td>전화번호</td>							
-								<td>관리자 아이디</td>							
-							</tr>
-							 
-						<c:forEach begin="0" end="10" step="1" varStatus="status">
-							 
-							<tr>
-							  <td id="name${status.index}"></td>
-						      <td id="addr${status.index }"></td>
-						      <td id="lat${status.index }"></td>					
-						      <td id="lon${status.index }"></td>					
-						      <td id="tel${status.index }"></td>					
-						      <td id="ad_id${status.index }"></td>					
-						  </tr>
-					  	</c:forEach>
-					  	<tr>
+<div id="wrapper">
+<nav>
+<h2 class="major" style="color:#FFB432 ">파출소</h2>
+<table class="table">
+  <tr>
+      <th>파출소명</th>
+      <th>주소</th>
+      <th>위도</th>
+      <th>경도</th>
+      <th>전화번호</th>
+      <th>관리자 아이디</th>
+  </tr>
+  <c:forEach begin="0" end="10" step="1" varStatus="status">  
+	  <tr>
+		  <td id="name${status.index}"></td>
+	      <td id="addr${status.index }"></td>
+	      <td id="lat${status.index }"></td>					
+	      <td id="lon${status.index }"></td>					
+	      <td id="tel${status.index }"></td>					
+	      <td id="ad_id${status.index }"></td>					
+	  </tr>
+  </c:forEach>
+  <tr>
 	  <td colspan="3" id="controller"></td>
   </tr>
 </table>
@@ -107,7 +102,7 @@ function button_create(data_list,startPage){
 function next_list(startRow,startPage){
 	$.ajax({
 		/* jsp 시작하면서 바로 border서블릿과 비동기 통신으로 DB 에있는 내용을 가져온다 */
-		url:'cctvListCon',
+		url:'PoliceListCon',
 		method:'post',
 		dataType :'json', // 응답데이터 형식 지정
 		data :{"num":startRow},/* 한 페이지 에서 가져와야하는 양이 정해저 있으므로 어디 페이지에서 요청했는지 알기위해 가져올DB의 시작 num을 같이 넘겨 준다 */

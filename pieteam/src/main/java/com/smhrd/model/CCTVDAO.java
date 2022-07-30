@@ -31,10 +31,10 @@ public class CCTVDAO {
 	
 	//관리자 페이지 CCTV 목록
 	
-	public List<CCTV> selectCctvAll() {
+	public List<CCTV> selectcctvList(int num) {
 		List<CCTV> list = null;
 		try {
-			list = sqlSession.selectList("com.smhrd.model.CCTV.selectCctvAll");
+			list = sqlSession.selectList("com.smhrd.model.CCTVDAO.selectcctvList", num);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {

@@ -41,4 +41,17 @@ public class PoliceDAO {
 //		}
 //		return name;
 //	}
+	
+	// 전체 경찰서 페이징
+	public List<Police> selectPoliceList(int num) {
+		List<Police> list = null;
+		try {
+			list = sqlSession.selectList("com.smhrd.model.PoliceDAO.selectPoliceList", num);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
 }

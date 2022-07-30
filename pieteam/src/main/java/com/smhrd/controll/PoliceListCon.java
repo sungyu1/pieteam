@@ -11,30 +11,29 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.smhrd.model.CCTV;
-import com.smhrd.model.CCTVDAO;
+import com.smhrd.model.Police;
+import com.smhrd.model.PoliceDAO;
 
-
-public class cctvListCon extends HttpServlet {
+public class PoliceListCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		CCTVDAO dao = new CCTVDAO();
-		List<CCTV> list = dao.selectcctvList(num);
+		PoliceDAO dao = new PoliceDAO();
+		List<Police> list = dao.selectPoliceList(num);
 		
 		JsonObject json = new JsonObject(); // json 객체
 		JsonArray jarray = new JsonArray(); // json array
 		
-		for(CCTV c : list) {
-			json.addProperty("num", c.getCctv_seq());
-			json.addProperty("name", c.getCctv_name());
-			json.addProperty("addr", c.getCctv_addr());
-			json.addProperty("lat", c.getCctv_lat());
-			json.addProperty("lon", c.getCctv_lon());
-			json.addProperty("tel", c.getCctv_tel());
-			json.addProperty("ad_id", c.getAdmin_id());
+		for(Police p : list) {
+			json.addProperty("num", p.getP_seq());
+			json.addProperty("name", p.getP_name());
+			json.addProperty("addr", p.getP_addr());
+			json.addProperty("lat", p.getP_lat());
+			json.addProperty("lon", p.getP_lon());
+			json.addProperty("tel", p.getP_tel());
+			json.addProperty("ad_id", p.getAdmin_id());
 			
 			jarray.add(json);
 			json = new JsonObject();

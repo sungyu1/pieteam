@@ -1,4 +1,4 @@
-<%@page import="com.smhrd.model.Fire"%>
+<%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
@@ -41,14 +41,14 @@
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
-        center: new kakao.maps.LatLng(35.16448618, 126.9180068), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(35.157727, 126.850512), // 지도의 중심좌표
         level: 4 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var imageSrc = './images/소방차.png', // 마커이미지의 주소입니다    
-imageSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+var imageSrc = './images/경찰차.png', // 마커이미지의 주소입니다    
+imageSize = new kakao.maps.Size(35, 35), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
 //마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
@@ -58,7 +58,7 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
 	AllDAO dao = new AllDAO();
-	List<Fire> list = dao.selectAllfire();
+	List<Police> list = dao.selectAllpol();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>
@@ -69,10 +69,10 @@ var Lon=[];
 var admin=[];
 var tel=[];
 <% for (int i=0; i<list.size(); i++){%>
-Lat.push(<%=list.get(i).getF_lat() %>)
-Lon.push(<%=list.get(i).getF_lon() %>)
-Name.push("<%=list.get(i).getF_addr()%>")
-tel.push("<%=list.get(i).getF_tel()%>")
+Lat.push(<%=list.get(i).getP_lat() %>)
+Lon.push(<%=list.get(i).getP_lon() %>)
+Name.push("<%=list.get(i).getP_addr()%>")
+tel.push("<%=list.get(i).getP_tel()%>")
 admin.push("<%=list.get(i).getAdmin_id()%>")
 
 
@@ -85,15 +85,15 @@ var clickedOverlay = null;
 	    	
 	        '    <div class="info" >' + 
 	        '        <div class="title">' + 
-	        '       소방서' +  
+	        '       경찰서' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/소방차.png" width="73" height="70">' +
+            '                <img src="./images/경찰차.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
-	        '                <div class="ellipsis">주소 : '+ Name[i] +'</div>' + '<br>' + 
+	        '                <div class="ellipsis">주소 : '+ Name[i] + '</div>' + '<br>' + 
 	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
 	        '            </div>' + 
 	        '        </div>' + 

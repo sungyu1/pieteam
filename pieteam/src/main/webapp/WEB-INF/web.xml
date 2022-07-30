@@ -70,6 +70,18 @@
   	<servlet-class>com.smhrd.controll.ReviewListCon</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>FireListCon</servlet-name>
+  	<display-name>FireListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.FireListCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SafeListCon</servlet-name>
+  	<display-name>SafeListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.SafeListCon</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>CommentCon</servlet-name>
   	<display-name>CommentCon</display-name>
   	<description></description>
@@ -118,6 +130,14 @@
   <servlet-mapping>
   	<servlet-name>ReviewListCon</servlet-name>
   	<url-pattern>/ReviewListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FireListCon</servlet-name>
+  	<url-pattern>/FireListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SafeListCon</servlet-name>
+  	<url-pattern>/SafeListCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CommentCon</servlet-name>

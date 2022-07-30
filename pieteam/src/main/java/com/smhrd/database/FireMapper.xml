@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.FireDAO">
+	<!-- 경찰서 페이징 -->
+	<select id="selectFireList" resultType="com.smhrd.model.Fire" parameterType="int">
+		select * from tbl_firestation where f_seq>=#{f_seq} order by f_seq
+	</select>
+	
+</mapper>

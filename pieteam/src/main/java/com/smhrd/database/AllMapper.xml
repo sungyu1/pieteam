@@ -2,14 +2,24 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.smhrd.model.PoliceDAO">
+<mapper namespace="com.smhrd.model.AllDAO">
 <!-- parameterType : sql 실행시 넘겨줄 파라미터의 실제 타입 -->
 
 <!--  	<select id="selectAll2" resultType="com.smhrd.model.VO" parameterType="String">
 		select * from cctv_gwanju where 관리기관명 like '%#{all}%'
 	</select> -->
-	<select id="selectAll" resultType="com.smhrd.model.Police" parameterType="String">
-		select * from tbl_police where p_addr like '%동구%'
+	<select id="selectAllfire" resultType="com.smhrd.model.Fire" parameterType="String">
+		select * from tbl_firestation
+	</select>
+	
+	<select id="selectAllcctv" resultType="com.smhrd.model.CCTV" parameterType="String">
+		select * from tbl_cctv
+	</select>
+		<select id="selectAllpol" resultType="com.smhrd.model.Police" parameterType="String">
+		select * from tbl_police
+	</select>
+	<select id="selectAllsafe" resultType="com.smhrd.model.Safe" parameterType="String">
+		select * from tbl_safezone
 	</select>
 <!-- 	<select id="selectAll" resultType="com.smhrd.model.CCTV">
 		select * from tbl_cctv where cctv_name='동구'

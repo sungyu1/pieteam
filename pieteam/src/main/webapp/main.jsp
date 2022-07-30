@@ -29,25 +29,25 @@
       img#north {
    
 		top: 150px;
-      	left : 550px;
+      	left : 350px;
       }
       img#west {
       	top: 305px;
-      	left : 500px;
+      	left : 300px;
       }
         img#east{
       	top: 323px;
-      	left : 659px;
+      	left : 459px;
       }
          img#south {
    
       	top: 338px;
-      	left : 434px;
+      	left : 234px;
       }
         img#gs {
 
       	top: 152px;
-      	left : 275px;
+      	left : 75px;
       }
   
 	

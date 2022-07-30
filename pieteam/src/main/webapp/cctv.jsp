@@ -1,15 +1,16 @@
-<%@page import="com.smhrd.model.CCTV"%>
-<%@page import="com.smhrd.model.CCTVDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.CCTVDAO"%>
+<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="com.smhrd.model.CCTV"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>여러개 마커에 이벤트 등록하기1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
     <style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
@@ -27,13 +28,19 @@
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
+    
+ 
 </style>
   
 
 
 </head>
 <body>
-<div id="map" style="width:100%;height:80vh;"></div>
+
+	<div id="wrapper">
+		<h2 class="major" style="color: #FFB432">안심경로</h2>
+		
+<div id="map" style="width:1000px;height:600px;"></div>
 <p>
     <button onclick="hideMarkers()">마커 감추기</button>
     <button onclick="showMarkers()">마커 보이기</button>
@@ -50,7 +57,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 var imageSrc = './images/cctv.png', // 마커이미지의 주소입니다    
-imageSize = new kakao.maps.Size(25, 25), // 마커이미지의 크기입니다
+imageSize = new kakao.maps.Size(15, 15), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
 //마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
@@ -59,8 +66,8 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	CCTVDAO dao = new CCTVDAO();
-	List<CCTV> list = dao.selectAll();
+	AllDAO dao = new AllDAO();
+	List<CCTV> list = dao.selectAllcctv();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>
@@ -95,8 +102,9 @@ var clickedOverlay = null;
             '                <img src="./images/cctv.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
-	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + 
-	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
+	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 
+	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + '<br>' +
+	        '                <div class="jibun ellipsis">'+Lat[i]+', ' + Lon[i]+'</div>' + 
 	        '            </div>' + 
 	        '        </div>' + 
 	        '    </div>' +    
@@ -179,5 +187,14 @@ var clickedOverlay = null;
 	}
 
 </script>
+</div>
+	<!-- BG -->
+	<div id="bg"></div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

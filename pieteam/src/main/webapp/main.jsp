@@ -96,14 +96,14 @@
 								
 								
 								<form action="JoinCon" method="post">
-								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id" required >
+								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id" required oninvalid="this.setCustomValidity('아이디를 입력해주세요')" oninput="this.setCustomValidity('')">
 								<input type="button" value="ID 중복체크" style="color:#FFB432;" onclick="checKE()"><br>
 								<span id ="resultCheck"></span><br>
-								<input type="password"  placeholder="PW를 입력하세요" name="pw" required>
-								<input type="text"  placeholder="이름을입력해주세요." name="name" required>
-								<input type="text"  placeholder="닉네임입력해주세요." name="nickname" required>
-								<input type="text"  placeholder="나이입력해주세요." name="age" required onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-								<select name="gender" required>
+								<input type="password"  placeholder="PW를 입력하세요" name="pw" required oninvalid="this.setCustomValidity('비밀번호를 입력해주세요')" oninput="this.setCustomValidity('')">
+								<input type="text"  placeholder="이름을입력해주세요." name="name" required oninvalid="this.setCustomValidity('이름을 입력해주세요')" oninput="this.setCustomValidity('')">
+								<input type="text"  placeholder="닉네임입력해주세요." name="nickname" required oninvalid="this.setCustomValidity('닉네임을 입력해주세요')" oninput="this.setCustomValidity('')">
+								<input type="text"  placeholder="나이입력해주세요." name="age" required oninvalid="this.setCustomValidity('나이를 입력해주세요')" oninput="this.setCustomValidity('')" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+								<select name="gender" required oninvalid="this.setCustomValidity('성별을 입력해주세요')" oninput="this.setCustomValidity('')">
 									<option value="">성별 선택</option>
 									<option value="M">남</option>
 									<option value="W">여</option>

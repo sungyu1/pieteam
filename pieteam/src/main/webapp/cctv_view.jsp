@@ -23,28 +23,28 @@ img {
 }
 
 img#north {
-	top: 350px;
-	left: 950px;
+	top: 250px;
+	left: 750px;
 }
 
 img#west {
-	top: 505px;
-	left: 900px;
+	top: 405px;
+	left: 700px;
 }
 
 img#east {
-	top: 523px;
-	left: 1059px;
+	top: 423px;
+	left: 859px;
 }
 
 img#south {
-	top: 538px;
-	left: 834px;
+	top: 438px;
+	left: 634px;
 }
 
 img#gs {
-	top: 352px;
-	left: 675px;
+	top: 252px;
+	left: 475px;
 }
 
 div#back {
@@ -59,15 +59,15 @@ div#back {
 
 
 		<!-- 로그인 -->
-		<a href="#" target="_blank"> <img src="./images/북구.png" id="north"
+		<a href="cctvN.jsp" target="_blank"> <img src="./images/북구.png" id="north"
 			name="북구">
-		</a> <a href="cctv.jsp" target="_blank"> <img src="./images/동구.png"
+		</a> <a href="cctvE.jsp" target="_blank"> <img src="./images/동구.png"
 			id="east" name="동구">
-		</a> <a href="#" target="_blank"> <img src="./images/남구.png"
+		</a> <a href="cctvS.jsp" target="_blank"> <img src="./images/남구.png"
 			id="south" name="남구">
-		</a> <a href="#" target="_blank"> <img src="./images/서구.png" id="west"
+		</a> <a href="cctvW.jsp" target="_blank"> <img src="./images/서구.png" id="west"
 			name="서구">
-		</a> <a href="#" target="_blank"> <img src="./images/광산구.png" id="gs"
+		</a> <a href="cctvGs.jsp" target="_blank"> <img src="./images/광산구.png" id="gs"
 			name="광산구">
 		</a>
 	
@@ -77,10 +77,10 @@ div#back {
 
 <<<<<<< HEAD
   
- <a href="#" target="_blank">
+<!--  <a href="cctv.jsp" target="_blank">
 <img src="./images/북구.png" id="north" name="북구" >
 </a>
- <a href="cctv.jsp" target="_blank">
+ <a href="cctvE.jsp" target="_blank">
 <img src="./images/동구.png" id="east" name="동구">
 </a>
  <a href="#" target="_blank">
@@ -92,9 +92,9 @@ div#back {
  <a href="#" target="_blank">
 <img src="./images/광산구.png" id="gs" name="광산구">
 </a>
+ -->
 
-
-  </body>
+ 
 =======
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -103,5 +103,5 @@ div#back {
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
->>>>>>> branch 'master' of https://github.com/sungyu1/pieteam.git
+<!-- >>>>>>> branch 'master' of https://github.com/sungyu1/pieteam.git -->
 </html>

@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.Safe"%>
-<%@page import="com.smhrd.model.SafeDAO"%>
+<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 
@@ -58,8 +58,8 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	SafeDAO dao = new SafeDAO();
-	List<Safe> list = dao.selectAll();
+	AllDAO dao = new AllDAO();
+	List<Safe> list = dao.selectAllsafe();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>

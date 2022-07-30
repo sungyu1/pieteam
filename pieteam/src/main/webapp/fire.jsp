@@ -7,7 +7,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>여러개 마커에 이벤트 등록하기1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
     <style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
@@ -25,24 +28,54 @@
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
+    
+ 
 </style>
   
 
 
 </head>
 <body>
-<div id="map" style="width:100%;height:80vh;"></div>
+
+	<div id="wrapper">
+		<h2 class="major" style="color: #FFB432">안심경로</h2>
+		
+<div id="map" style="width:1000px;height:600px;"></div>
 <p>
-    <button onclick="hideMarkers()">마커 감추기</button>
-    <button onclick="showMarkers()">마커 보이기</button>
+    <button onclick="location='cctv.jsp'"> CCTV</button>
+    <button onclick="location='fire.jsp'"> 소방서</button>
+    <button onclick="location='police.jsp'"> 경찰서</button>
+    <button onclick="location='safe.jsp'"> 어린이보호구역</button>
+    <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
+<!--  <div id="mapwrap"> 
+지도가 표시될 div
+<div id="map" style="width:100%;height:350px;"></div>
+지도 위에 표시될 마커 카테고리
+<div class="category">
+    <ul>
+        <li id="coffeeMenu" onclick="changeMarker('coffee')">
+            <span class="ico_comm ico_coffee"></span>
+            커피숍
+        </li>
+        <li id="storeMenu" onclick="changeMarker('store')">
+            <span class="ico_comm ico_store"></span>
+            편의점
+        </li>
+        <li id="carparkMenu" onclick="changeMarker('carpark')">
+            <span class="ico_comm ico_carpark"></span>
+            주차장
+        </li>
+    </ul>
+</div>
+</div>  -->
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
         center: new kakao.maps.LatLng(35.16448618, 126.9180068), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
+        level: 6 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -84,17 +117,17 @@ var clickedOverlay = null;
 	    	content:'<div class="wrap">' + 
 	    	
 	        '    <div class="info" >' + 
-	        '        <div class="title">' + 
-	        '       소방서' +  
+	        '        <div class="title">' +
+	        '       CCTV' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/소방차.png" width="73" height="70">' +
+            '                <img src="./images/cctv.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
-	        '                <div class="ellipsis">주소 : '+ Name[i] +'</div>' + '<br>' + 
-	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
+	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 
+	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + '<br>' +
 	        '            </div>' + 
 	        '        </div>' + 
 	        '    </div>' +    
@@ -168,7 +201,7 @@ var clickedOverlay = null;
 
 	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
 	function showMarkers() {
-	    setMarkers(map)    
+		setMarkers(map);   
 	}
 
 	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다

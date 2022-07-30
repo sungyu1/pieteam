@@ -1,5 +1,5 @@
 <%@page import="com.smhrd.model.Police"%>
-<%@page import="com.smhrd.model.AllDAO"%>
+<%@page import="com.smhrd.model.EastDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -7,7 +7,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>여러개 마커에 이벤트 등록하기1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
     <style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
@@ -25,16 +28,26 @@
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
+    
+ 
 </style>
   
 
 
 </head>
 <body>
-<div id="map" style="width:100%;height:80vh;"></div>
+
+	<div id="wrapper">
+		<h2 class="major" style="color: #FFB432">안심경로</h2>
+		
+<div id="map" style="width:1000px;height:600px;"></div>
 <p>
-    <button onclick="hideMarkers()">마커 감추기</button>
-    <button onclick="showMarkers()">마커 보이기</button>
+  	<button onclick="location='cctvE.jsp'"> CCTV</button>
+    <button onclick="location='fireE.jsp'"> 소방서</button>
+    <button onclick="location='policeE.jsp'"> 경찰서</button>
+    <button onclick="location='safeE.jsp'"> 어린이보호구역</button>
+    <button type="button" onclick="showMarkers()">마크 보이기</button>
+    <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
@@ -57,8 +70,8 @@ imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵�
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	AllDAO dao = new AllDAO();
-	List<Police> list = dao.selectAllpol();
+	EastDAO dao = new EastDAO();
+	List<Police> list = dao.selectAllpolE();
 	System.out.println(list.size());
 /* 	System.out.print(list.get(0).getLat()); */
 %>
@@ -84,17 +97,17 @@ var clickedOverlay = null;
 	    	content:'<div class="wrap">' + 
 	    	
 	        '    <div class="info" >' + 
-	        '        <div class="title">' + 
-	        '       경찰서' + 
+	        '        <div class="title">' +
+	        '       CCTV' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/경찰차.png" width="73" height="70">' +
+            '                <img src="./images/cctv.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
-	        '                <div class="ellipsis">주소 : '+ Name[i] + '</div>' + '<br>' + 
-	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
+	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 
+	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + '<br>' +
 	        '            </div>' + 
 	        '        </div>' + 
 	        '    </div>' +    
@@ -168,13 +181,24 @@ var clickedOverlay = null;
 
 	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
 	function showMarkers() {
-	    setMarkers(map)    
+		setMarkers(map);   
 	}
 
 	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
 	function hideMarkers() {
 	    setMarkers(null);    
 	}
+
+</script>
+</div>
+	<!-- BG -->
+	<div id="bg"></div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </script>
 </body>

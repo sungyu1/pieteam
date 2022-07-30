@@ -15,43 +15,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-		  <style>
-
-      a{
-      text-decoration:none;
-      color:white;
-      display: inline-block;
-      }
-      img {
-      	position: absolute;
-      }
-    
-      img#north {
-   
-		top: 150px;
-      	left : 350px;
-      }
-      img#west {
-      	top: 305px;
-      	left : 300px;
-      }
-        img#east{
-      	top: 323px;
-      	left : 459px;
-      }
-         img#south {
-   
-      	top: 338px;
-      	left : 234px;
-      }
-        img#gs {
-
-      	top: 152px;
-      	left : 75px;
-      }
-  
-	
-    </style>
 	</head>
 	
 	<body class="is-preload">
@@ -153,46 +116,6 @@
 							<article id="safe"><!-- about -->
 							
 								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
-<<<<<<< HEAD
-								<div class="image main">
-								 <a href="#" target="_blank">
-									<img src="./images/북구.png" id="north" name="북구" >
-									</a>
-									 <a href="cctv.jsp" target="_blank">
-									<img src="./images/동구.png" id="east" name="동구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/남구.png" id="south" nam
-									e="남구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/서구.png" id="west" name="서구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/광산구.png" id="gs" name="광산구">
-									</a>
-								</div>
-=======
-								<span class="image main">
-						
-<!-- 								 <a href="#" target="_blank">
-									<img src="./images/북구.png" id="north" name="북구">
-									</a>
-									 <a href="cctv.jsp" target="_blank">
-									<img src="./images/동구.png" id="east" name="동구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/남구.png" id="south" name="남구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/서구.png" id="west" name="서구">
-									</a>
-									 <a href="#" target="_blank">
-									<img src="./images/광산구.png" id="gs" name="광산구">
-									</a> -->
-								
-								</span>
->>>>>>> branch 'master' of https://github.com/sungyu1/pieteam.git
 								
 							</article>
 

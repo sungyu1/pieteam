@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 관리자의 전체회원 조회 -->
 	<select id="selectAllMember" resultType="com.smhrd.model.Member">
-		select * from tbl_member where n ot(m_id='admin')
+		select * from tbl_member where not(m_id='admin')
 	</select>
 	
 	<!-- 관리자의 회원 삭제 -->

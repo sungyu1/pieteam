@@ -46,6 +46,7 @@
     <button onclick="location='fire.jsp'"> 소방서</button>
     <button onclick="location='police.jsp'"> 경찰서</button>
     <button onclick="location='safe.jsp'"> 어린이보호구역</button>
+    <button type="button" onclick="showMarkers()">마크 보이기</button>
     <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
 <!--  <div id="mapwrap"> 
@@ -101,6 +102,8 @@ var Lat= [];
 var Lon=[];
 var admin=[];
 var tel=[];
+
+
 <% for (int i=0; i<list.size(); i++){%>
 Lat.push(<%=list.get(i).getCctv_lat() %>)
 Lon.push(<%=list.get(i).getCctv_lon() %>)
@@ -110,6 +113,7 @@ admin.push("<%=list.get(i).getAdmin_id()%>")
 
 
 <%}%>
+
 var positions=[]
 var clickedOverlay = null;
 	for(var i = 0 ; i<Name.length;i++) {

@@ -43,10 +43,10 @@
 		
 <div id="map" style="width:1000px;height:600px;"></div>
 <p>
-  	<button onclick="location='cctv.jsp'"> CCTV</button>
-    <button onclick="location='fire.jsp'"> 소방서</button>
-    <button onclick="location='police.jsp'"> 경찰서</button>
-    <button onclick="location='safe.jsp'"> 어린이보호구역</button>
+  	<button onclick="location='cctvE.jsp'"> CCTV</button>
+    <button onclick="location='fireE.jsp'"> 소방서</button>
+    <button onclick="location='policeE.jsp'"> 경찰서</button>
+    <button onclick="location='safeE.jsp'"> 어린이보호구역</button>
     <button type="button" onclick="showMarkers()">마크 보이기</button>
     <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
@@ -98,12 +98,12 @@ var clickedOverlay = null;
 	    	
 	        '    <div class="info" >' + 
 	        '        <div class="title">' +
-	        '       CCTV' + 
+	        '       어린이보호구역' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/cctv.png" width="73" height="70">' +
+            '                <img src="./images/어린이보호.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 

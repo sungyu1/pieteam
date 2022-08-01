@@ -59,15 +59,15 @@ div#back {
 
 
 		<!-- 로그인 -->
-		<a href="cctvN.jsp" target="_blank"> <img src="./images/북구.png" id="north"
+		<a href="cctvN.jsp" target="_self"> <img src="./images/북구.png" id="north"
 			name="북구">
-		</a> <a href="cctvE.jsp" target="_blank"> <img src="./images/동구.png"
+		</a> <a href="cctvE.jsp" target="_self"> <img src="./images/동구.png"
 			id="east" name="동구">
-		</a> <a href="cctvS.jsp" target="_blank"> <img src="./images/남구.png"
+		</a> <a href="cctvS.jsp" target="_self"> <img src="./images/남구.png"
 			id="south" name="남구">
-		</a> <a href="cctvW.jsp" target="_blank"> <img src="./images/서구.png" id="west"
+		</a> <a href="cctvW.jsp" target="_self"> <img src="./images/서구.png" id="west"
 			name="서구">
-		</a> <a href="cctvGs.jsp" target="_blank"> <img src="./images/광산구.png" id="gs"
+		</a> <a href="cctvGs.jsp" target="_self"> <img src="./images/광산구.png" id="gs"
 			name="광산구">
 		</a>
 	

@@ -49,27 +49,7 @@
     <button onclick="location='safe.jsp'"> 어린이보호구역</button>
     <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
-<!--  <div id="mapwrap"> 
-지도가 표시될 div
-<div id="map" style="width:100%;height:350px;"></div>
-지도 위에 표시될 마커 카테고리
-<div class="category">
-    <ul>
-        <li id="coffeeMenu" onclick="changeMarker('coffee')">
-            <span class="ico_comm ico_coffee"></span>
-            커피숍
-        </li>
-        <li id="storeMenu" onclick="changeMarker('store')">
-            <span class="ico_comm ico_store"></span>
-            편의점
-        </li>
-        <li id="carparkMenu" onclick="changeMarker('carpark')">
-            <span class="ico_comm ico_carpark"></span>
-            주차장
-        </li>
-    </ul>
-</div>
-</div>  -->
+
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
@@ -102,6 +82,7 @@ var Lat= [];
 var Lon=[];
 var admin=[];
 var tel=[];
+
 <% for (int i=0; i<list.size(); i++){%>
 Lat.push(<%=list.get(i).getSz_lat() %>)
 Lon.push(<%=list.get(i).getSz_lon() %>)
@@ -118,12 +99,12 @@ var clickedOverlay = null;
 	    	
 	        '    <div class="info" >' + 
 	        '        <div class="title">' +
-	        '       CCTV' + 
+	        '       어린이보호구역' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/cctv.png" width="73" height="70">' +
+            '                <img src="./images/어린이보호.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 

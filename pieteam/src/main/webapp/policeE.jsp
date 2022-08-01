@@ -98,12 +98,12 @@ var clickedOverlay = null;
 	    	
 	        '    <div class="info" >' + 
 	        '        <div class="title">' +
-	        '       CCTV' + 
+	        '       경찰서' + 
 	        '            <div class="close" onclick="closeOverlay('+i+')" title="닫기"></div>' + 
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/cctv.png" width="73" height="70">' +
+            '                <img src="./images/경찰차.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 

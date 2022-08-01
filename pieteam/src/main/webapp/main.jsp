@@ -16,8 +16,9 @@
 	<style>
 		#map{
 			background-color: black;
-			width: 1300px;
-			height: 1000px;
+			width: 1100px;
+			height: 600px;
+			position: fixed;
 		}
 	</style>
 	<body class="is-preload">
@@ -34,12 +35,12 @@
 								<header id="header">
 									
 									<ul class="icons">
-										<li><button class="form_btn" >전체보기</button></span></li>
-										<li><button class="form_btn" >CCTV</button></span></li>
-										<li><button class="form_btn" >파출소</button></span></li>
-										<li><button class="form_btn" >소방서</button></span></li>
-										<li><button class="form_btn" >어린이보호</button></span></li>
-										<li><button class="form_btn" >커뮤니티</button></span></li>
+										<li><button class="form_btn" >전체보기</button></li>
+										<li><button class="form_btn" >CCTV</button></li>
+										<li><button class="form_btn" >파출소</button></li>
+										<li><button class="form_btn" >소방서</button></li>
+										<li><button class="form_btn" >어린이보호</button></li>
+										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
 									</ul>
 								</header>
 

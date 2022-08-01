@@ -12,7 +12,7 @@
 <head>
   <meta charset="utf-8">
   <title>안심경로</title>
-  <link rel="stylesheet" href="assets/css/safepath.css" />
+<!--   <link rel="stylesheet" href="assets/css/safepath.css" /> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>

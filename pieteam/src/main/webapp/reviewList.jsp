@@ -2,14 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-		<title>Dimension by HTML5 UP</title>
+	<head>
+		<title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-<!-- <style>
+<style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
 		font-family: 'Do Hyeon', sans-serif;
@@ -23,12 +21,12 @@
 	#writeBtn{
 		margin-bottom : 20px;
 	}
-</style> -->
+</style>
 </head>
 <body>
-<div id="wrapper">
 <nav>
 <h2 class="major" style="color:#FFB432 ">리뷰게시판</h2>
+<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
 <table class="table">
   <tr>
       <th>글 제목</th>
@@ -39,23 +37,14 @@
 	  <tr>
 		  <td id="name${status.index}"></td>
 	      <td id="writer${status.index }"></td>
-<%-- 	      <td id="num${status.index }"></td>	 --%>				
+	      <%-- <td id="lat${status.index }"></td> --%>				
 	  </tr>
   </c:forEach>
   <tr>
 	  <td colspan="3" id="controller"></td>
   </tr>
-<tr>
-<td><a href="reviewWrite.jsp"><button id="writeBtn">글작성</button></a></td>
-<td><a href="main.jsp"><button id="writeBtn">Main</button></a></td>
-
-</tr>
 </table>
 </nav>
-</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -131,7 +120,7 @@ function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
 		
- 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+		$('#name'+i).html("<a href='boardView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
 	}
 	
@@ -198,7 +187,7 @@ function print_list(data_list){
 		$('#name'+i).show();
 		$('#writer'+i).show();
 		
-		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+ 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
 	}
 }

@@ -31,15 +31,15 @@
 						<div class="inner">
 
 							<!-- Header -->
-							<a href="#Join" text-align="right"><h5>Login</h5></a>
+							<a href="#" text-align="right"><h5>Login</h5></a>
 								<header id="header">
 									
 									<ul class="icons">
-										<li><button class="form_btn" >전체보기</button></li>
-										<li><button class="form_btn" >CCTV</button></li>
-										<li><button class="form_btn" >파출소</button></li>
-										<li><button class="form_btn" >소방서</button></li>
-										<li><button class="form_btn" >어린이보호</button></li>
+										<li><a href="#"><button class="form_btn" >전체보기</button></a></li>
+										<li><a href="#"><button class="form_btn" >CCTV</button></a></li>
+										<li><a href="#"><button class="form_btn" >파출소</button></a></li>
+										<li><a href="#"><button class="form_btn" >소방서</button></a></li>
+										<li><a href="#"><button class="form_btn" >어린이보호</button></a></li>
 										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
 									</ul>
 								</header>

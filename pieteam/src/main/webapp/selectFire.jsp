@@ -4,13 +4,11 @@
     
 <!DOCTYPE html>
 <html> 
-<head>
-		<title>Dimension by HTML5 UP</title>
+	<head>
+		<title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	<style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
@@ -60,9 +58,6 @@
 </table>
 </nav>
 </div>
-
-		<!-- BG -->
-			<div id="bg"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

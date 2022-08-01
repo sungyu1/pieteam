@@ -4,13 +4,11 @@
     
 <!DOCTYPE html>
 <html> 
-<head>
-		<title>Dimension by HTML5 UP</title>
+	<head>
+		<title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	<style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
@@ -61,16 +59,12 @@
 </nav>
 </div>
 
-		<!-- BG -->
-			<div id="bg"></div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 // 게시물 요청

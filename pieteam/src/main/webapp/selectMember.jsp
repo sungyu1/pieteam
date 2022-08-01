@@ -6,12 +6,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
 <body>
 	<%
@@ -20,7 +18,6 @@
 		System.out.print(list.size());
 	%>
 	<!-- Wrapper -->
-			<div id="wrapper">
 				<!-- Menu -->
 					<nav id="Update">	
 						<table>
@@ -51,16 +48,12 @@
 					<footer id="footer">
 						<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
 					</footer>
-			</div>
-			
-				<!-- BG -->
-			<div id="bg"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js"></script>			
 </body>
 </html>

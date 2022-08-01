@@ -13,10 +13,8 @@
 </head>
 <body>
 
-	<div id="wrapper">
 	
-		<h2 class="major">리뷰 작성</h2>
-		
+		<h2 class="major" style="color:#FFB432; text-align:center;">리뷰 작성</h2>
 	 	<form action="RevieWriteCon" method="post">
 			<div class="fields">
 				<div class="field">
@@ -37,7 +35,6 @@
 		<footer id="footer">
 			<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
 		</footer>
-</div>
 	
 		<!-- BG -->
 			<div id="bg"></div>

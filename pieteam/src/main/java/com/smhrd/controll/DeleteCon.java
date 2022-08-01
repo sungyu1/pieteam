@@ -30,7 +30,7 @@ public class DeleteCon extends HttpServlet {
 		}else { // 삭제 실패
 			System.out.println("삭제 실패");
 		}
-		response.sendRedirect("select.jsp");
+		response.sendRedirect("selectMember.jsp");
 	}
 
 }

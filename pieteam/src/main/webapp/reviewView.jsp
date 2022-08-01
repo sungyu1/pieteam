@@ -8,13 +8,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+ 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
 			rel="stylesheet">
 		<style>
-body {
+ body {
 	background-image: url('asset/img/bg.jpg');
 	padding-left: 200px;
 	padding-right: 200px;
@@ -34,7 +34,7 @@ p {
 #date{
 	font-size : 20px;
 	text-align : right;
-}
+} 
 </style>
 </head>
 <jsp:useBean id="ReviewDAO" class="com.smhrd.model.ReviewDAO"/>
@@ -42,6 +42,7 @@ p {
 <jsp:useBean id="CommentDAO" class="com.smhrd.model.CommentDAO"/>
 <c:set var="commentList" value="${CommentDAO.selectComment(param.num)}"/>
 <body>
+<h2 class="major" style="color:#FFB432; text-align:center;">¸®ºä°Ô½ÃÆÇ</h2>
 	<form>
 		<div class="card-body" style="margin-top: 100px; margin-bottom: 10px; height: 150px">
 			<p>${review.r_name}/${review.m_id}</p>
@@ -91,7 +92,7 @@ p {
 			})
 		}
 	</script>
-			<!-- Scripts -->
+		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>

@@ -1165,12 +1165,12 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/길거리.png" );/*전체배경*/
+			background-image: url("../../images/블랙맵.jpg" );/*전체배경*/
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
-			opacity: 0.5;
+			opacity: 0.3;/*이미지 back그라운드 색감 */
 		}
 
 		body.is-article-visible #bg:after {
@@ -1279,16 +1279,16 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			#header > *:before {
+			/* #header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);/*위로*/
+				top: calc(-3.5rem - 1px);위로
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);/*아래로*/
+				height: calc(3.5rem + 1px);아래로
 				background: #FFAF00;
-			}
+			} */
 
 		#header > :first-child {
 			margin-top: 0;
@@ -1298,14 +1298,14 @@ input, select, textarea {
 				display: none;
 			}
 
-		#header .logo { /* 원*/
+		/* #header .logo {  원
 		
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
 			border: solid 1px #FFAF00;
 			border-radius: 100%;
-		}
+		} */
 
 			#header .logo .icon:before {
 				font-size: 4rem;

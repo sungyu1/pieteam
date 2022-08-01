@@ -16,7 +16,6 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 	</head>
-	
 	<body class="is-preload">
 <%
 		// session 값 가지고 오기
@@ -30,17 +29,17 @@
 					<header id="header">
 						<div class="logo">
 							<!-- 표지판-->
-							 <i class="fa-solid fa-signs-post fa-2x" style="color: #FFAF00;"></i> 
+							 <!-- <i class="fa-solid fa-signs-post fa-2x" style="color: #FFB432;"></i> -->
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1 >안.길</h1>
-								<p style="color: #FFAF00 "">안전하게 가족에게 돌아가 안기길</p>
+								<h1 style="color: #FFB432 ">안.길</h1>
+								<p style="color:#FFB432 ">안전하게 가족에게 돌아가 안기길</a>
 								
 							</div>
 						</div>
 						<nav>
-							<ul>
+														<ul>
 								<%if(loginMember == null){ %>
 									<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
 									<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
@@ -72,19 +71,34 @@
 							<!-- Member 로그인-->
 							<article id="Login"><!-- intro -->
 								<!-- <h2 class="major">로그인</h2> -->
-								<h2 class="login" style="color:#FFB432">로그인</h2>
 								
+								<!--<span class="image main"><img src="images/pic01.jpg" alt=""/></span>--> 
 								
 								<!-- 로그인 -->
-								<nav id="menu">	
-									<ul class="links">
+								<div id="menu">	
+									<div class="sign-in-container">
+										<div class="container">
 										<form action="LoginCon" method="post">
-									 		<input type="text"  placeholder="id을 입력하세요" name="id">
-											<input type="password"  placeholder="PW를 입력하세요" name="pw"><br>
-											<input type="submit" value="LogIn" style="color:#FFB432;" class="button fit">
+											<h2 style="color:#ffb432 ">로그인</h2>
+											<div class="social-links" style="display: flex;	justify-content:start;">
+											  <div>
+												<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+											  </div>
+											  <div>
+												<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+											  </div>
+											  <div>
+												<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+											  </div>
+											</div>
+											<h6>or use your account</h6>
+											<input type="text"  placeholder="id을 입력하세요" name="id">
+											<input type="password" placeholder="PW를 입력하세요" name="pw">
+											<button class="form_btn" >Sign In</button>
 										</form>
-									</ul>
-									<a href="#Join" ><h6>아이디가 없으신가요?</h6><h6>비밀번호를 잊어버리셨나요?</h6></a>
+									</div>
+									<a href="#Join"><h6>아이디가 없으신가요?</h6></a>
+									<a href="#Join"><h6>비밀번호를 잊어버리셨나요?</h6></a>
 								</nav>	
 							</article>
 						 
@@ -92,30 +106,32 @@
 						<!-- 회원가입 -->
 						<!-- Join -->
 							<article id="Join"><!-- work -->
-								<h2 class="major">회원가입</h2>
 								
+								<div class="social-links">
+									<h2>회원가입</h2>								  
+								 <form action="JoinCon" method="post">
+								 <input type="text" id="inpute" placeholder="id을 입력하세요" name="id" required oninvalid="this.setCustomValidity('아이디를 입력해주세요')" oninput="this.setCustomValidity('')">
+								 <input type="button" value="ID 중복체크" onclick="checKE()"><br>
 								
-								<form action="JoinCon" method="post">
-								<input type="text" id="inputID" placeholder="id을 입력하세요" name="id" required oninvalid="this.setCustomValidity('아이디를 입력해주세요')" oninput="this.setCustomValidity('')">
-								<input type="button" value="ID 중복체크" style="color:#FFB432;" onclick="checKE()"><br>
-								<span id ="resultCheck"></span><br>
-								<input type="password"  placeholder="PW를 입력하세요" name="pw" required oninvalid="this.setCustomValidity('비밀번호를 입력해주세요')" oninput="this.setCustomValidity('')">
-								<input type="text"  placeholder="이름을입력해주세요." name="name" required oninvalid="this.setCustomValidity('이름을 입력해주세요')" oninput="this.setCustomValidity('')">
-								<input type="text"  placeholder="닉네임입력해주세요." name="nickname" required oninvalid="this.setCustomValidity('닉네임을 입력해주세요')" oninput="this.setCustomValidity('')">
-								<input type="text"  placeholder="나이입력해주세요." name="age" required oninvalid="this.setCustomValidity('나이를 입력해주세요')" oninput="this.setCustomValidity('')" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-								<select name="gender" required oninvalid="this.setCustomValidity('성별을 입력해주세요')" oninput="this.setCustomValidity('')">
+								 <span id ="resultCheck"></span><br>
+									<input type="password"  placeholder="PW를 입력하세요" name="pw" required oninvalid="this.setCustomValidity('비밀번호를 입력해주세요')" oninput="this.setCustomValidity('')">
+									<input type="text"  placeholder="이름을입력해주세요." name="name" required oninvalid="this.setCustomValidity('이름을 입력해주세요')" oninput="this.setCustomValidity('')">
+									<input type="text"  placeholder="닉네임입력해주세요." name="nickname" required oninvalid="this.setCustomValidity('닉네임을 입력해주세요')" oninput="this.setCustomValidity('')">
+									<input type="text"  placeholder="나이입력해주세요." name="age" required oninvalid="this.setCustomValidity('나이를 입력해주세요')" oninput="this.setCustomValidity('')" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+									<select name="gender" required oninvalid="this.setCustomValidity('성별을 선택해주세요')" oninput="this.setCustomValidity('')">
 									<option value="">성별 선택</option>
 									<option value="M">남</option>
 									<option value="W">여</option>
-								</select>
-								<input type="submit" value="JoinUs"  style="color:#FFB432;" class="button fit">
-								</form>
-								
+									</select>
+									<input type="submit" value="JoinUs"  style="color:#FFB432;" class="button fit">
+									</form>
+								</div>
 							</article>
+
 						<!-- safe -->
 							<article id="safe"><!-- about -->
-							
 								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
+								<span class="image main"><img src="" alt="" /></span>
 								
 							</article>
 
@@ -128,12 +144,13 @@
 										
 										<table class="table">
 										  <tr>
-											  <th style="color:#FFB432 ">글 제목</th>
-											  <th style="color:#FFB432 ">작성자</th>
-											  <th style="color:#FFB432 ">조회수</th>
+											  <th>글 제목</th>
+											  <th>작성자</th>
+											  <th>조회수</th>
 										  </tr>
 										
 										</table>
+										<a href="#community"><button id="writeBtn">글작성</button></a>
 										</div>
 									
 									
@@ -153,11 +170,10 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="form_btn" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul> -->
 								</form>
-								<a href="reviewWrite.jsp"><button id="writeBtn" style="color:#FFB432 ">글작성</button></a>
 								<!-- <ul class="icons"> 인스타,페이스북 버튼위치
 									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -405,7 +421,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 											</div>
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="form_btn" value="Send Message" class="primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</form>
@@ -417,7 +433,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
+						<p &copy; class="copyright"style="color:#FFB432 ">&copy; 안.길</p>
 					</footer>
 
 			</div>
@@ -431,7 +447,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
+
 			<!-- id 중복체크 -->
 			<script>
 				function checKE() {
@@ -462,4 +478,5 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</script>
 	</body>
 </html>
+
 

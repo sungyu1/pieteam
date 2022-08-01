@@ -963,7 +963,7 @@ input, select, textarea {
 			font-size: 0.9em;
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			/*text-align: left;*/
 		}
 
 		table thead {
@@ -1165,7 +1165,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/블랙맵.jpg" );/*전체배경*/
+			background-image: url("../../images/길거리.png" );/*전체배경*/
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1315,8 +1315,8 @@ input, select, textarea {
 			border-style: solid;
 			border-color: #FFAF00
 			;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
+			border-top-width: 2px;
+			border-bottom-width: 2px;
 			max-width: 100%;
 		}
 
@@ -1491,7 +1491,7 @@ input, select, textarea {
 
 					#header nav ul li { /*상자가로줄*/
 						border-left: 0;
-						border-top: solid 3px #ffffff;
+						border-top: solid 3px #ffaf00;
 					}
 
 						#header nav ul li:first-child {

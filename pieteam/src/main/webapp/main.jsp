@@ -29,7 +29,7 @@
 					<header id="header">
 						<div class="logo">
 							<!-- 표지판-->
-							 <i class="fa-solid fa-signs-post fa-2x" style="color: #FFB432;"></i>
+							 <!--  <i class="fa-solid fa-signs-post fa-2x" style="color: #FFB432;"></i> -->
 						</div>
 						<div class="content">
 							<div class="inner">

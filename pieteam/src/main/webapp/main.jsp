@@ -29,7 +29,7 @@
 					<header id="header">
 						<div class="logo">
 							<!-- 표지판-->
-							 <!-- <i class="fa-solid fa-signs-post fa-2x" style="color: #FFB432;"></i> -->
+							 <i class="fa-solid fa-signs-post fa-2x" style="color: #FFB432;"></i>
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -144,9 +144,9 @@
 										
 										<table class="table">
 										  <tr>
-											  <th>글 제목</th>
-											  <th>작성자</th>
-											  <th>조회수</th>
+											  <th style="color:#FFAF00">글 제목</th>
+											  <th style="color:#FFAF00">작성자</th>
+											  <th style="color:#FFAF00">조회수</th>
 										  </tr>
 										
 										</table>

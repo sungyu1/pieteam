@@ -42,9 +42,13 @@
 						<ul>
 								<%if(loginMember == null){ %>
 									<li><a href="#Login" ><b style="color:#FFAF00 ">로그인</b></a></li>
-									<li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
 									<li><a href="cctv_view.jsp" ><b style="color:#FFAF00">안심경로</b></a></li>
+									<li><a href="#Login" ><b style="color:#FFAF00">경로추천</b></a></li>
 									<li><a href="#Login"><b style="color:#FFAF00">커뮤니티</b></a></li>
+									
+									
+									<!--  <li><a href="#Join" ><b style="color:#FFAF00 ">회원가입</b></a></li>
+									<li><a href="cctv_view.jsp" ><b style="color:#FFAF00">안심경로</b></a></li>-->
 								<%}else{ %>
 									<li><a href="LogoutCon" ><b style="color:#FFAF00 ">로그아웃</b></a></li>
 									<li><a href="update.jsp" ><b style="color:#FFAF00 ">정보수정</b></a></li>
@@ -58,6 +62,7 @@
 										<li><a href="#"><b style="color:#FFAF00">커뮤니티관리</b></a></li>
 									<%}else{ %>
 									<li><a href="cctv_view.jsp" ><b style="color:#FFAF00">안심경로</b></a></li>
+									<li><a href="#pathways" ><b style="color:#FFAF00">경로추천</b></a></li>
 									<li><a href="reviewList.jsp"><b style="color:#FFAF00">커뮤니티</b></a></li>
 									<%} %>
 								<%} %>
@@ -131,6 +136,12 @@
 						<!-- safe -->
 							<article id="safe"><!-- about -->
 								<h2 class="major" style="color:#FFB432 ">안심경로</h2>
+								<span class="image main"><img src="" alt="" /></span>
+								
+							</article>
+						<!-- pathways -->
+							<article id="pathways"><!-- about -->
+								<h2 class="major" style="color:#FFB432 ">경로추천</h2>
 								<span class="image main"><img src="" alt="" /></span>
 								
 							</article>

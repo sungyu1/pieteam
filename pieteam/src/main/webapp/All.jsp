@@ -2,11 +2,7 @@
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.CCTV"%>
 <%@page import="com.smhrd.model.Safe"%>
-<%@page import="com.smhrd.model.GsDAO"%>
-<%@page import="com.smhrd.model.NorthDAO"%>
-<%@page import="com.smhrd.model.SouthDAO"%>
-<%@page import="com.smhrd.model.EastDAO"%>
-<%@page import="com.smhrd.model.WestDAO"%>
+
 <%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>

@@ -1,4 +1,3 @@
-<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="com.smhrd.model.Fire"%>
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.CCTV"%>
@@ -43,7 +42,7 @@
 <head>
   <meta charset="utf-8">
   <title>안심경로</title>
-  <link rel="stylesheet" href="assets/css/safepath.css" />
+ <link rel="stylesheet" href="assets/css/safepath.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -53,8 +52,8 @@
     </form> -->
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     <div style="margin-top: 10px;">  
-      출발지 : <input type="text" id="start" name="keyword" size="15"> 
-      도착지 : <input type="text" id="end" name="keyword" size="15"> 
+      <!-- 출발지 : <input type="text" id="start" name="keyword" size="15"> 
+      도착지 : <input type="text" id="end" name="keyword" size="15">  -->
       <button type="button" id="reset" onclick="reset()">경로 재검색</button>
       <button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
       <button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button> 
@@ -62,8 +61,16 @@
       <div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
-                <form onsubmit="searchPlaces(); return false;">
+<!--                 <form onsubmit="searchPlaces(); return false;">
                     키워드 : <input type="text" value=" " id="keyword" size="15"> 
+                    <button type="submit">검색하기</button> 
+                </form> -->
+                <form onsubmit="searchPlaces1(); return false;">
+                    출발지 : <input type="text" value=" " id="keyword1" name="keyword1"size="15"> 
+                    <button type="submit">검색하기</button> 
+                </form>
+                <form onsubmit="searchPlaces2(); return false;">
+                    도착지 : <input type="text" value=" " id="keyword2" name="keyword2"size="15"> 
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -109,14 +116,14 @@ imageSizeS = new kakao.maps.Size(20, 20); // 마커이미지의 크기입니다
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	AllDAO fire = new AllDAO();
-	List<Fire> list_F = fire.selectAllfire();
-	AllDAO cctv = new AllDAO();
-	List<CCTV> list_C = cctv.selectAllcctv();
-	AllDAO police = new AllDAO();
-	List<Police> list_P = police.selectAllpol();
-	AllDAO safe = new AllDAO();
-	List<Safe> list_S = safe.selectAllsafe();
+	WestDAO fire = new WestDAO();
+	List<Fire> list_F = fire.selectAllfireW();
+	WestDAO cctv = new WestDAO();
+	List<CCTV> list_C = cctv.selectAllcctvW();
+	WestDAO police = new WestDAO();
+	List<Police> list_P = police.selectAllpolW();
+	WestDAO safe = new WestDAO();
+	List<Safe> list_S = safe.selectAllsafeW();
 	
 /* 	System.out.print(list.get(0).getLat()); */
 %>
@@ -488,19 +495,31 @@ var ps = new kakao.maps.services.Places();
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 // 키워드로 장소를 검색합니다
-searchPlaces();
+searchPlaces1();
+searchPlaces2();
 
 // 키워드 검색을 요청하는 함수입니다
-function searchPlaces() {
-	    var keyword = document.getElementById('keyword').value;
+function searchPlaces1() {
+	    var keyword = document.getElementById('keyword1').value;
 	
-	    if (!keyword.replace(/\s+$/, '')) {
+	   /*  if (!keyword.replace(/\s+$/, '')) {
 	        alert('키워드를 입력해주세요!');
 	        return false;
-	    }
-	    keyword2= "광주광역시"+keyword
+	    } */
+	    keyword3= "광주광역시"+keyword
 	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-	    ps.keywordSearch(keyword2, placesSearchCB); 
+	    ps.keywordSearch(keyword3, placesSearchCB); 
+}
+function searchPlaces2() {
+    var keyword = document.getElementById('keyword2').value;
+
+   /*  if (!keyword.replace(/\s+$/, '')) {
+        alert('키워드를 입력해주세요!');
+        return false;
+    } */
+    keyword4= "광주광역시"+keyword
+    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+    ps.keywordSearch(keyword4, placesSearchCB); 
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -575,8 +594,7 @@ function displayPlaces(places) {
 
             // 리스트 클릭시 이벤트 
             itemEl.onclick = function () {
-              var start = document.getElementById('start');
-              var end = document.getElementById('end');
+              var start = document.getElementById('keyword1');
               infowindow.open(map, marker);
               if(start.value==''){
                 start.value = title;
@@ -585,12 +603,6 @@ function displayPlaces(places) {
                 marker.setMap(map);
                 markerstart.push(marker);
                 console.log(markerstart)
-              }else if(end.value==''){
-                end.value = title;
-                removeMarker();0
-                removeMarkerEnd();
-                marker.setMap(map);
-                markerend.push(marker);
               }else{
                 removeMarkerAll();
               }
@@ -598,6 +610,22 @@ function displayPlaces(places) {
               // menu.style.display = "none"
 
             }
+            itemEl.onclick = function () {
+            var end = document.getElementById('keyword2');
+            infowindow.open(map, marker);
+           if(end.value==''){
+              end.value = title;
+              removeMarker();0
+              removeMarkerEnd();
+              marker.setMap(map);
+              markerend.push(marker);
+            }else{
+              removeMarkerAll();
+            }
+            // var menu = document.getElementById('menu_wrap');
+            // menu.style.display = "none"
+
+          }
 
        
         })(marker, places[i].place_name);

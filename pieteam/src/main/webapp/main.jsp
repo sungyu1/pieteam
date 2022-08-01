@@ -62,7 +62,7 @@
 										<li><a href="#"><b style="color:#FFAF00">커뮤니티관리</b></a></li>
 									<%}else{ %>
 									<li><a href="cctv_view.jsp" ><b style="color:#FFAF00">안심경로</b></a></li>
-									<li><a href="#pathways" ><b style="color:#FFAF00">경로추천</b></a></li>
+									<li><a href="safepath.jsp" ><b style="color:#FFAF00">경로추천</b></a></li>
 									<li><a href="reviewList.jsp"><b style="color:#FFAF00">커뮤니티</b></a></li>
 									<%} %>
 								<%} %>

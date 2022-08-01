@@ -1,4 +1,3 @@
-<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="com.smhrd.model.Fire"%>
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.CCTV"%>
@@ -109,14 +108,14 @@ imageSizeS = new kakao.maps.Size(20, 20); // 마커이미지의 크기입니다
 
 // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 <%
-	AllDAO fire = new AllDAO();
-	List<Fire> list_F = fire.selectAllfire();
-	AllDAO cctv = new AllDAO();
-	List<CCTV> list_C = cctv.selectAllcctv();
-	AllDAO police = new AllDAO();
-	List<Police> list_P = police.selectAllpol();
-	AllDAO safe = new AllDAO();
-	List<Safe> list_S = safe.selectAllsafe();
+	GsDAO fire = new GsDAO();
+	List<Fire> list_F = fire.selectAllfireGs();
+	GsDAO cctv = new GsDAO();
+	List<CCTV> list_C = cctv.selectAllcctvGs();
+	GsDAO police = new GsDAO();
+	List<Police> list_P = police.selectAllpolGs();
+	GsDAO safe = new GsDAO();
+	List<Safe> list_S = safe.selectAllsafeGs();
 	
 /* 	System.out.print(list.get(0).getLat()); */
 %>

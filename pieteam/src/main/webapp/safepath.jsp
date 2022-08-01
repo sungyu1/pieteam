@@ -1,13 +1,8 @@
-<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="com.smhrd.model.Fire"%>
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.CCTV"%>
 <%@page import="com.smhrd.model.Safe"%>
-<%@page import="com.smhrd.model.GsDAO"%>
-<%@page import="com.smhrd.model.NorthDAO"%>
-<%@page import="com.smhrd.model.SouthDAO"%>
-<%@page import="com.smhrd.model.EastDAO"%>
-<%@page import="com.smhrd.model.WestDAO"%>
+<%@page import="com.smhrd.model.AllDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -43,7 +38,7 @@
 <head>
   <meta charset="utf-8">
   <title>안심경로</title>
-<!--   <link rel="stylesheet" href="assets/css/safepath.css" /> -->
+  <link rel="stylesheet" href="assets/css/safepath.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -63,7 +58,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value=" " id="keyword" size="15"> 
+                    키워드 : <input type="text" value="맛집" id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -492,15 +487,16 @@ searchPlaces();
 
 // 키워드 검색을 요청하는 함수입니다
 function searchPlaces() {
-	    var keyword = document.getElementById('keyword').value;
-	
-	    if (!keyword.replace(/\s+$/, '')) {
-	        alert('키워드를 입력해주세요!');
-	        return false;
-	    }
-	    keyword2= "광주광역시"+keyword
-	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-	    ps.keywordSearch(keyword2, placesSearchCB); 
+
+    var keyword = document.getElementById('keyword').value;
+
+    if (!keyword.replace(/^\s+|\s+$/g, '')) {
+        alert('키워드를 입력해주세요!');
+        return false;
+    }
+    keyword2= "광주광역시"+keyword
+    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+    ps.keywordSearch(keyword2, placesSearchCB); 
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다

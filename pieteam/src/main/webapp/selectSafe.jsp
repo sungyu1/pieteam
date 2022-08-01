@@ -31,6 +31,7 @@
 	<div id="wrapper">
 	<nav>
 	<h2 class="major" style="color:#FFB432 ">어린이보호구역</h2>
+<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
 	<table class="table">	
 	
 							<tr>

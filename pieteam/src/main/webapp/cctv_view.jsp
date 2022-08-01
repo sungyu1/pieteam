@@ -57,7 +57,6 @@ div#back {
 	<div id="wrapper">
 		<h2 class="major" style="color: #FFB432">안심경로</h2>
 
-
 		<!-- 로그인 -->
 		<a href="cctvN.jsp" target="_self"> <img src="./images/북구.png" id="north"
 			name="북구">
@@ -70,7 +69,6 @@ div#back {
 		</a> <a href="cctvGs.jsp" target="_self"> <img src="./images/광산구.png" id="gs"
 			name="광산구">
 		</a>
-	
 	</div>
 	<!-- BG -->
 	<div id="bg"></div>

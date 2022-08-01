@@ -38,8 +38,16 @@
 <body>
 
 	<div id="wrapper">
+<div style="float:left;">
+  <a class="active" href="#">홈</a><br>
+  <a href="#">공지사항</a><br>
+ <a href="#">소개</a><br>
+  <a href="#">자유게시판</a>
+ </div>
 		<h2 class="major" style="color: #FFB432">안심경로</h2>
-		
+<!-- 	<nav>
+		<a href="cctvN.jsp"><button>북구</button></a>
+	</nav> -->		
 <div id="map" style="width:1000px;height:600px;"></div>
 <p>
   	<button onclick="location='cctvGs.jsp'"> CCTV</button>

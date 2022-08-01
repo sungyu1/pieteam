@@ -10,7 +10,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
 <style>
-/* 	body{
+	body{
 		background-image : url('./asset/img/bg.jpg');
 		font-family: 'Do Hyeon', sans-serif;
 		font-size : 30px;
@@ -22,38 +22,43 @@
 	}
 	#writeBtn{
 		margin-bottom : 20px;
-	} */
+	}
 </style>
 </head>
 <body>
 <div id="wrapper">
-<div id="main">
-<h2 class="login" style="color:#FFB432">리뷰 작성</h2>
-<a href="boardWrite.jsp"><button id="writeBtn">글작성</button></a>
+<nav>
+<h2 class="major" style="color:#FFB432 ">리뷰게시판</h2>
 <table class="table">
+<button id="writeBtn">글작성</button></a>
   <tr>
       <th>글 제목</th>
       <th>작성자</th>
-      <th>조회수</th>
+<!--       <th>조회수</th> -->
   </tr>
   <c:forEach begin="0" end="10" step="1" varStatus="status">  
 	  <tr>
 		  <td id="name${status.index}"></td>
 	      <td id="writer${status.index }"></td>
-	      <td id="views${status.index }"></td>					
+<%-- 	      <td id="num${status.index }"></td>	 --%>				
 	  </tr>
   </c:forEach>
   <tr>
 	  <td colspan="3" id="controller"></td>
   </tr>
 </table>
-</div>
-				<!-- Footer -->
-					<footer id="footer">
-						<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
-					</footer>
+</nav>
 </div>
 
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -122,15 +127,13 @@ function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
 		
-		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+ 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
-		$('#views'+i).text(data_list[i].views);
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
 		$('#name'+i).hide(); 
 		$('#writer'+i).hide();
-		$('#views'+i).hide();
 	}
 	
 }
@@ -190,16 +193,12 @@ function print_list(data_list){
 	for(var i=0;i<10;i++){
 		$('#name'+i).show();
 		$('#writer'+i).show();
-		$('#views'+i).show();
 		
 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
-		$('#views'+i).text(data_list[i].views);
 	}
 }
 
 </script>
-
-
 </body>
 </html>

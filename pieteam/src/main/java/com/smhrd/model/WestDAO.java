@@ -56,7 +56,7 @@ public class WestDAO {
 			public List<Safe> selectAllsafeW() {
 				List<Safe> name = null;
 				try {
-					name = sqlSession.selectList("com.smhrd.model.WestDAO.selectAllsafeE");
+					name = sqlSession.selectList("com.smhrd.model.WestDAO.selectAllsafeW");
 					// select ==> commit/rollback 생략가능
 				}catch(Exception e) {
 					e.printStackTrace();

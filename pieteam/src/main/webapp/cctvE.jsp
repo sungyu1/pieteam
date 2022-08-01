@@ -82,6 +82,8 @@ var Lat= [];
 var Lon=[];
 var admin=[];
 var tel=[];
+
+var cctvE=[];
 <% for (int i=0; i<list.size(); i++){%>
 Lat.push(<%=list.get(i).getCctv_lat() %>)
 Lon.push(<%=list.get(i).getCctv_lon() %>)

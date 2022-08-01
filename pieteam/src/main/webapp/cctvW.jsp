@@ -43,8 +43,12 @@
 		
 <div id="map" style="width:1000px;height:600px;"></div>
 <p>
-    <button onclick="hideMarkers()">마커 감추기</button>
-    <button onclick="showMarkers()">마커 보이기</button>
+  	<button onclick="location='cctvW.jsp'"> CCTV</button>
+    <button onclick="location='fireW.jsp'"> 소방서</button>
+    <button onclick="location='policeW.jsp'"> 경찰서</button>
+    <button onclick="location='safeW.jsp'"> 어린이보호구역</button>
+    <button type="button" onclick="showMarkers()">마크 보이기</button>
+    <button type="button" onclick="hideMarkers()">마크 감추기</button>
 </p> 
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
@@ -104,7 +108,7 @@ var clickedOverlay = null;
             '           </div>' + 
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 
-	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + 
+	        '                <div class="jibun ellipsis">관리전화번호 : '+tel[i]+'</div>' + '<br>' +
 	        '            </div>' + 
 	        '        </div>' + 
 	        '    </div>' +    
@@ -178,13 +182,14 @@ var clickedOverlay = null;
 
 	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
 	function showMarkers() {
-	    setMarkers(map)    
+		setMarkers(map);   
 	}
 
 	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
 	function hideMarkers() {
 	    setMarkers(null);    
 	}
+
 
 </script>
 </div>

@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-<style>
+<!-- <style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
 		font-family: 'Do Hyeon', sans-serif;
@@ -23,14 +23,13 @@
 	#writeBtn{
 		margin-bottom : 20px;
 	}
-</style>
+</style> -->
 </head>
 <body>
 <div id="wrapper">
 <nav>
 <h2 class="major" style="color:#FFB432 ">리뷰게시판</h2>
 <table class="table">
-<button id="writeBtn">글작성</button></a>
   <tr>
       <th>글 제목</th>
       <th>작성자</th>
@@ -46,6 +45,11 @@
   <tr>
 	  <td colspan="3" id="controller"></td>
   </tr>
+<tr>
+<td><a href="reviewWrite.jsp"><button id="writeBtn">글작성</button></a></td>
+<td><a href="main.jsp"><button id="writeBtn">Main</button></a></td>
+
+</tr>
 </table>
 </nav>
 </div>

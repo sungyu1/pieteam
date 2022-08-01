@@ -20,11 +20,11 @@
 	 	<form action="RevieWriteCon" method="post">
 			<div class="fields">
 				<div class="field">
-				<input type="text" placeholder="제목 작성" name="name">
+				<input type="text" placeholder="제목 작성" name="name" required oninvalid="this.setCustomValidity('제목을 입력해주세요')" oninput="this.setCustomValidity('')">
 				</div>
 				<div class="field">
 					<label for="review">Review</label>
-					<textarea name="review" id="review" rows="10"></textarea>
+					<textarea name="review" id="review" rows="10"  required oninvalid="this.setCustomValidity('내용을 입력해주세요')" oninput="this.setCustomValidity('')"></textarea>
 				</div>
 			</div>
 			<ul class="actions">

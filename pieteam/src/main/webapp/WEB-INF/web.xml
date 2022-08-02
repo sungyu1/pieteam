@@ -87,6 +87,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.CommentCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DeletePoliceCon</servlet-name>
+  	<display-name>DeletePoliceCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeletePoliceCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -142,5 +148,9 @@
   <servlet-mapping>
   	<servlet-name>CommentCon</servlet-name>
   	<url-pattern>/CommentCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeletePoliceCon</servlet-name>
+  	<url-pattern>/DeletePoliceCon</url-pattern>
   </servlet-mapping>
 </web-app>

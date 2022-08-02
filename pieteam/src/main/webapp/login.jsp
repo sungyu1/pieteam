@@ -34,12 +34,12 @@
 				 <label><input type="radio" name="gender" value="M" required oninvalid="this.setCustomValidity('성별을 선택해주세요')" oninput="this.setCustomValidity('')"> 남자</label>
       			 <label><input type="radio" name="gender" value="W"> 여자</label>
 				 <!-- </select> -->
-				 <button type="submit" class="form_btn">signIn</button>
+				 <button type="submit" class="form_btn">sign In</button>
 				</form>
 			  </div>
 			  <div class="sign-in-container">
 				<form action="LoginCon" method="post">
-				  <h1>Loign</h1>
+				  <h1>Login</h1>
 				  <div class="social-links">
 					<div>
 					  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -59,12 +59,12 @@
 			  </div>
 			  <div class="overlay-container">
 				<div class="overlay-left">
-				  <h1>Loign</h1>
+				  <h1>Login</h1>
 				  
 				  <button id="signIn" class="overlay_btn">Sign In</button>
 				</div>
 				<div class="overlay-right">
-				  <h1>SignUp</h1>
+				  <h1>Sign Up</h1>
 				 
 				  <button id="signUp" class="overlay_btn">Sign Up</button>
 				</div>

@@ -21,49 +21,6 @@
 			height: 600px;
 			position: fixed;
 		}
-		
-		.select {
-		  position: relative;
-		}
-		
-		.select .option-list {
-		  position: absolute;
-		  top: 100%;
-		  left: 0;
-		  width: 100%;
-		  overflow: hidden;
-		  max-height: 0;
-		}
-		
-		.select.active .option-list {
-		  max-height: none;
-		}
-		
-		/* 테마 적용하기 */
-		#adimn {}
-		#admin .select {
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		  border-radius: 5px;
-		  padding: 10px 15px;
-		  cursor: pointer;
-		}
-		#admin .select:hover {
-		  color: #333;
-		  transition: all .3s;
-		}
-		#admin .select .text {}
-		#admin .select .option-list {
-		  list-style: none;
-		  padding: 0;
-		  border-radius: 5px;
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		}
-		#admin .select .option-list .option {
-		  padding: 10px 15px;
-		}
-		#admin .select .option-list .option:hover {
-		  background-color: #f2f2f2;
-		}
 	</style>
 	<body class="is-preload">
 <%
@@ -79,12 +36,21 @@
 
 					
 
-							<%if(loginMember==null){ %>
-								<a href="login.jsp" text-align="right"><h5>Login</h5></a>
-							<%}else{ %>								
-								<a href="update.jsp" style="color:black">개인정보수정</a>
-								<a href="LogoutCon" style="color:black">Logout</a>
-							<%} %>
+							<%if(loginMember!=null){ %>
+								<a href="update.jsp" style="color:black"><h5>개인정보수정</h5></a>
+								<a href="LogoutCon" style="color:black"><h5>Logout</h5></a>
+								<%if(loginMember.getM_id().equals("admin")){ %>
+									<header id="header">
+										<ul class="icons">
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">커뮤니티관리</button></a></li>
+										</ul>
+									</header>
+								<%}else{ %>
 							<header id="header">
 							<ul class="icons">
 								<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
@@ -95,7 +61,37 @@
 								<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
 							</ul>
 							</header>
+								<%} %>
+							<%}else{ %>								
+								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
+								<header id="header">
+								<ul class="icons">
+									<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+								</ul>
+								</header>
+								<script>
+									function mouseOut(){
+										$("#img").attr('src','./images/경찰서.png')
+									}
+								</script>
+							<%} %>
 							<!-- map-->
+							<%if(loginMember != null){ %>
+								<%if(loginMember.getM_id().equals("admin")){ %>
+									<div id = "manage">
+									<iframe src="selectMember.jsp" id="url" style="width:1200px; height:600px; align-content: center;"></iframe>
+									</div>
+							<%}} %>
+							<script>
+								function changeIframe(url){
+									$('#url').attr('src', url)
+								}
+							</script>
 								<section id="">
 									<div id="map">
 									</div>
@@ -175,7 +171,7 @@
 										<li><a href="#">Sapien Mauris</a></li>
 										<li><a href="#">Amet Lacinia</a></li>
 									</ul> -->
-								</nav>
+								<!-- </nav> -->
 
 							
 

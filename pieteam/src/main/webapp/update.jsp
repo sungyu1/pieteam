@@ -17,11 +17,10 @@
 	%>
 
 	<!-- Wrapper -->
-		<div id="wrapper">
 			<!-- Menu -->
 				<nav id="Update">	
-						<h2 align="center">회원정보수정</h2>
-					<ul class="actions vertical">
+						<h2 style="text-align:center">회원정보수정</h2>
+					<ul class="actions vertical" style="text-align:center">
 							<form action="UpdateCon" method="post">
 								<li>현재 접속 ID : <%=loginMember.getM_id() %></li>
 								<li><input name="pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
@@ -38,10 +37,6 @@
 			<footer id="footer">
 				<p class="copyright">&copy; 안.길</p>
 			</footer>	
-		</div>
-				<!-- BG -->
-			<div id="bg"></div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

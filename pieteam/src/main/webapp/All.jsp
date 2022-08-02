@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/All.css" />
 <meta charset="UTF-8">
- <style>
+<style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
@@ -27,14 +27,19 @@
     .info .body {position: relative;overflow: hidden;}
     .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
     .desc .ellipsis { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+   
     /* 여러 줄 자르기 추가 스타일 */
     white-space: normal; }
     .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-    .info .link {color: #5085BB;}
+    .info .link {color: #5085BB;} 
   
-</style>
+</style> 
+ <meta charset="utf-8">
+  <title>안심경로</title>
+  <link rel="stylesheet" href="assets/css/safepath.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <body class="is-preload">
@@ -65,7 +70,7 @@
 								<%}else{ %>
 									<header id="header">
 									<ul class="icons">
-										<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+										<li><a href="main.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
 										<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 										<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 										<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
@@ -78,12 +83,12 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="All.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
+									<li><a href="main.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
 									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
 									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
-									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+									<li><a href="login.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
 								</ul>
 								</header>
 								<script>
@@ -94,38 +99,19 @@
 							<%} %>
 							<!-- map-->
 								<section id="">
-									<div id="map" style="width:68%;height:65%;">
-<head>
-  <meta charset="utf-8">
-  <title>안심경로</title>
-  <link rel="stylesheet" href="assets/css/safepath.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
+								
+<div id="map">
 <div class="map_wrap">
-    <!-- <form onsubmit="searchPlaces(this.keyword.value); return false;">
-      
-    </form> -->
-
-
 </div>
-
-
-
-						</div>
 								</section>
-
-							
 						</div>
 					</div>
-
 				<!-- Sidebar -->
 					<div id="sidebar">
-						<div class="inner" >
-
-							<!-- Search -->
-    <div style="overflow:auto;">  
-            <div>
+						<div class="inner">
+						
+								<section id="search" class="alt">
+									<div>
                 <form onsubmit="searchPlaces(); return false;">
                     검색  <input type="text" value=" " id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
@@ -136,61 +122,10 @@
       <button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
       <button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
         </div>
-     
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-						
-
-							<!-- Menu -->
-								<!-- <nav id="menu">
-									<div style="margin-top: 10px;">  
-										출발지 : <input type="text" id="start" name="keyword" size="15"> 
-										도착지 : <input type="text" id="end" name="keyword" size="15"> 
-										<button type="button" id="reset" onclick="reset()">경로 재검색</button>
-										<button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
-										<button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button> 
-									  </div> -->
-									<!-- <header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										 <li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										 
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
-									</ul> -->
-								</nav>
-
-							
-
-							
-
-							
-						</div>
-					</div>
-
+								</section>
+			<div style="height: 600px; overflow: auto;">
+			<ul id="placesList"></ul>
+        	<div id="pagination"></div>
 			</div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
@@ -212,7 +147,7 @@ imageSizeF = new kakao.maps.Size(30, 30), // 마커이미지의 크기입니다
 imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 var imageSrcP = './images/경찰차.png', // 마커이미지의 주소입니다    
 imageSizeP = new kakao.maps.Size(30, 30); // 마커이미지의 크기입니다
-var imageSrcC = './images/cctv.png', // 마커이미지의 주소입니다    
+var imageSrcC = './images/cctv2.png', // 마커이미지의 주소입니다    
 imageSizeC = new kakao.maps.Size(20, 20); // 마커이미지의 크기입니다
 var imageSrcS = './images/어린이보호.png', // 마커이미지의 주소입니다    
 imageSizeS = new kakao.maps.Size(20, 20); // 마커이미지의 크기입니다

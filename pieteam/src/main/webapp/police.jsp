@@ -14,9 +14,9 @@
 <title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/All.css" />
 <meta charset="UTF-8">
- <style>
+<style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
@@ -27,63 +27,19 @@
     .info .body {position: relative;overflow: hidden;}
     .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
     .desc .ellipsis { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+   
     /* 여러 줄 자르기 추가 스타일 */
     white-space: normal; }
     .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-    .info .link {color: #5085BB;}
-    #map{
-			background-color: black;
-			width: 1100px;
-			height: 600px;
-			position: fixed;
-		}
-		
-		.select {
-		  position: relative;
-		}
-		
-		.select .option-list {
-		  position: absolute;
-		  top: 100%;
-		  left: 0;
-		  width: 100%;
-		  overflow: hidden;
-		  max-height: 0;
-		}
-		
-		.select.active .option-list {
-		  max-height: none;
-		}
-		
-		/* 테마 적용하기 */
-		#adimn {}
-		#admin .select {
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		  border-radius: 5px;
-		  padding: 10px 15px;
-		  cursor: pointer;
-		}
-		#admin .select:hover {
-		  color: #333;
-		  transition: all .3s;
-		}
-		#admin .select .text {}
-		#admin .select .option-list {
-		  list-style: none;
-		  padding: 0;
-		  border-radius: 5px;
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		}
-		#admin .select .option-list .option {
-		  padding: 10px 15px;
-		}
-		#admin .select .option-list .option:hover {
-		  background-color: #f2f2f2;
-		}
-
-</style>
+    .info .link {color: #5085BB;} 
+  
+</style> 
+ <meta charset="utf-8">
+  <title>안심경로</title>
+  <link rel="stylesheet" href="assets/css/safepath.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <body class="is-preload">
@@ -92,7 +48,7 @@
 		Member loginMember = (Member)session.getAttribute("loginMember");
 %>
 		<!-- Wrapper -->
-			<div id="wrapper">
+			 <div id="wrapper">
 
 				<!-- Main -->
 					<div id="main">
@@ -114,7 +70,7 @@
 								<%}else{ %>
 									<header id="header">
 									<ul class="icons">
-										<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+										<li><a href="main.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
 										<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 										<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 										<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
@@ -127,12 +83,12 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="All.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
+									<li><a href="main.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
 									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
 									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
-									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+									<li><a href="login.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
 								</ul>
 								</header>
 								<script>
@@ -143,36 +99,19 @@
 							<%} %>
 							<!-- map-->
 								<section id="">
-									<div id="map" style="width:68%;height:65%;">
-<head>
-  <meta charset="utf-8">
-  <title>안심경로</title>
-  <link rel="stylesheet" href="assets/css/safepath.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
+								
+<div id="map">
 <div class="map_wrap">
-    <!-- <form onsubmit="searchPlaces(this.keyword.value); return false;">
-      
-    </form> -->
-
-
 </div>
-
-
-
-						</div>
 								</section>
-							
 						</div>
 					</div>
-
 				<!-- Sidebar -->
 					<div id="sidebar">
-						<div class="inner" >
-
-							<!-- Search -->
-            <div>
+						<div class="inner">
+						
+								<section id="search" class="alt">
+									<div>
                 <form onsubmit="searchPlaces(); return false;">
                     검색  <input type="text" value=" " id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
@@ -180,63 +119,13 @@
             </div>
       출발지  <input type="text" id="start" name="keyword" size="15"> 
       도착지  <input type="text" id="end" name="keyword" size="15"> 
-      <button type="button" id="reset" onclick="reset()">경로 재검색</button>
-      <button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
-     
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-
-
-							<!-- Menu -->
-								<!-- <nav id="menu">
-									<div style="margin-top: 10px;">  
-										출발지 : <input type="text" id="start" name="keyword" size="15"> 
-										도착지 : <input type="text" id="end" name="keyword" size="15"> 
-										<button type="button" id="reset" onclick="reset()">경로 재검색</button>
-										<button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
-										<button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button> 
-									  </div> -->
-									<!-- <header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										 <li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										 
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
-									</ul> -->
-								</nav>
-
-							
-
-							
-
-							
-						</div>
-					</div>
-
+      <button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
+      <button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
+        </div>
+								</section>
+			<div style="height: 600px; overflow: auto;">
+			<ul id="placesList"></ul>
+        	<div id="pagination"></div>
 			</div>
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>

@@ -94,7 +94,7 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="main.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
+									<li><a href="main.jsp"><button class="form_btn" id="button" onmouseover="mouseOver()" onmouseout="mouseOut()"><img id="img" src="./images/map.png"></button></a></li>
 									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
@@ -104,7 +104,11 @@
 								</header>
 								<script>
 									function mouseOut(){
-										$("#img").attr('src','./images/경찰서.png')
+										$("#button").html("")
+										$("#img").attr('src','./images/map.png')
+									}
+									function mouseOver(){
+										$("#button").html("전체보기")
 									}
 								</script>
 							<%} %>

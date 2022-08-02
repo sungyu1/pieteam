@@ -20,18 +20,18 @@
 			<!-- Menu -->
 				<nav id="Update">	
 						<h2 style="text-align:center">회원정보수정</h2>
-					<ul class="actions vertical" style="text-align:center">
 							<form action="UpdateCon" method="post">
-								<li>현재 접속 ID : <%=loginMember.getM_id() %></li>
-								<li><input name="pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-								<li><input name="name" type="text" value="<%=loginMember.getM_name() %>" placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-								<li><input name="nickname" type="text" value="<%=loginMember.getM_nick() %>" placeholder="집주소를 입력하세요" style="width: 500px; margin: 0 auto;"></li>
-								<li><input type="text" value="<%=loginMember.getM_gender() %>" readonly="readonly"></li>
-								<li><input type="text" value="<%=loginMember.getM_age() %>" readonly="readonly"></li>
-								<li><input type="submit" value="Edit" class="button fit" style="width: 500px; margin: 0 auto;"></li>
-								<li><a href="main.jsp"><input type="button" value="Main" class="button fit" style="width: 500px; margin: 0 auto;"></a></li>
+							<table style="margin: auto; width: 500px;">
+								<caption>현재 접속 ID : <%=loginMember.getM_id() %></caption>
+								<tr><td><input name="pw" type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;"></td></tr>
+								<tr><td><input name="name" type="text" value="<%=loginMember.getM_name() %>" placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;"></td></tr>
+								<tr><td><input name="nickname" type="text" value="<%=loginMember.getM_nick() %>" placeholder="집주소를 입력하세요" style="width: 500px; margin: 0 auto;"></td></tr>
+								<tr><td><input type="text" value="<%=loginMember.getM_gender() %>" readonly="readonly"></td></tr>
+								<tr><td><input type="text" value="<%=loginMember.getM_age() %>" readonly="readonly"></td></tr>
+								<tr><td><input type="submit" value="Edit" class="button fit" style="width: 500px; margin: 0 auto;"></td></tr>
+								<tr><td><a href="main.jsp"><input type="button" value="Main" class="button fit" style="width: 500px; margin: 0 auto;"></a></td></tr>
+							</table>
 							</form>
-					</ul>
 				</nav>		
 						<!-- Footer -->
 			<footer id="footer">

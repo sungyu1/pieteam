@@ -2,6 +2,7 @@ package com.smhrd.controll;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,7 +32,7 @@ public class ReviewListCon extends HttpServlet {
 			json.addProperty("num", r.getR_seq());
 			json.addProperty("name", r.getR_name());
 			json.addProperty("name", r.getR_content());
-			json.addProperty("name", r.getR_date());
+			json.addProperty("name", r.getR_date().toString());
 			json.addProperty("writer", r.getM_id());
 			
 			jarray.add(json);

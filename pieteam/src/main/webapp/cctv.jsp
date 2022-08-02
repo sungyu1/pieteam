@@ -100,7 +100,7 @@
 							<!-- map-->
 								<section id="">
 								
-<div id="map">
+<div id="map" style="width:1698px; height:800px;">
 <div class="map_wrap">
 </div>
 								</section>
@@ -186,7 +186,7 @@ var clickedOverlay = null;
 	        '        </div>' + 
 	        '        <div class="body">' + 
 	        '            <div class="img">' +
-            '                <img src="./images/cctv.png" width="73" height="70">' +
+            '                <img src="./images/cctv2.png" width="73" height="70">' +
             '           </div>' + 
 	        '            <div class="desc">' + 
 	        '                <div class="ellipsis">주소 : ' +Name[i]+'</div>' + '<br>' + 

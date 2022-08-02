@@ -100,7 +100,7 @@
 							<!-- map-->
 								<section id="">
 								
-<div id="map">
+<div id="map" style="width:1698px; height:800px;">
 <div class="map_wrap">
 </div>
 								</section>

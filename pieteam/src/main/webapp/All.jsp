@@ -100,7 +100,7 @@
 							<!-- map-->
 								<section id="">
 								
-<div id="map">
+<div id="map" style="width: 65%; height:100%;">
 <div class="map_wrap">
 </div>
 								</section>
@@ -520,6 +520,7 @@ markerS.setMap(map);
 	        marker_listS[i].setMap(map);
 	    }            
 	}
+	
 	
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places();  

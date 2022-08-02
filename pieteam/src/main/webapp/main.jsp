@@ -109,6 +109,7 @@
 									}
 									function mouseOver(){
 										$("#button").html("전체보기")
+										$("#img").attr('src','./images/map.png')
 									}
 								</script>
 							<%} %>

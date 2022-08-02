@@ -136,8 +136,19 @@
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
-						
 								<section id="search" class="alt">
+									<!-- 출발지
+									<form method="post" action="#"> 
+										<input type="text" name="Departure" id="Departure" placeholder="출발지"/>
+									</form>
+									목적지
+									<form method="post" action="#">
+										<input type="text" name="Arrival" id="Arrival" placeholder="목적지" />
+									</form>
+										<button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
+										<button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
+										 <button type="button" id="fastroad" onclick="fastroad()"></button> -->
+										
 									<div>
                 <form onsubmit="searchPlaces(); return false;">
                     검색  <input type="text" value=" " id="keyword" size="15"> 

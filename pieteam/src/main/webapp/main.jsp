@@ -17,8 +17,8 @@
 	<style>
 		#map{
 			background-color: black;
-			width: 1100px;
-			height: 600px;
+			width: 1306px; /* 1698:끝까지 큰화면 */
+			height: 700px;
 			position: fixed;
 		}
 	</style>
@@ -42,7 +42,7 @@
 								<%if(loginMember.getM_id().equals("admin")){ %>
 									<header id="header">
 										<ul class="icons">
-											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></a></li>
+											<li><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></a></li>
@@ -66,7 +66,7 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+									<li><a href="All.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
 									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
@@ -84,7 +84,7 @@
 							<%if(loginMember != null){ %>
 								<%if(loginMember.getM_id().equals("admin")){ %>
 									<div id = "manage">
-									<iframe src="selectMember.jsp" id="url" style="width:1200px; height:600px; align-content: center;"></iframe>
+									<iframe src="selectMember.jsp" id="url" style="width:1698px; height:600px; align-content: center;"></iframe>
 									</div>
 							<%}} %>
 							<script>
@@ -92,12 +92,10 @@
 									$('#url').attr('src', url)
 								}
 							</script>
-								<section id="">
+							
 									<div id="map">
 									</div>
-								</section>
-
-							
+								
 						</div>
 					</div>
 
@@ -105,19 +103,19 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
+							Search
 								<section id="search" class="alt">
-									<!-- 출발지 -->
+									출발지
 									<form method="post" action="#"> 
 										<input type="text" name="Departure" id="Departure" placeholder="출발지"/>
 									</form>
-									<!-- 목적지 -->
+									목적지
 									<form method="post" action="#">
 										<input type="text" name="Arrival" id="Arrival" placeholder="목적지" />
 									</form>
 										<button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
 										<button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
-										<!-- <button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button>  -->
+										<button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button> 
 										
 								</section>
 								<div style="height: 100px; background: red;     overflow: auto;">

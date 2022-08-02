@@ -17,6 +17,7 @@
 <td colspan="2">
 <a href="reviewWrite.jsp" class="button next scrolly">글작성</a>
 <a href="schoolmateList.jsp" class="button next scrolly">등교메이트 구하기</a>
+<a href="#" class="button next scrolly">위험지역등록</a>
 </td>
 <td><a href="main.jsp" class="button next scrolly">Main</a></td>
 </tr>

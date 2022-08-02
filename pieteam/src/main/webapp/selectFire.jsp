@@ -12,7 +12,6 @@
 </style>
 </head>
 <body>
-	<div id="wrapper">
 	<nav>
 	<h2 class="major" style="text-align:center">소방서</h2>
 	<table class="table">	
@@ -42,7 +41,6 @@
   </tr>
 </table>
 </nav>
-</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

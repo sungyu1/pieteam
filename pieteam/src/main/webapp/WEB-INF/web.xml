@@ -93,6 +93,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.DeletePoliceCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MateListCon</servlet-name>
+  	<display-name>MateListCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.MateListCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MateWriteCon</servlet-name>
+  	<display-name>MateWriteCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.MateWriteCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -152,5 +164,13 @@
   <servlet-mapping>
   	<servlet-name>DeletePoliceCon</servlet-name>
   	<url-pattern>/DeletePoliceCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MateListCon</servlet-name>
+  	<url-pattern>/MateListCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MateWriteCon</servlet-name>
+  	<url-pattern>/MateWriteCon</url-pattern>
   </servlet-mapping>
 </web-app>

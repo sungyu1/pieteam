@@ -14,6 +14,8 @@
 <body>
 <nav>
 <h2 class="major" style="text-align:center">리뷰</h2>
+<a href="#" class="button next scrolly">등교메이트 관리</a>
+<a href="#" class="button next scrolly">위험지역 관리</a>
 <table class="table">
   <tr>
       <th>글 제목</th>
@@ -26,7 +28,7 @@
 		  <td id="name${status.index}"></td>
 	      <td id="content${status.index }"></td>
 	      <td id="date${status.index }"></td>					
-	      <td id="m_id${status.index }"></td>					
+	      <td id="writer${status.index }"></td>					
 	  </tr>
   </c:forEach>
   <tr>
@@ -112,14 +114,14 @@ function list_write(data_list){
 		$('#name'+i).text(data_list[i].name);
 		$('#content'+i).text(data_list[i].content);
 		$('#date'+i).text(data_list[i].date);
-		$('#m_id'+i).text(data_list[i].m_id);
+		$('#writer'+i).text(data_list[i].writer);
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
 		$('#name'+i).hide(); 
 		$('#content'+i).hide();
 		$('#date'+i).hide();
-		$('#m_id'+i).hide();
+		$('#writer'+i).hide();
 	}
 	
 }
@@ -180,12 +182,12 @@ function print_list(data_list){
 		$('#name'+i).show();
 		$('#content'+i).show();
 		$('#date'+i).show();
-		$('#m_id'+i).show();
+		$('#writer'+i).show();
 		
 		$('#name'+i).text(data_list[i].name);
 		$('#content'+i).text(data_list[i].content);
 		$('#date'+i).text(data_list[i].date);
-		$('#m_id'+i).text(data_list[i].m_id);
+		$('#writer'+i).text(data_list[i].writer);
 	}
 }
 

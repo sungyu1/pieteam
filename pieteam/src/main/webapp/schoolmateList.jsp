@@ -15,21 +15,22 @@
 <table class="table" style="width: 1000px; height: 600px; margin: auto">
 <tr>
 <td colspan="2">
-<a href="#" class="button next scrolly">글작성</a>
+<a href="MateWrite.jsp" class="button next scrolly">글작성</a>
 <a href="reviewWrite.jsp" class="button next scrolly">리뷰게시판</a>
+<a href="#" class="button next scrolly">위험지역등록</a>
 </td>
 <td><a href="main.jsp" class="button next scrolly">Main</a></td>
 </tr>
   <tr>
       <th>글 제목</th>
       <th>작성자</th>
-      <th>조회수</th> 
+      <th>메이트</th> 
   </tr>
   <c:forEach begin="0" end="10" step="1" varStatus="status">  
 	  <tr>
 		  <td id="name${status.index}"></td>
 	      <td id="writer${status.index }"></td>
-	      <td id="view${status.index }"></td>				
+	      <td id="mate${status.index }"></td>				
 	  </tr>
   </c:forEach>
   <tr>
@@ -82,7 +83,7 @@ function button_create(data_list,startPage){
 function next_list(startRow,startPage){
 	$.ajax({
 		/* jsp 시작하면서 바로 border서블릿과 비동기 통신으로 DB 에있는 내용을 가져온다 */
-		url:'ReviewListCon',
+		url:'MateListCon',
 		method:'post',
 		dataType :'json', // 응답데이터 형식 지정
 		data :{"num":startRow},/* 한 페이지 에서 가져와야하는 양이 정해저 있으므로 어디 페이지에서 요청했는지 알기위해 가져올DB의 시작 num을 같이 넘겨 준다 */
@@ -112,14 +113,15 @@ function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
 		
-		$('#name'+i).html("<a href='boardView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+		$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
-		$('#view'+i).text(0);
+		$('#mate'+i).text(data_list[i].mate);
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
 		$('#name'+i).hide(); 
 		$('#writer'+i).hide();
+		$('#mate'+i).hide();
 	}
 	
 }
@@ -180,16 +182,11 @@ function print_list(data_list){
 	for(var i=0;i<10;i++){
 		$('#name'+i).show();
 		$('#writer'+i).show();
-		$('#view'+i).show();
+		$('#mate'+i).show();
 		
- 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+ 		$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
-		if($('#view'+i).text('')==cnt){
-			cnt += 1;
-			$('#view'+i).text(cnt);			
-		}else{
-			$('#view'+i).text(cnt);						
-		}
+		$('#mate'+i).text(data_list[i].mate);
 	}
 }
 

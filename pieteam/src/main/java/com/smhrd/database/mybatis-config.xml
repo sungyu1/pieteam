@@ -32,5 +32,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	<mapper resource="com/smhrd/database/FireMapper.xml"/>
     	<mapper resource="com/smhrd/database/CommentMapper.xml"/>
     	<mapper resource="com/smhrd/database/SafeMapper.xml"/>
+    	<mapper resource="com/smhrd/database/MateMapper.xml"/>
     </mappers>
 </configuration>

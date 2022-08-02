@@ -1353,7 +1353,7 @@ ul.icons {
     ul.icons li .icon {
       color: inherit; }
       ul.icons li .icon:before {
-        font-size: 1.25em; }
+        font-size: 1.25em; } 
 
 /* Contact */
 ul.contact {
@@ -1496,8 +1496,8 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #f56a6a; /*버튼폰트색깔*/
-  color: #f56a6a !important; /*버튼색깔*/
+  /* box-shadow: inset 0 0 0 2px #009474; 버튼폰트색깔*/
+  color: #3d4449 !important; /*버튼색깔*/
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
@@ -1996,7 +1996,9 @@ button,
       position: absolute;
       text-indent: 0;
       top: 0;
-      width: inherit; }
+      width: inherit;
+      color: #009474; /*슬라이스*/
+    }
   #sidebar.inactive {
     margin-left: -26em; }
   @media screen and (max-width: 1680px) {
@@ -2055,7 +2057,7 @@ button,
       text-indent: 7.25em;
       width: 7.25em; }
       #sidebar .toggle:before {
-        color: #7f888f;
+        color: #009474;
         margin-left: -0.0625em;
         margin-top: -0.25em;
         font-size: 1.1rem;
@@ -2076,7 +2078,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  border-bottom: solid 5px #009474; /* 버튼아래줄*/
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {

@@ -7,37 +7,29 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-<style>
-	body{
-		background-image : url('./asset/img/bg.jpg');
-		font-family: 'Do Hyeon', sans-serif;
-		font-size : 30px;
-	}
-	.container{
-		background-color : whitesmoke;
-		margin-top : 100px;
-		padding-top : 20px;
-	}
-	#writeBtn{
-		margin-bottom : 20px;
-	}
-</style>
+
 </head>
 <body>
 <nav>
-<h2 class="major" style="color:#FFB432 ">리뷰게시판</h2>
-<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
-<table class="table">
+<h2 class="major" style="text-align: center;">리뷰게시판</h2>
+<table class="table" style="width: 1000px; height: 600px; margin: auto">
+<tr>
+<td colspan="2">
+<a href="reviewWrite.jsp" class="button next scrolly">글작성</a>
+<a href="schoolmateList.jsp" class="button next scrolly">등교메이트 구하기</a>
+</td>
+<td><a href="main.jsp" class="button next scrolly">Main</a></td>
+</tr>
   <tr>
       <th>글 제목</th>
       <th>작성자</th>
-<!--       <th>조회수</th> -->
+      <th>조회수</th> 
   </tr>
   <c:forEach begin="0" end="10" step="1" varStatus="status">  
 	  <tr>
 		  <td id="name${status.index}"></td>
 	      <td id="writer${status.index }"></td>
-	      <%-- <td id="lat${status.index }"></td> --%>				
+	      <td id="view${status.index }"></td>				
 	  </tr>
   </c:forEach>
   <tr>
@@ -120,8 +112,9 @@ function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
 		
-		$('#name'+i).html("<a href='boardView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
+		$('#view'+i).text(0);
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
@@ -182,13 +175,21 @@ function page(currentPage){
 //그래서 전부 .show() 로 보여준다음
 
 //해당 게시물을 출력한다
+var cnt=0;
 function print_list(data_list){
 	for(var i=0;i<10;i++){
 		$('#name'+i).show();
 		$('#writer'+i).show();
+		$('#view'+i).show();
 		
  		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
+		if($('#view'+i).text('')==cnt){
+			cnt += 1;
+			$('#view'+i).text(cnt);			
+		}else{
+			$('#view'+i).text(cnt);						
+		}
 	}
 }
 

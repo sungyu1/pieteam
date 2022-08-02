@@ -9,27 +9,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	<style>
-	body{
-		background-image : url('./asset/img/bg.jpg');
-		font-family: 'Do Hyeon', sans-serif;
-		font-size : 30px;
-	}
-	.container{
-		background-color : whitesmoke;
-		margin-top : 100px;
-		padding-top : 20px;
-	}
-	#writeBtn{
-		margin-bottom : 20px;
-	}
 </style>
 </head>
 <body>
 	<div id="wrapper">
 	<nav>
-	<h2 class="major" style="color:#FFB432 ">소방서</h2>
-<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
+	<h2 class="major" style="text-align:center">소방서</h2>
 	<table class="table">	
 	
 							<tr>

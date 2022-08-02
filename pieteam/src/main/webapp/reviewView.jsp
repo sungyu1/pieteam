@@ -8,13 +8,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
- 		<link rel="preconnect" href="https://fonts.googleapis.com">
+<!--  		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-			rel="stylesheet">
+			rel="stylesheet"> -->
 		<style>
- body {
+   body {
 	background-image: url('asset/img/bg.jpg');
 	padding-left: 200px;
 	padding-right: 200px;
@@ -42,7 +42,7 @@ p {
 <jsp:useBean id="CommentDAO" class="com.smhrd.model.CommentDAO"/>
 <c:set var="commentList" value="${CommentDAO.selectComment(param.num)}"/>
 <body>
-<h2 class="major" style="color:#FFB432; text-align:center;">리뷰게시판</h2>
+<h2 class="major" style="text-align:center;">리뷰게시판</h2>
 	<form>
 		<div class="card-body" style="margin-top: 100px; margin-bottom: 10px; height: 150px">
 			<p>${review.r_name}/${review.m_id}</p>
@@ -59,12 +59,13 @@ p {
 					<li class="list-group-item"><textarea class="form-control"
 							id="exampleFormControlTextarea1" rows="3"></textarea>
 						<button type="button" class="btn btn-dark mt-3" onclick="addReply()">post reply</button></li>
+						<li style="list-style: none; text-align: right"><a href="reviewList.jsp"><input type="button" value="뒤로가기" /></a>
+						<a href="#"><input type="button" value="글삭제"/></a></li>
 				</ul>
 				<ul class="list-group list-group-flush" id="reply">
 					<c:forEach items="${commentList }" var="reply">
 					<li class="list-group-item"><span>${reply.cmt_content} / ${reply.m_id}</span></li>
 					</c:forEach>
-		
 				</ul>
 			</div>
 		</div>

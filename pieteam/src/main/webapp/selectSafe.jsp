@@ -9,7 +9,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	<style>
+<!-- 	<style>
 	body{
 		background-image : url('./asset/img/bg.jpg');
 		font-family: 'Do Hyeon', sans-serif;
@@ -23,12 +23,12 @@
 	#writeBtn{
 		margin-bottom : 20px;
 	}
-</style>
+</style> -->
 </head>
 <body>
 	<nav>
-	<h2 class="major" style="color:#FFB432 ">어린이보호구역</h2>
-<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
+	<h2 class="major" style="text-align:center">어린이보호구역</h2>
+<!-- <a href="main.jsp" class="button next scrolly">되돌아가기</a>	 -->
 	<table class="table">	
 	
 							<tr>

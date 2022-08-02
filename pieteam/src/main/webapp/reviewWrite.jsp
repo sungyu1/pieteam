@@ -3,19 +3,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-		<title>Dimension by HTML5 UP</title>
+	<head>
+		<title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-</head>
+	</head>
 <body>
 
 	
-		<h2 class="major" style="color:#FFB432; text-align:center;">리뷰 작성</h2>
-	 	<form action="RevieWriteCon" method="post">
+		<h2 class="major" style="text-align:center;">리뷰 작성</h2>
+<!-- 	 	<form action="RevieWriteCon" method="post">
 			<div class="fields">
 				<div class="field">
 				<input type="text" placeholder="제목 작성" name="name" required oninvalid="this.setCustomValidity('제목을 입력해주세요')" oninput="this.setCustomValidity('')">
@@ -29,15 +27,23 @@
 				<li><input type="submit" value="Upload" class="primary" /></li>
 				<li><input type="reset" value="Reset" /></li>
 			</ul>
+		</form> -->
+	 	<form action="RevieWriteCon" method="post">
+		<table style="width: 1000px; height: 600px; margin: auto">
+		<tr><td><input type="text" placeholder="제목 작성" name="name" required oninvalid="this.setCustomValidity('제목을 입력해주세요')" oninput="this.setCustomValidity('')"></td></tr>
+		<tr><td><label for="review">Review</label>
+			<textarea name="review" id="review" rows="10"  required oninvalid="this.setCustomValidity('내용을 입력해주세요')" oninput="this.setCustomValidity('')"></textarea></td></tr>
+		<tr><td><input type="submit" value="Upload" class="primary" />
+				<input type="reset" value="Reset" />
+				<a href="reviewList.jsp"><input type="button" value="Cancle" /></a></td></tr>
+		</table>
 		</form>
 	
 		<!-- Footer -->
 		<footer id="footer">
-			<p &copy; class="copyright"style="color:#FFAF00 ">&copy; 안.길</p>
+			<p &copy; class="copyright">&copy; 안.길</p>
 		</footer>
-	
-		<!-- BG -->
-			<div id="bg"></div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

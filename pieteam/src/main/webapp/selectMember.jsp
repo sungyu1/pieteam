@@ -19,9 +19,9 @@
 	%>
 	<!-- Wrapper -->
 				<!-- Menu -->
-					<nav id="Update">	
+					<nav id="Update">
+					<h2 class="major" style="text-align: center">회원관리</h2>
 						<table>
-							<caption><h2>회원관리페이지</h2></caption>
 							<tr>
 								<td>ID</td>
 								<td>Name</td>
@@ -41,7 +41,6 @@
 							<%} %>
 						</table>
 					</nav>		
-					<a href="main.jsp" class="button next scrolly">되돌아가기</a>	
 					
 					
 									<!-- Footer -->

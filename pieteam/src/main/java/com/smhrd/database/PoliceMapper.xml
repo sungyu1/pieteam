@@ -8,4 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from tbl_police where p_seq>=#{p_seq} order by p_seq
 	</select>
 	
+	<!-- 관리자의 경찰서 삭제 -->
+	<delete id="deletePolice" parameterType="BigDecimal">
+		delete from tbl_police where p_seq=#{p_seq}
+	</delete>
 </mapper>

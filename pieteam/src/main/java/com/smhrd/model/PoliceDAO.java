@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -15,7 +16,7 @@ public class PoliceDAO {
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 
 	
-
+	
 	public List<Police> selectAll() {
 		List<Police> name = null;
 		try {
@@ -53,5 +54,23 @@ public class PoliceDAO {
 			sqlSession.close();
 		}
 		return list;
+	}
+	
+	// 관리자의 경찰서 삭제
+	public int deletePolice(BigDecimal num) {
+		int cnt=0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.model.PoliceDAO.deletePolice", num);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
 	}
 }

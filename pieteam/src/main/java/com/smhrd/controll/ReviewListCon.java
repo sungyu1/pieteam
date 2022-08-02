@@ -30,8 +30,9 @@ public class ReviewListCon extends HttpServlet {
 		for(Review r : list) {
 			json.addProperty("num", r.getR_seq());
 			json.addProperty("name", r.getR_name());
+			json.addProperty("name", r.getR_content());
+			json.addProperty("name", r.getR_date());
 			json.addProperty("writer", r.getM_id());
-//			json.addProperty("views", r.);
 			
 			jarray.add(json);
 			json = new JsonObject();

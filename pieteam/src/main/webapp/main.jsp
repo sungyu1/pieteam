@@ -51,27 +51,27 @@
 										</ul>
 									</header>
 								<%}else{ %>
-									<header id="header">
-									<ul class="icons">
-										<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
-										<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
-										<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
-										<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
-										<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
-										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
-									</ul>
-									</header>
+							<header id="header">
+							<ul class="icons">
+								<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+								<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+								<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+								<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+								<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+								<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+							</ul>
+							</header>
 								<%} %>
 							<%}else{ %>								
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="All.jsp" title="전체보기" id="a" onMouseOver="this.innerHTML='전체보기'" onmouseout="mouseOut()"><img src="/images.경찰서.png" id="img" title="타이틀"></img></a></li>
-									<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
-									<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
-									<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
-									<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
-									<li><a href="login.jsp"><button class="form_btn" >커뮤니티</button></a></li>
+									<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
 								</ul>
 								</header>
 								<script>
@@ -115,11 +115,21 @@
 									<form method="post" action="#">
 										<input type="text" name="Arrival" id="Arrival" placeholder="목적지" />
 									</form>
-										<button type="button" id="reset" onclick="reset()">재검색</button>
-										<button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
+										<button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
+										<button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
 										<!-- <button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button>  -->
 										
 								</section>
+								<div style="height: 100px; background: red;     overflow: auto;">
+									
+									redredredredredred
+									<br><br><br><br><br><br><br>
+									redredredredredred
+									
+									
+
+
+								</div>
 
 							<!-- Menu -->
 								<!-- <nav id="menu">

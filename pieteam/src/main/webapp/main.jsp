@@ -103,7 +103,7 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							Search
+							
 								<section id="search" class="alt">
 									출발지
 									<form method="post" action="#"> 
@@ -115,7 +115,7 @@
 									</form>
 										<button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
 										<button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
-										<button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button> 
+										<!--  <button type="button" id="fastroad" onclick="fastroad()"></button> -->
 										
 								</section>
 								<div style="height: 100px; background: red;     overflow: auto;">

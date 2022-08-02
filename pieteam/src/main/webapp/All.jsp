@@ -14,7 +14,7 @@
 <title>안.길</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/All.css" />
 <meta charset="UTF-8">
  <style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
@@ -48,22 +48,50 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<%if(loginMember==null){ %>
-								<a href="login.jsp" text-align="right"><h5>Login</h5></a>
-							<%}else{ %>								
-								<a href="update.jsp" style="color:black">개인정보수정</a>
-								<a href="LogoutCon" style="color:black">Logout</a>
-							<%} %>
-							<header id="header">
-							<ul class="icons">
-								<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></a></li>
+							<%if(loginMember!=null){ %>
+								<a href="update.jsp" style="color:black"><h5>개인정보수정</h5></a>
+								<a href="LogoutCon" style="color:black"><h5>Logout</h5></a>
+								<%if(loginMember.getM_id().equals("admin")){ %>
+									<header id="header">
+										<ul class="icons">
+											<li><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></a></li>
 											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">커뮤니티관리</button></a></li>
-							</ul>
-							</header>
+										</ul>
+									</header>
+								<%}else{ %>
+									<header id="header">
+									<ul class="icons">
+										<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+										<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+										<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+										<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+										<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+										<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+									</ul>
+									</header>
+								<%} %>
+							<%}else{ %>								
+								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
+								<header id="header">
+								<ul class="icons">
+									<li><a href="All.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
+									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+								</ul>
+								</header>
+								<script>
+									function mouseOut(){
+										$("#img").attr('src','./images/경찰서.png')
+									}
+								</script>
+							<%} %>
 							<!-- map-->
 								<section id="">
 									<div id="map" style="width:68%;height:65%;">

@@ -51,16 +51,16 @@
 										</ul>
 									</header>
 								<%}else{ %>
-							<header id="header">
-							<ul class="icons">
-								<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
-								<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
-								<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
-								<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
-								<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
-								<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
-							</ul>
-							</header>
+									<header id="header">
+									<ul class="icons">
+										<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
+										<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
+										<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
+										<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
+										<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
+										<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+									</ul>
+									</header>
 								<%} %>
 							<%}else{ %>								
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>

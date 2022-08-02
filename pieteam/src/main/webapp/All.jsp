@@ -133,8 +133,8 @@
             </div>
       출발지  <input type="text" id="start" name="keyword" size="15"> 
       도착지  <input type="text" id="end" name="keyword" size="15"> 
-      <button type="button" id="reset" onclick="reset()">경로 재검색</button>
-      <button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
+      <button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
+      <button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 
         </div>
      
         <ul id="placesList"></ul>

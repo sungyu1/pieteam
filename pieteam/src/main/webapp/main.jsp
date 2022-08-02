@@ -35,11 +35,11 @@
 								<header id="header">
 									
 									<ul class="icons">
-										<li><a href="#"><button class="form_btn" >전체보기</button></a></li>
-										<li><a href="#"><button class="form_btn" >CCTV</button></a></li>
-										<li><a href="#"><button class="form_btn" >파출소</button></a></li>
-										<li><a href="#"><button class="form_btn" >소방서</button></a></li>
-										<li><a href="#"><button class="form_btn" >어린이보호</button></a></li>
+										<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
+										<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
+										<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
+										<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
+										<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
 										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
 									</ul>
 								</header>

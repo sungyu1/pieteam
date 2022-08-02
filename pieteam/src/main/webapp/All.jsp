@@ -7,15 +7,50 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8">
+	<head>
+		<title>안.길</title>
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-    <style>
+	</head>
+	<style>
+		#map{
+			background-color: black;
+			width: 1100px;
+			height: 600px;
+			position: fixed;
+		}
+	</style>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<a href="#" text-align="right"><h5>Login</h5></a>
+								<header id="header">
+									
+									<ul class="icons">
+										<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
+										<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
+										<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
+										<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
+										<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
+										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
+									</ul>
+								</header>
+
+							<!-- map-->
+								<section id="">
+									<div id="map">
+										<style>
  .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
@@ -42,19 +77,10 @@
 <body>
 
 	<div id="wrapper">
-		<h2 class="major" style="color: #FFB432">안심경로</h2>
+
 		
 <div id="map" style="width:1000px;height:600px;"></div>
-<p>
-  	<button onclick="location='All.jsp'"> 전체</button>
-  	<button onclick="location='AllN.jsp'"> 북구</button>
-    <button onclick="location='AllE.jsp'"> 동구</button>
-    <button onclick="location='AllW.jsp'"> 서구</button>
-    <button onclick="location='AllS.jsp'"> 남구</button>
-    <button onclick="location='AllGs.jsp'"> 광산구</button>
-    <button type="button" onclick="showMarkers()">마크 보이기</button>
-    <button type="button" onclick="hideMarkers()">마크 감추기</button>
-</p> 
+
 
 <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
@@ -474,3 +500,49 @@ var clickedOverlayF = null;
 	<script src="assets/js/main.js"></script>
 </body>
 </html>
+										
+									</div>
+									
+									</span>
+								</section>
+
+							
+
+							
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<!-- 출발지 -->
+									<form method="post" action="#"> 
+										<input type="text" name="Departure" id="Departure" placeholder="출발지"/>
+									</form>
+									<!-- 목적지 -->
+									<form method="post" action="#">
+										<input type="text" name="Arrival" id="Arrival" placeholder="목적지" />
+									</form>
+										<button type="button" id="reset" onclick="reset()">재검색</button>
+										<button type="button" id="saferoad" onclick="saferoad()">안전경로</button> 
+										<!-- <button type="button" id="fastroad" onclick="fastroad()">빠른안전경로</button>  -->
+										
+								</section>
+								</nav>
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+    

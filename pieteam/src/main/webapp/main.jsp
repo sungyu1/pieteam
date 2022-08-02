@@ -94,7 +94,7 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="main.jsp"><button class="form_btn" id="button" onmouseover="mouseOver()" onmouseout="mouseOut()"><img id="img" src="./images/map.png"></button></a></li>
+									<li><a href="main.jsp"><button class="form_btn" ><img id="img" src="./images/map.png"></button></a></li>
 									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
 									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
 									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
@@ -128,7 +128,7 @@
 								<!-- map-->
 								<section id="">
 								
-<div id="map" style="width:1698px; height:800px;">
+<div id="map">
 <div class="map_wrap">
 </div>
 								</section>

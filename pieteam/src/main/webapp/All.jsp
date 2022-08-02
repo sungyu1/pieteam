@@ -33,56 +33,7 @@
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
-    #map{
-			background-color: black;
-			width: 1100px;
-			height: 600px;
-			position: fixed;
-		}
-		
-		.select {
-		  position: relative;
-		}
-		
-		.select .option-list {
-		  position: absolute;
-		  top: 100%;
-		  left: 0;
-		  width: 100%;
-		  overflow: hidden;
-		  max-height: 0;
-		}
-		
-		.select.active .option-list {
-		  max-height: none;
-		}
-		
-		/* 테마 적용하기 */
-		#adimn {}
-		#admin .select {
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		  border-radius: 5px;
-		  padding: 10px 15px;
-		  cursor: pointer;
-		}
-		#admin .select:hover {
-		  color: #333;
-		  transition: all .3s;
-		}
-		#admin .select .text {}
-		#admin .select .option-list {
-		  list-style: none;
-		  padding: 0;
-		  border-radius: 5px;
-		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
-		}
-		#admin .select .option-list .option {
-		  padding: 10px 15px;
-		}
-		#admin .select .option-list .option:hover {
-		  background-color: #f2f2f2;
-		}
-
+  
 </style>
 </head>
 <body>
@@ -92,7 +43,7 @@
 		Member loginMember = (Member)session.getAttribute("loginMember");
 %>
 		<!-- Wrapper -->
-			<div id="wrapper">
+			 <div id="wrapper">
 
 				<!-- Main -->
 					<div id="main">
@@ -105,17 +56,17 @@
 							<%} %>
 							<header id="header">
 							<ul class="icons">
-								<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
-								<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
-								<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
-								<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
-								<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
-								<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
+								<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></a></li>
+											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">커뮤니티관리</button></a></li>
 							</ul>
 							</header>
 							<!-- map-->
 								<section id="">
-									<div id="map">
+									<div id="map" style="width:68%;height:65%;">
 <head>
   <meta charset="utf-8">
   <title>안심경로</title>
@@ -346,7 +297,7 @@ var clickedOverlay = null;
 		        '        </div>' + 
 		        '        <div class="body">' + 
 		        '            <div class="img">' +
-	            '                <img src="./images/cctv.png" width="73" height="70">' +
+	            '                <img src="./images/cctv2.png" width="73" height="70">' +
 	            '           </div>' + 
 		        '            <div class="desc">' + 
 		        '                <div class="ellipsis">주소 : ' +C_Name[i]+'</div>' + '<br>' + 

@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.Fire"%>
 <%@page import="com.smhrd.model.Police"%>
 <%@page import="com.smhrd.model.CCTV"%>
@@ -25,7 +26,10 @@
 		}
 	</style>
 	<body class="is-preload">
-
+<%
+//session 값 가지고 오기
+		Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -34,7 +38,12 @@
 						<div class="inner">
 
 							<!-- Header -->
-							<a href="#" text-align="right"><h5>Login</h5></a>
+								<%if(loginMember==null){ %>
+								<a href="login.jsp" text-align="right"><h5>Login</h5></a>
+							<%}else{ %>								
+								<a href="update.jsp" style="color:black">개인정보수정</a>
+								<a href="LogoutCon" style="color:black">Logout</a>
+							<%} %>
 								<header id="header">
 									
 									<ul class="icons">

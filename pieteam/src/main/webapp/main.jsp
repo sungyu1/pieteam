@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -20,9 +21,55 @@
 			height: 600px;
 			position: fixed;
 		}
+		
+		.select {
+		  position: relative;
+		}
+		
+		.select .option-list {
+		  position: absolute;
+		  top: 100%;
+		  left: 0;
+		  width: 100%;
+		  overflow: hidden;
+		  max-height: 0;
+		}
+		
+		.select.active .option-list {
+		  max-height: none;
+		}
+		
+		/* 테마 적용하기 */
+		#adimn {}
+		#admin .select {
+		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+		  border-radius: 5px;
+		  padding: 10px 15px;
+		  cursor: pointer;
+		}
+		#admin .select:hover {
+		  color: #333;
+		  transition: all .3s;
+		}
+		#admin .select .text {}
+		#admin .select .option-list {
+		  list-style: none;
+		  padding: 0;
+		  border-radius: 5px;
+		  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+		}
+		#admin .select .option-list .option {
+		  padding: 10px 15px;
+		}
+		#admin .select .option-list .option:hover {
+		  background-color: #f2f2f2;
+		}
 	</style>
 	<body class="is-preload">
-
+<%
+//session 값 가지고 오기
+		Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -30,31 +77,29 @@
 					<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-							<a href="#" text-align="right"><h5>Login</h5></a>
-								<header id="header">
-									
-									<ul class="icons">
-										<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
-										<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
-										<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
-										<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
-										<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
-										<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
-									</ul>
-								</header>
+					
 
+							<%if(loginMember==null){ %>
+								<a href="login.jsp" text-align="right"><h5>Login</h5></a>
+							<%}else{ %>								
+								<a href="update.jsp" style="color:black">개인정보수정</a>
+								<a href="LogoutCon" style="color:black">Logout</a>
+							<%} %>
+							<header id="header">
+							<ul class="icons">
+								<li><a href="All.jsp"><button class="form_btn" >전체보기</button></a></li>
+								<li><a href="cctv.jsp"><button class="form_btn" >CCTV</button></a></li>
+								<li><a href="police.jsp"><button class="form_btn" >파출소</button></a></li>
+								<li><a href="fire.jsp"><button class="form_btn" >소방서</button></a></li>
+								<li><a href="safe.jsp"><button class="form_btn" >어린이보호</button></a></li>
+								<li><a href="reviewList.jsp"><button class="form_btn" >커뮤니티</button></a></li>
+							</ul>
+							</header>
 							<!-- map-->
 								<section id="">
 									<div id="map">
-										
-										
 									</div>
-									
-									</span>
 								</section>
-
-							
 
 							
 						</div>
@@ -138,6 +183,29 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			function onClickSelect(e) {
+				  const isActive = e.currentTarget.className.indexOf("active") !== -1;
+				  if (isActive) {
+				    e.currentTarget.className = "select";
+				  } else {
+				    e.currentTarget.className = "select active";
+				  }
+				}
+
+				document.querySelector("#theme .select").addEventListener("click", onClickSelect);
+
+				function onClickOption(e) {
+				  const selectedValue = e.currentTarget.innerHTML;
+				  document.querySelector("#theme .text").innerHTML = selectedValue;
+				}
+
+				var optionList = document.querySelectorAll("#theme .option");
+				for (var i = 0; i < optionList.length; i++) {
+				  var option = optionList[i];
+				  option.addEventListener("click", onClickOption);
+				}
+			</script>
 
 	</body>
 </html>

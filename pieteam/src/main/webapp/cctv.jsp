@@ -141,77 +141,7 @@ var clickedOverlay = null;
 	}
 	
 	// 오버레이를 담을 리스트 생성
-	var overlay_list=[]
-	var marker_list=[]
-	var clickedOverlay = null;
-	// 마커를 생성합니다
-	for (var i = 0; i < positions.length; i ++) {
-	var marker = new kakao.maps.Marker({
-	  map : map,
-	  position: positions[i].latlng,
-	  image: markerImage // 마커이미지 설정 
-	
-	});
-
-	// 마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);  
-	
-	
-	// 마커 리스트에 마커들을 담음
-	marker_list.push(marker)
-	
-	 // 마커에 표시할 인포윈도우를 생성합니다 
-  var overlay = new kakao.maps.CustomOverlay({
-        content: positions[i].content,
-        map: map,
-        position: positions[i].latlng      
-    });
-	 
-  // 오버레이 리스트에 오버레이를 담음
-  overlay_list.push(overlay)
-
-  // 오버레이를 맵에 표시하지 않는다.
-  overlay.setMap(null)
-
-  // 마커를 클릭했을 때 커스텀 오버레이가 열리는 함수
-  /*       kakao.maps.event.addListener(marker, 'click', function() {
-  		var index = marker_list.indexOf(this);
-      	overlay_list[index].setMap(map); 
-  	});   */
-  	
-  kakao.maps.event.addListener(marker, 'click', function() {
-	    
-	  // 다른 마커를 클릭하면 기존의 커스텀 오버레이가 닫힘
-	  if (clickedOverlay) {   
-	        clickedOverlay.setMap(null);
-	    }
-	    
-	    var index = marker_list.indexOf(this);
-      	overlay_list[index].setMap(map); 
-	    clickedOverlay = overlay_list[index];
-	  });
-
-	}
-	// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-	function closeOverlay(num) {
-		overlay_list[num].setMap(null);     
-	}
-	
-	function setMarkers(map) {
-	    for (var i = 0; i < positions.length; i++) {
-	        marker_list[i].setMap(map);
-	    }            
-	}
-
-	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
-	function showMarkers() {
-		setMarkers(map);   
-	}
-
-	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
-	function hideMarkers() {
-	    setMarkers(null);    
-	}
+	 v
 
 </script>
 </div>

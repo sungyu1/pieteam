@@ -8,12 +8,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-<!--  		<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-			rel="stylesheet"> -->
-		<style>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<style>
+		.major{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		table>tr{
+			font-family: 'Noto Sans KR', sans-serif;
+		} 
+	</style>
+	
+	 	<style>
    body {
 	background-image: url('asset/img/bg.jpg');
 	padding-left: 200px;
@@ -22,7 +31,8 @@
 }
 
 .card-body {
-	background-color: whitesmoke;
+	background-color:rgba(173,212,0,0.25);
+	
 }
 
 p {
@@ -34,7 +44,16 @@ p {
 #date{
 	font-size : 20px;
 	text-align : right;
-} 
+}
+textarea {
+    width: 925px;
+    height: 6.25em;
+    border: none;
+    resize: none;
+  }  
+  li{
+  list-style: none;
+  }
 </style>
 </head>
 <jsp:useBean id="ReviewDAO" class="com.smhrd.model.ReviewDAO"/>
@@ -49,7 +68,7 @@ p {
 			<p id="date">작성일 : ${review.r_date}</p>
 		</div>
 		<div class="card-body" style="height: 300px">
-			<p align="center">${review.r_content}</span>
+			<p align="center">${review.r_content}
 		</div>
 	
 		<!-- 댓글작성 -->
@@ -58,9 +77,9 @@ p {
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><textarea class="form-control"
 							id="exampleFormControlTextarea1" rows="3"></textarea>
-						<button type="button" class="btn btn-dark mt-3" onclick="addReply()">post reply</button></li>
-						<li style="list-style: none; text-align: right"><a href="reviewList.jsp"><input type="button" value="뒤로가기" /></a>
-						<a href="#"><input type="button" value="글삭제"/></a></li>
+						<button type="button" class="btn btn-dark mt-3" onclick="addReply()" style="background-color:#1E552E; color: white !important;">post reply</button></li>
+						<li style="list-style: none; text-align: right"><a href="reviewList.jsp"><input type="button" value="back" /></a>
+						<a href="#"><input type="button" value="remove"/></a></li>
 				</ul>
 				<ul class="list-group list-group-flush" id="reply">
 					<c:forEach items="${commentList }" var="reply">

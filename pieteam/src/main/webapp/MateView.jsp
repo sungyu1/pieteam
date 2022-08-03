@@ -8,11 +8,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://kit.fontawesome.com/b163195086.js" crossorigin="anonymous"></script>
-<!--  		<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-			rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<style>
+		.major{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		table>tr{
+			font-family: 'Noto Sans KR', sans-serif;
+		} 
+	</style>
 		<style>
    body {
 	background-image: url('asset/img/bg.jpg');
@@ -22,7 +30,7 @@
 }
 
 .card-body {
-	background-color: whitesmoke;
+	background-color:rgba(173,212,0,0.25);
 }
 
 p {
@@ -34,7 +42,17 @@ p {
 #date{
 	font-size : 20px;
 	text-align : right;
-} 
+}
+
+textarea {
+    width: 925px;
+    height: 6.25em;
+    border: none;
+    resize: none;
+  }  
+  li{
+  list-style: none;
+  } 
 </style>
 </head>
 <jsp:useBean id="MateDAO" class="com.smhrd.model.MateDAO"/>
@@ -57,10 +75,10 @@ p {
 			<div class="card-body">
 				
 					<input type="text" name="mate_id" id="mate_id" placeholder="아이디를 입력하세요">
-					<button type="submit" class="btn btn-dark mt-3" id="mate" onclick="addReply()">메이트하기</button><!-- onclick="addReply()" -->
+					<button type="submit" class="btn btn-dark mt-3" id="mate" onclick="addReply()" style="background-color:#1E552E; color: white !important;">With Mate</button><!-- onclick="addReply()" -->
 				
-						<a href="schoolmateList.jsp"><input type="button" value="뒤로가기" /></a>
-						<a href="#"><input type="button" value="글삭제"/></a>
+						<a href="schoolmateList.jsp"><input type="button" value="back" /></a>
+						<a href="#"><input type="button" value="remove"/></a>
 			</div>
 		</div>
 	

@@ -8,6 +8,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+						<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<style>
+		.major{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		table>tr{
+			font-family: 'Noto Sans KR', sans-serif;
+		} 
+	</style>
+		
 	</head>
 <body>
 
@@ -25,10 +40,6 @@
 		</table>
 		</form>
 	
-		<!-- Footer -->
-		<footer id="footer">
-			<p &copy; class="copyright">&copy; 안.길</p>
-		</footer>
 
 
 		<!-- Scripts -->

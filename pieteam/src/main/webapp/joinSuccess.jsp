@@ -18,12 +18,12 @@
 	<!-- <div id="wrapper"> -->
 
 		<!-- Menu -->
-			<nav id="Update"> <font size="8">회원가입성공</font>
+			<nav id="Update"> <font size="8" style="text-align: center;">회원가입성공</font>
 				<br>
-				정보를 확인하세요<br>
+				<p style="text-align: center;">정보를 확인하세요</p><br>
 				<br>
 				
-				<table>
+				<table width="500px" height="500px">
 					<tr>
 						<td>ID</td>
 						<td><%=joinMember.getM_id() %></td>	
@@ -33,12 +33,8 @@
 						<td><%=joinMember.getM_name() %></td>	
 					</tr>
 				</table>
-			<a href="main.jsp"><input type="button" value="Main"></a> </nav>
+			<a href="main.jsp"><input type="button" value="Main"></a></nav>
 
-			<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy; 안.길</p>
-		</footer>
 	</div>
 	
 				<!-- Scripts -->

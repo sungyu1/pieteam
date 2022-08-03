@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -16,6 +17,9 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	</head>
 	<body class="generic">
+<%
+	Member joinMember = (Member)request.getAttribute("joinMember");
+%>
 
 	 	<div class="wrapper">
 			<div class="container">
@@ -31,7 +35,7 @@
 				 <!-- <select name="gender" required oninvalid="this.setCustomValidity('성별을 선택해주세요')" oninput="this.setCustomValidity('')"> --> 
 				 <!-- <button value="M">남</button> -->
 				 <!-- <button value="W">여</button> -->
-				 <label><input type="radio" name="gender" value="M"> 남자</label>
+				 <label><input type="radio" name="gender" value="M" required oninvalid="this.setCustomValidity('성별을 선택해주세요')" oninput="this.setCustomValidity('')"> 남자</label>
       			 <label><input type="radio" name="gender" value="W"> 여자</label>
 				 <!-- </select> -->
 				 <button type="submit" class="form_btn">sign In</button>
@@ -64,8 +68,8 @@
 				  <button id="signIn" class="overlay_btn">Sign In</button>
 				</div>
 				<div class="overlay-right">
-				  <h1>Sign Up</h1>
-				 
+				  <h2>회원가입 성공하셨습니다</h2>
+				 <p>ID : <%=joinMember.getM_id() %></p>
 				  <button id="signUp" class="overlay_btn">Sign Up</button>
 				</div>
 			  </div>

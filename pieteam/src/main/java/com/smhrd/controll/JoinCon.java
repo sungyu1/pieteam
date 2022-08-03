@@ -35,7 +35,7 @@ public class JoinCon extends HttpServlet {
 		
 		if(cnt>0) { // 회원가입 성공
 			System.out.println("회원가입 성공");
-			RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("joinS.jsp");
 			/* request.setAttribute("joinMember", vo); */
 			request.setAttribute("joinMember", vo);
 			rd.forward(request, response);

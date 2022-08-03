@@ -1556,7 +1556,7 @@ button,
   input[type="button"].primary,
   button.primary,
   .button.primary {
-    background-color: #f56a6a;
+    background-color: #1E552E;
     box-shadow: none;
     color: #ffffff !important; }
     input[type="submit"].primary:hover,
@@ -1903,7 +1903,7 @@ button,
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
     color: #7f888f;
-    content: '\f002';
+/*     content: '\f002'; */
     cursor: default;
     display: block;
     font-size: 1.5em;

@@ -1955,7 +1955,7 @@ button,
       background-color: #eff1f2;
       border-bottom: 0;
       margin: -2.22222em 0 4.44444em -2.22222em;
-      padding: 2.22222em;
+      padding: 30px;
       width: calc(100% + 4.44444em); }
   #sidebar .toggle {
     text-decoration: none;

@@ -56,7 +56,9 @@ body {
     bottom:-2px;
     width: 130px;
     height: 40px;
-    border: 2px solid #babdba;
+    /* border: 2px solid #babdba; */
+    border: 2px solid #f1f1f1;
+  	box-shadow: 1px 1px 1px #f1f1f1, 5px 5px 8px #e4e4e4;
     margin:0;
     text-align: center;
     -webkit-box-sizing: border-box;
@@ -118,7 +120,8 @@ body {
   bottom:-2px;
   width: 130px;
   height: 40px;
-  border: 2px solid #babdba;
+  border: 2px solid #eff1fe;
+  box-shadow: 1px 1px 1px #e3e4ee, 5px 5px 8px #d2d3d6;
   margin:0;
   text-align: center;
   -webkit-box-sizing: border-box;

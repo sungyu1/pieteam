@@ -128,9 +128,8 @@
                     <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색녹색.png"></button> 
                 </form>
             </div>
-     
-      <button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색.png"></button></span>
-      <button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안전경로</span><span><img src="./images/안전경로.png"></button></span>
+      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색.png"></button></span>
+      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안전경로</span><span><img src="./images/안전경로.png"></button></span>
         </div>
 								</section>
 			<div style="height: 600px; overflow: auto;">
@@ -976,7 +975,7 @@ function removeAllChildNods(el) {
         OverlaySaferoad = new kakao.maps.CustomOverlay({
             map: map,
             content: content,
-            position: new kakao.maps.LatLng(35.150512, 126.909843)
+            position: new kakao.maps.LatLng(35.147523, 126.915237)
         });
     }
     function removesaferoad_di() {
@@ -1004,7 +1003,8 @@ function removeAllChildNods(el) {
         OverlayFastroad = new kakao.maps.CustomOverlay({
             map: map,
             content: content,
-            position: new kakao.maps.LatLng(35.147523, 126.915237)
+            position: new kakao.maps.LatLng(35.150512, 126.909843)
+            
         });
     }
     function removefastroad_di() {

@@ -17,4 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectOne" parameterType="int" resultType="com.smhrd.model.Mate">
 		select * from tbl_schoolmate where mate_seq=#{mate_seq}
 	</select>
+	
+	<!-- 개인정보수정 -->
+	<update id="updateMate" parameterType="com.smhrd.model.Mate">
+		update tbl_schoolmate set mate_id=#{mate_id} where mate_seq=#{mate_seq} 
+	</update>
 </mapper>

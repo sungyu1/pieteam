@@ -112,10 +112,15 @@ function next_list(startRow,startPage){
 function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
-		
-		$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
-		$('#writer'+i).text(data_list[i].writer);
-		$('#mate'+i).text(data_list[i].mate);
+		if(data_list[i].mate == " "){
+			$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+			$('#writer'+i).text(data_list[i].writer);
+			$('#mate'+i).text(data_list[i].mate);
+		}else{
+			$('#name'+i).text(data_list[i].name);
+			$('#writer'+i).text(data_list[i].writer);
+			$('#mate'+i).text(data_list[i].mate);
+		}
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
@@ -184,9 +189,15 @@ function print_list(data_list){
 		$('#writer'+i).show();
 		$('#mate'+i).show();
 		
- 		$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
-		$('#writer'+i).text(data_list[i].writer);
-		$('#mate'+i).text(data_list[i].mate);
+		if(data_list[i].mate == " "){
+	 		$('#name'+i).html("<a href='MateView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+			$('#writer'+i).text(data_list[i].writer);
+			$('#mate'+i).text(data_list[i].mate);
+		}else{
+			$('#name'+i).text(data_list[i].name);
+			$('#writer'+i).text(data_list[i].writer);
+			$('#mate'+i).text(data_list[i].mate);
+		}
 	}
 }
 

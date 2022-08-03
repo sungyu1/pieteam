@@ -23,6 +23,12 @@ public class Mate {
 	@NonNull
 	private String mate_name;
 	
+	public Mate(BigDecimal mate_seq, String mate_id) {
+		super();
+		this.mate_seq = mate_seq;
+		this.mate_id = mate_id;
+	}
+	
 	
 	
 }

@@ -57,4 +57,24 @@ public class MateDAO {
 		}
 		return vo;
 	}
+	
+	// 메이트 업데이트
+	// 개인정보수정
+	public int updateMate(Mate vo) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.model.MateDAO.updateMate",vo);
+			
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

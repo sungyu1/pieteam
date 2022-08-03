@@ -117,7 +117,7 @@
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
-      출발지  <input type="text" id="start" name="keyword" size="15"> 
+      출발지  <button type="button" input type="text" id="start" name="keyword" size="15"></button>
       도착지  <input type="text" id="end" name="keyword" size="15"> 
       <button type="button" id="reset" onclick="reset()"><img src="./images/재검색1.png"></button>
       <button type="button" id="saferoad" onclick="saferoad()"><img src="./images/moving.png"></button> 

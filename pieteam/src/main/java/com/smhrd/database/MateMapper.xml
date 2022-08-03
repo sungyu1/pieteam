@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.smhrd.model.MateDAO">
 	<!-- 리뷰 작성 -->
 	<insert id="insertMate" parameterType="com.smhrd.model.Mate">
-		insert into tbl_schoolmate values (tbl_schoolmate_seq.nextval, null, sysdate, #{m_id}, #{mate_memo}, #{mate_name})
+		insert into tbl_schoolmate values (tbl_schoolmate_seq.nextval, ' ', sysdate, #{m_id}, #{mate_memo}, #{mate_name})
 	</insert>
 	
 	<!-- 리뷰 리스트 페이징 -->

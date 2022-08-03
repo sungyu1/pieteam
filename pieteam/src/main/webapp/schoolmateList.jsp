@@ -16,7 +16,7 @@
 <tr>
 <td colspan="2">
 <a href="MateWrite.jsp" class="button next scrolly">글작성</a>
-<a href="reviewWrite.jsp" class="button next scrolly">리뷰게시판</a>
+<a href="reviewList.jsp" class="button next scrolly">리뷰게시판</a>
 <a href="#" class="button next scrolly">위험지역등록</a>
 </td>
 <td><a href="main.jsp" class="button next scrolly">Main</a></td>

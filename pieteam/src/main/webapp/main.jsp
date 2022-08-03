@@ -64,18 +64,19 @@
 					
 
 							<%if(loginMember!=null){ %>
-								<a href="update.jsp" style="color:black"><h5>개인정보수정</h5></a>
-								<a href="LogoutCon" style="color:black"><h5>Logout</h5></a>
+								<div style="text-align: right;">
+								<a href="update.jsp" style="color:black"><span>개인정보수정</span></a>
+								<a href="LogoutCon" style="color:black"><span>Logout</span></a>
+								</div>
 								<%if(loginMember.getM_id().equals("admin")){ %>
 									<header id="header">
 										<ul class="icons">
 											<li><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></li>
-											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></a></li>
-											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></a></li>
-											<li><a href="#"><button class="form_btn" onclic
-											k="changeIframe('selectFire.jsp')">소방서관리</button></a></li>
-											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></a></li>
-											<li><a href="#"><button class="form_btn" onclick="changeIframe('selectMember.jsp')">커뮤니티관리</button></a></li>
+											<li><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></li>
+											<li><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></li>
+											<li><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></li>
+											<li><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></li>
+											<li><button class="form_btn" onclick="changeIframe('selectReview.jsp')">커뮤니티관리</button></li>
 										</ul>
 									</header>
 								<%}else{ %>
@@ -91,7 +92,7 @@
 									</header>
 								<%} %>
 							<%}else{ %>								
-								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
+								<div style="text-align: right;"><a href="login.jsp" style="color:black; text-decoration: none;"><span>Login</span></a></div>
 								<header id="header">
 								<ul class="icons">
 									<li><a href="main.jsp"><button class="form_btn" ><img id="img" src="./images/map.png"></button></a></li>

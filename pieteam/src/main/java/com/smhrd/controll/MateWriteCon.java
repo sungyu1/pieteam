@@ -27,7 +27,7 @@ public class MateWriteCon extends HttpServlet {
 		String name = request.getParameter("name");
 		String mate = request.getParameter("mate");
 		
-		Mate mateVO = new Mate(mate, id, name);
+		Mate mateVO = new Mate(id, mate, name);
 		MateDAO dao = new MateDAO();
 		int cnt = dao.insertMate(mateVO);
 		

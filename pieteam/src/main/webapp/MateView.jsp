@@ -52,14 +52,13 @@ p {
 			<p align="center">${mate.mate_memo}</span>
 		</div>
 	
-		<%-- <!-- 댓글작성 -->
+		 <!-- 메이트 등록 -->
 		<div class="card mb-2">
 			<div class="card-body">
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item"><textarea class="form-control"
-							id="exampleFormControlTextarea1" rows="3"></textarea>
-						<button type="button" class="btn btn-dark mt-3" onclick="addReply()">post reply</button></li>
-						<li style="list-style: none; text-align: right"><a href="reviewList.jsp"><input type="button" value="뒤로가기" /></a>
+					<li class="list-group-item"><input type="text" name="mate_id">
+						<button type="button" class="btn btn-dark mt-3" id="mate_id" onclick="addReply()">메이트하기</button></li>
+						<li style="list-style: none; text-align: right"><a href="MatewList.jsp"><input type="button" value="뒤로가기" /></a>
 						<a href="#"><input type="button" value="글삭제"/></a></li>
 				</ul>
 				<ul class="list-group list-group-flush" id="reply">
@@ -68,13 +67,13 @@ p {
 					</c:forEach>
 				</ul>
 			</div>
-		</div> --%>
+		</div>
 	
 	</form>
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script>
 		function addReply() {
-			let ta = $('textarea').val()
+			let ta = $('#mate_id').val()
 			
 			$.ajax({
 				// 요청 경로

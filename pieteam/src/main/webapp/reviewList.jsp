@@ -7,17 +7,33 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/reviewListta.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<style>
+		.major{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		.button next scrolly{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+	</style>
+
+
 
 </head>
 <body>
 <nav>
 <h2 class="major" style="text-align: center;">리뷰게시판</h2>
-<table class="table" style="width: 1000px; height: 600px; margin: auto">
+<table class="table" >
 <tr>
 <td colspan="2">
 <a href="reviewWrite.jsp" class="button next scrolly">글작성</a>
 <a href="schoolmateList.jsp" class="button next scrolly">등교메이트 구하기</a>
-<a href="#" class="button next scrolly">위험지역등록</a>
 </td>
 <td><a href="main.jsp" class="button next scrolly">Main</a></td>
 </tr>

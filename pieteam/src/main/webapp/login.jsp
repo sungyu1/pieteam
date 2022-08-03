@@ -17,7 +17,7 @@
 	</head>
 	<body class="generic">
 
-		<div class="wrapper">
+	 	<div class="wrapper">
 			<div class="container">
 			  <div class="sign-up-container">
 				<form action="JoinCon" method="post">

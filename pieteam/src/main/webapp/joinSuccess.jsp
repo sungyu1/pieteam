@@ -15,7 +15,7 @@
 %>
 
 	<!-- Wrapper -->
-	<div id="wrapper">
+	<!-- <div id="wrapper"> -->
 
 		<!-- Menu -->
 			<nav id="Update"> <font size="8">회원가입성공</font>

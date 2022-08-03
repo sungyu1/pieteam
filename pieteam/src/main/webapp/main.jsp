@@ -13,6 +13,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main1.css" />
+		<link rel="stylesheet" href="assets/css/safepath.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	</head>
 	<style>
 		#map{
@@ -53,12 +56,12 @@
 								<%}else{ %>
 									<header id="header">
 									<ul class="icons">
-										<li><a href="All.jsp"><button class="form_btn" ><img src="./images/map.png"></button></a></li>
-										<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
-										<li><a hre f="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
-										<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
-										<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
-										<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+										<li><a href="main.jsp"><button class="custom-btn btn-12"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
+										<li><a href="cctv.jsp"><button class="custom-btn btn-12"><span>cctv</span><span><img src="./images/cctv.png"></span></button></a></li>
+										<li><a href="police.jsp"><button  class="custom-btn btn-12"><span>경찰</span><span><img src="./images/경찰.png"></span></button></a></li>
+										<li><a href="fire.jsp"><button class="custom-btn btn-12"><span>소방서</span><span><img src="./images/소방서.png"></span></button></a></li>
+										<li><a href="safe.jsp"><button class="custom-btn btn-12"><span>안전</span><span><img src="./images/학교.png"></span></button></a></li>
+										<li><a href="reviewList.jsp"><button class="custom-btn btn-12"><span>전체보기</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
 									</ul>
 									</header>
 								<%} %>
@@ -66,19 +69,14 @@
 								<a href="login.jsp" style="color:black; text-decoration: none; text-align: right"><h5>Login</h5></a>
 								<header id="header">
 								<ul class="icons">
-									<li><a href="All.jsp"><button class="form_btn"><img src="./images/map.png"></button></a></li>
-									<li><a href="cctv.jsp"><button class="form_btn" ><img src="./images/cctv.png"></button></a></li>
-									<li><a href="police.jsp"><button class="form_btn" ><img src="./images/경찰2.png"></button></a></li>
-									<li><a href="fire.jsp"><button class="form_btn" ><img src="./images/소방서.png"></button></a></li>
-									<li><a href="safe.jsp"><button class="form_btn" ><img src="./images/학교.png"></button></a></li>
-									<li><a href="reviewList.jsp"><button class="form_btn" ><img src="./images/커뮤니티.png"></button></a></li>
+										<li><a href="main.jsp"><button class="custom-btn btn-12"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
+										<li><a href="cctv.jsp"><button class="custom-btn btn-12"><span>cctv</span><span><img src="./images/cctv.png"></span></button></a></li>
+										<li><a href="police.jsp"><button  class="custom-btn btn-12"><span>경찰</span><span><img src="./images/경찰.png"></span></button></a></li>
+										<li><a href="fire.jsp"><button class="custom-btn btn-12"><span>소방서</span><span><img src="./images/소방서.png"></span></button></a></li>
+										<li><a href="safe.jsp"><button class="custom-btn btn-12"><span>안전</span><span><img src="./images/학교.png"></span></button></a></li>
+										<li><a href="reviewList.jsp"><button class="custom-btn btn-12"><span>전체보기</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
 								</ul>
 								</header>
-								<script>
-									function mouseOut(){
-										$("#img").attr('src','./images/경찰서.png')
-									}
-								</script>
 							<%} %>
 							<!-- map-->
 							<%if(loginMember != null){ %>

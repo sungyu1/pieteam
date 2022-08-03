@@ -131,7 +131,7 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 { 
-  color: #3d4449;
+  color: #1E552E;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.5;
@@ -1057,8 +1057,8 @@ textarea {
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
-    border-color: #f56a6a;
-    box-shadow: 0 0 0 1px #f56a6a; }
+    border-color: #ADDE40; /*검색색깔*/
+    box-shadow: 0 0 0 1px #ADDE40 } /*검색색깔*/
 
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
@@ -1506,7 +1506,8 @@ button,
   height: 3.5em;
   letter-spacing: 0.075em;
   line-height: 3.5em;
-  padding: 0 2.25em;
+  /* padding: 0 2.25em; */
+  padding: 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -1901,7 +1902,7 @@ button,
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
     color: #7f888f;
-/*     content: '\f002'; */
+    content: '\f002';
     cursor: default;
     display: block;
     font-size: 1.5em;
@@ -2078,7 +2079,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-   border-bottom: solid 5px #009474; /* 버튼아래줄 */
+  border-bottom: solid 5px #009474; /* 버튼아래줄*/
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {

@@ -64,9 +64,9 @@ button {
   box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
 }
 .overlay_btn {
-  background-color: #99B0A7;
+  background-color: #ADDE40;
   color: #fff;
-  box-shadow: -1px -1px 10px #99b0a7, 5px 5px 8px #507158;
+  box-shadow: -1px -1px 10px #2a463b, 5px 5px 8px #141414;
 }
 .sign-in-container {
   position: absolute;
@@ -94,7 +94,7 @@ button {
   width: 50%;
   height: 100%;
   opacity: 0;
-  background-color: #078ACA;
+  background-color: #276480;
   color: #fff;
   transition: all 0.5s;
 }
@@ -108,7 +108,7 @@ button {
   right: 0;
   width: 50%;
   height: 100%;
-  background-color: #009474;
+  background-color: #1E552E;
   color: #fff;
   transition: all 0.5s;
 }

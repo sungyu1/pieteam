@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 리뷰 리스트 페이징 -->
 	<select id="selectReviewList" resultType="com.smhrd.model.Review" parameterType="int">
-		select * from tbl_review where r_seq>=#{r_seq} order by r_seq
+		select * from tbl_review where r_seq>=#{r_seq} order by r_seq desc
 	</select>
 	
 	<!-- 리뷰 하나 보여주기 -->

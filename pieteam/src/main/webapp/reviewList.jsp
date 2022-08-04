@@ -147,7 +147,7 @@ function list_write(data_list){
 //한 페이지 에는 페이지안에 속해있는 페이지 블럭에 맞는 게시물(레코드) 수가 있기 때문이다.
 //--->한 페이지 가 가지고 있는 배열안에서 그때그때 해당페이지 블럭을 클릭 한다면 거기 범위에 맞는 데이터를 가져오기 위해 슬라이싱 해줄 필요가 있다
 function page(currentPage){
-	
+		
 	var startNum = (currentPage-1)*10+1;
 	var endNum = currentPage*10;
 	
@@ -168,12 +168,14 @@ function page(currentPage){
 		}
 		
 	}
+	console.log(start_index, end_index);
 	
 	var new_arr = new Array();
 	
 	if(check != 1){
 		end_index=arr.length-1; // endNum의 는 배열의 마지막 인덱스 번호이다. 
 	}
+	
 		
 	new_arr = arr.slice(start_index, end_index+1);	
 	
@@ -210,12 +212,10 @@ function print_list(data_list){
    		}  */   
    		
    		var cnt=0;
-   		$('#btn').click(function(){
-   			alert('클릭');
-   		});
+
    		$('#name'+i).html("<a id='btn' href='reviewView.jsp?num="+data_list[i].num+"' onclick='incrementClick()'>"+data_list[i].name+"</a>");
    		$('#writer'+i).text(data_list[i].writer);
-   		$('#view'+i).text(cnt);
+   		$('#view'+i).text(1);
    		
    		
    		function incrementClick() {

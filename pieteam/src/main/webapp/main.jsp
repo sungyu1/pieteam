@@ -171,8 +171,8 @@
 		                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
 		                </form>
 		            </div>
-		      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
-		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로1.png"></button></span>
+		      		<!-- <button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
+		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로1.png"></button></span> -->
 		        </div>
 										</section>
 					<div style="height: 600px; overflow: auto;">
@@ -685,27 +685,35 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 } */
 
 function searchStart(){
-    var str_keyword = document.getElementById('start').value;
-    if (!str_keyword.replace(/^\s+|\s+$/g, '')) {
-        alert('키워드를 입력해주세요!');
-        return false;
-    }
-    keyword00= "광주광역시"+str_keyword
-    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch(keyword00, placesSearchCB);
-    searchState = 'start';
+	if(<%=loginMember %> != null){
+	    var str_keyword = document.getElementById('start').value;
+	    if (!str_keyword.replace(/^\s+|\s+$/g, '')) {
+	        alert('키워드를 입력해주세요!');
+	        return false;
+	    }
+	    keyword00= "광주광역시"+str_keyword
+	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+	    ps.keywordSearch(keyword00, placesSearchCB);
+	    searchState = 'start';
+	}else{
+		alert('로그인을 해주세요')
+	}
 }
 
 function searchEnd(){
-    var end_keyword = document.getElementById('end').value;
-    if (!end_keyword.replace(/^\s+|\s+$/g, '')) {
-        alert('키워드를 입력해주세요!');
-        return false;
-    }
-    keyword01= "광주광역시"+end_keyword
-    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-    ps.keywordSearch(keyword01, placesSearchCB);
-    searchState = 'end';
+	if(<%=loginMember %> != null){
+	    var end_keyword = document.getElementById('end').value;
+	    if (!end_keyword.replace(/^\s+|\s+$/g, '')) {
+	        alert('키워드를 입력해주세요!');
+	        return false;
+	    }
+	    keyword01= "광주광역시"+end_keyword
+	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+	    ps.keywordSearch(keyword01, placesSearchCB);
+	    searchState = 'end';
+	}else{
+		alert('로그인을 해주세요')
+	}
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다

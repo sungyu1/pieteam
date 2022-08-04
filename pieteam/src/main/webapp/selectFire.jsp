@@ -22,7 +22,8 @@
 								<td>위도</td>							
 								<td>경도</td>							
 								<td>전화번호</td>							
-								<td>관리자 아이디</td>							
+								<td>관리자 아이디</td>	
+								<th><a href="#">등록</a></th>						
 							</tr>
 							 
 						<c:forEach begin="0" end="100" step="1" varStatus="status">

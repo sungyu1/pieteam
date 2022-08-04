@@ -117,37 +117,69 @@
 											$('#iframe').attr('src',url);
 										}
 									</script>
-							<%} } %>
+								<%}else{%>
+																<!-- map-->
+								<section id="">
+													
+							<div id="map" style="width:1698px; height:800px;">
+							<div class="map_wrap">
+							</div>
+										</section>
+								</div>
+							</div>
+						<!-- Sidebar -->
+							<div id="sidebar">
+								<div class="inner">
+								
+										<section id="search" class="alt">
+											<div>
+		                <form>
+		                     <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
+		                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
+		                     <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
+		                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
+		                </form>
+		            </div>
+		      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
+		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로.png"></button></span>
+		        </div>
+										</section>
+					<div style="height: 600px; overflow: auto;">
+					<ul id="placesList"></ul>
+		        	<div id="pagination"></div>
+					</div>
+								<%}}else{ %>
 							<!-- map-->
 								<section id="">
+													
+							<div id="map" style="width:1698px; height:800px;">
+							<div class="map_wrap">
+							</div>
+										</section>
+								</div>
+							</div>
+						<!-- Sidebar -->
+							<div id="sidebar">
+								<div class="inner">
 								
-<div id="map" style="width:1698px; height:800px;">
-<div class="map_wrap">
-</div>
-								</section>
-						</div>
+										<section id="search" class="alt">
+											<div>
+		                <form>
+		                     <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
+		                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
+		                     <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
+		                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
+		                </form>
+		            </div>
+		      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
+		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로.png"></button></span>
+		        </div>
+										</section>
+					<div style="height: 600px; overflow: auto;">
+					<ul id="placesList"></ul>
+		        	<div id="pagination"></div>
 					</div>
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-						
-								<section id="search" class="alt">
-									<div>
-                <form>
-                     <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
-                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
-                     <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
-                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
-                </form>
-            </div>
-      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
-      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로.png"></button></span>
-        </div>
-								</section>
-			<div style="height: 600px; overflow: auto;">
-			<ul id="placesList"></ul>
-        	<div id="pagination"></div>
-			</div>
+					<%} %>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
 <script>
 // 마커를 담을 배열입니다

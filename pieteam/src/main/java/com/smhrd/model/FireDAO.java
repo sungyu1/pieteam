@@ -27,6 +27,24 @@ public class FireDAO {
 			}
 			return list;
 		}
+		
+		// 관리자의 소방서 삭제
+		public int deleteFire(int num) {
+			int cnt=0;
+			try {
+				cnt = sqlSession.delete("com.smhrd.model.FireDAO.deleteFire", num);
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return cnt;
+		}
 	}
 
 

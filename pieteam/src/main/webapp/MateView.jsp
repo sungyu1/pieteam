@@ -78,7 +78,7 @@ textarea {
 					<button type="submit" class="btn btn-dark mt-3" id="mate" onclick="addReply()" style="background-color:#1E552E; color: white !important;">With Mate</button><!-- onclick="addReply()" -->
 				
 						<a href="schoolmateList.jsp"><input type="button" value="back" /></a>
-						<a href="#"><input type="button" value="remove"/></a>
+						<a href="DeleteMate?num=${param.num }"><input type="button" value="remove"/></a>
 			</div>
 		</div>
 	
@@ -98,9 +98,15 @@ textarea {
 				success : function(data) {
 					// alert(data) -> success / fail
 					/* $('#reply').prepend('<li class="list-group-item"><span>'+ta+' / ${loginMember.m_id}</span></li>') */
-					$("#mate").hide();
-					alter("메이트 등록 성공!")
-					$(location).attr('href', 'schoolmateList.jsp')
+					const res = $.trim(data);
+					if(res =='success'){
+						$("#mate").hide();
+						alert("메이트 매치 성공 !")
+						location.href='schoolmateList.jsp'
+					}else{
+						alert("아이디를 확인해주세요")
+					}
+
 				},
 				error : function() {
 					alert("통신실패")

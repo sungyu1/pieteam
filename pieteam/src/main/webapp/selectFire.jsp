@@ -33,7 +33,8 @@
 						      <td id="lat${status.index }"></td>					
 						      <td id="lon${status.index }"></td>					
 						      <td id="tel${status.index }"></td>					
-						      <td id="ad_id${status.index }"></td>					
+						      <td id="ad_id${status.index }"></td>
+						      <td id="delete${status.index }"></td>					
 						  </tr>
 					  	</c:forEach>
 					  	<tr>
@@ -120,6 +121,7 @@ function list_write(data_list){
 		$('#lon'+i).text(data_list[i].lon);
 		$('#tel'+i).text(data_list[i].tel);
 		$('#ad_id'+i).text(data_list[i].ad_id);
+		$('#delete'+i).html("<a href='DeleteFire?num="+data_list[i].num+"'>삭제</a>");
 	}
 	
 	for(var i =data_list.length;i<100;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
@@ -129,6 +131,7 @@ function list_write(data_list){
 		$('#lon'+i).hide();
 		$('#tel'+i).hide();
 		$('#ad_id'+i).hide();
+		$('#delete'+i).hide();
 	}
 	
 }
@@ -192,6 +195,7 @@ function print_list(data_list){
 		$('#lon'+i).show();
 		$('#tel'+i).show();
 		$('#ad_id'+i).show();
+		$('#delete'+i).show();
 		
 /* 		$('#name'+i).html("<a href='boardView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>"); */
 		$('#name'+i).text(data_list[i].name);
@@ -200,6 +204,7 @@ function print_list(data_list){
 		$('#lon'+i).text(data_list[i].lon);
 		$('#tel'+i).text(data_list[i].tel);
 		$('#ad_id'+i).text(data_list[i].ad_id);
+		$('#delete'+i).html("<a href='DeleteFire?num="+data_list[i].num+"'>삭제</a>");
 	}
 }
 

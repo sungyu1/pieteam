@@ -57,10 +57,29 @@ public class PoliceDAO {
 	}
 	
 	// 관리자의 경찰서 삭제
-	public int deletePolice(BigDecimal num) {
+	public int deletePolice(int num) {
 		int cnt=0;
 		try {
 			cnt = sqlSession.delete("com.smhrd.model.PoliceDAO.deletePolice", num);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
+	// 경찰서 등록
+	public int insertP(Police vo) {
+		int cnt=0;
+		try {
+			cnt = sqlSession.insert("com.smhrd.model.PoliceDAO.insertP", vo);
+			
 			if(cnt>0) {
 				sqlSession.commit();
 			}else {

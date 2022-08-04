@@ -43,6 +43,24 @@ public class CCTVDAO {
 		return list;
 	}
 	
+	// 관리자의 cctv 삭제
+	public int deleteCctv(int num) {
+		int cnt=0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.model.CCTVDAO.deleteCctv", num);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	
 //	public List<CCTV> selectAll() {
 //		List<CCTV> name = null;
 //		try {

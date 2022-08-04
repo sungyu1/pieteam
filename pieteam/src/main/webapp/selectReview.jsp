@@ -13,9 +13,8 @@
 </head>
 <body>
 <nav>
-<h2 class="major" style="text-align:center">리뷰</h2>
-<a href="#" class="button next scrolly">등교메이트 관리</a>
-<a href="#" class="button next scrolly">위험지역 관리</a>
+<h2 class="major" style="text-align:center">리뷰 관리</h2>
+<a href="selectMate.jsp" class="button next scrolly">등교메이트 관리</a>
 <table class="table">
   <tr>
       <th>글 제목</th>

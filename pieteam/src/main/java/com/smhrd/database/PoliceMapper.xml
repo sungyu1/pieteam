@@ -9,7 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 관리자의 경찰서 삭제 -->
-	<delete id="deletePolice" parameterType="BigDecimal">
+	<delete id="deletePolice" parameterType="int">
 		delete from tbl_police where p_seq=#{p_seq}
 	</delete>
+	
+	<!-- 경찰서 등록 -->
+	<insert id="insertP" parameterType="com.smhrd.model.Police">
+		insert into tbl_police values(TBL_POLICE_SEQ.nextval, #{p_name}, #{p_addr}, #{p_lat}, #{p_lon}, #{p_tel}, 'admin')
+	</insert>
 </mapper>

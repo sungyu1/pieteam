@@ -3,9 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.model.FireDAO">
-	<!-- 경찰서 페이징 -->
+	<!-- 소방서 페이징 -->
 	<select id="selectFireList" resultType="com.smhrd.model.Fire" parameterType="int">
 		select * from tbl_firestation where f_seq>=#{f_seq} order by f_seq
 	</select>
 	
+	<!-- 관리자의 소방서 삭제 -->
+	<delete id="deleteFire" parameterType="int">
+		delete from tbl_firestation where f_seq=#{f_seq}
+	</delete>
 </mapper>

@@ -26,6 +26,24 @@ public class SafeDAO {
 				}
 				return list;
 			}
+			
+			// 관리자의 보호구역 삭제
+			public int deleteSafe(int num) {
+				int cnt=0;
+				try {
+					cnt = sqlSession.delete("com.smhrd.model.SafeDAO.deleteSafe", num);
+					if(cnt>0) {
+						sqlSession.commit();
+					}else {
+						sqlSession.rollback();
+					}
+				}catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					sqlSession.close();
+				}
+				return cnt;
+			}
 		}
 
 

@@ -79,7 +79,7 @@ textarea {
 							id="exampleFormControlTextarea1" rows="3"></textarea>
 						<button type="button" class="btn btn-dark mt-3" onclick="addReply()" style="background-color:#1E552E; color: white !important;">post reply</button></li>
 						<li style="list-style: none; text-align: right"><a href="reviewList.jsp"><input type="button" value="back" /></a>
-						<a href="#"><input type="button" value="remove"/></a></li>
+						<a href="DeleteReview?num=${param.num }"><input type="button" value="remove"/></a></li>
 				</ul>
 				<ul class="list-group list-group-flush" id="reply">
 					<c:forEach items="${commentList }" var="reply">

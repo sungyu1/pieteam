@@ -8,4 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from tbl_safezone where sz_seq>=#{sz_seq} order by sz_seq
 	</select>
 	
+	<!-- 관리자의 보호구역 삭제 -->
+	<delete id="deleteSafe" parameterType="int">
+		delete from tbl_safezone where sz_seq=#{sz_seq}
+	</delete>
 </mapper>

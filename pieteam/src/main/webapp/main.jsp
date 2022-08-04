@@ -106,6 +106,18 @@
 								</ul>
 								</header>
 							<%} %>
+							<%if(loginMember !=null){
+								if(loginMember.getM_id().equals("admin")) {%>
+									<div>
+										<iframe src="selectMember.jsp" id="iframe" style="width: 1698px; height: 600px; margin-top: 50px;"></iframe>
+									</div>
+									
+									<script>
+										function changeIframe(url){
+											$('#iframe').attr('src',url);
+										}
+									</script>
+							<%} } %>
 							<!-- map-->
 								<section id="">
 								

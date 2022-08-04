@@ -22,8 +22,9 @@
       <th>경도</th>
       <th>전화번호</th>
       <th>관리자 아이디</th>
+      <th><a href="insertP.jsp">등록</a></th>
   </tr>
-  <c:forEach begin="0" end="10" step="1" varStatus="status">  
+  <c:forEach begin="0" end="15" step="1" varStatus="status">  
 	  <tr>
 		  <td id="name${status.index}"></td>
 	      <td id="addr${status.index }"></td>
@@ -31,7 +32,7 @@
 	      <td id="lon${status.index }"></td>					
 	      <td id="tel${status.index }"></td>					
 	      <td id="ad_id${status.index }"></td>	
-<%-- 	      <td><a href="DeletePoliceCon?num=num${param.num}">삭제</a></td>	 --%>	
+	      <td id="delete${status.index }"></td>	
 	  </tr>
   </c:forEach>
   <tr>
@@ -55,7 +56,7 @@ next_list(1,1);
 
 var arr=null;
 var pageSize = 3;
-var maxRow=10;
+var maxRow=15;
 
 
 function button_create(data_list,startPage){
@@ -121,6 +122,7 @@ function list_write(data_list){
 		$('#lon'+i).text(data_list[i].lon);
 		$('#tel'+i).text(data_list[i].tel);
 		$('#ad_id'+i).text(data_list[i].ad_id);
+ 		$('#delete'+i).html("<a href='DeletePoliceCon?num="+data_list[i].num+"'>삭제</a>");
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
@@ -130,6 +132,7 @@ function list_write(data_list){
 		$('#lon'+i).hide();
 		$('#tel'+i).hide();
 		$('#ad_id'+i).hide();
+		$('#delete'+i).hide();
 	}
 	
 }
@@ -140,8 +143,8 @@ function list_write(data_list){
 //--->한 페이지 가 가지고 있는 배열안에서 그때그때 해당페이지 블럭을 클릭 한다면 거기 범위에 맞는 데이터를 가져오기 위해 슬라이싱 해줄 필요가 있다
 function page(currentPage){
 	
-	var startNum = (currentPage-1)*10+1;
-	var endNum = currentPage*10;
+	var startNum = (currentPage-1)*15+1;
+	var endNum = currentPage*15;
 	
 	var start_index=0;
 	var end_index=0;
@@ -186,13 +189,14 @@ function page(currentPage){
 
 //해당 게시물을 출력한다
 function print_list(data_list){
-	for(var i=0;i<10;i++){
+	for(var i=0;i<15;i++){
 		$('#name'+i).show();
 		$('#addr'+i).show();
 		$('#lat'+i).show();
 		$('#lon'+i).show();
 		$('#tel'+i).show();
 		$('#ad_id'+i).show();
+		$('#delete'+i).show();
 		
 /* 		$('#name'+i).html("<a href='boardView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>"); */
 		$('#name'+i).text(data_list[i].name);
@@ -201,6 +205,7 @@ function print_list(data_list){
 		$('#lon'+i).text(data_list[i].lon);
 		$('#tel'+i).text(data_list[i].tel);
 		$('#ad_id'+i).text(data_list[i].ad_id);
+		$('#delete'+i).html("<a href='DeletePoliceCon?num="+data_list[i].num+"'>삭제</a>");
 	}
 }
 

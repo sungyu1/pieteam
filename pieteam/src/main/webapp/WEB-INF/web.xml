@@ -111,6 +111,42 @@
   	<description></description>
   	<servlet-class>com.smhrd.controll.MateCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DeleteMate</servlet-name>
+  	<display-name>DeleteMate</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeleteMate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteReview</servlet-name>
+  	<display-name>DeleteReview</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeleteReview</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteSafe</servlet-name>
+  	<display-name>DeleteSafe</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeleteSafe</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteFire</servlet-name>
+  	<display-name>DeleteFire</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeleteFire</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteCctv</servlet-name>
+  	<display-name>DeleteCctv</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.DeleteCctv</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertP</servlet-name>
+  	<display-name>insertP</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controll.insertP</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -182,5 +218,29 @@
   <servlet-mapping>
   	<servlet-name>MateCon</servlet-name>
   	<url-pattern>/MateCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteMate</servlet-name>
+  	<url-pattern>/DeleteMate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteReview</servlet-name>
+  	<url-pattern>/DeleteReview</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteSafe</servlet-name>
+  	<url-pattern>/DeleteSafe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteFire</servlet-name>
+  	<url-pattern>/DeleteFire</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteCctv</servlet-name>
+  	<url-pattern>/DeleteCctv</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertP</servlet-name>
+  	<url-pattern>/insertP</url-pattern>
   </servlet-mapping>
 </web-app>

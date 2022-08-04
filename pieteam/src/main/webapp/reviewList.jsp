@@ -129,14 +129,15 @@ function list_write(data_list){
 	
 	for(var i =0 ; i<data_list.length;i++){//jquery 문을통해 태그안의 내용을 바꾸어준다 --> .text()사용
 		
-		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
+		$('#name'+i).html("<a id='btn' href='reviewView.jsp?num="+data_list[i].num+"' onclick='incrementClick()'>"+data_list[i].name+"</a>");
 		$('#writer'+i).text(data_list[i].writer);
 		$('#view'+i).text(0);
 	}
 	
 	for(var i =data_list.length;i<10;i++){//jsonArray타입의 객체의 갯수가 10개보다 적을경우 데이터가 들어가지 않는 행은 안보임 처리를 해준다
-		$('#name'+i).hide(); 
+		$('#name'+i).hide();
 		$('#writer'+i).hide();
+		$('#view'+i).hide();
 	}
 	
 }
@@ -192,21 +193,40 @@ function page(currentPage){
 //그래서 전부 .show() 로 보여준다음
 
 //해당 게시물을 출력한다
-var cnt=0;
+
 function print_list(data_list){
 	for(var i=0;i<10;i++){
 		$('#name'+i).show();
 		$('#writer'+i).show();
 		$('#view'+i).show();
 		
- 		$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"'>"+data_list[i].name+"</a>");
-		$('#writer'+i).text(data_list[i].writer);
-		if($('#view'+i).text('')==cnt){
-			cnt += 1;
-			$('#view'+i).text(cnt);			
-		}else{
-			$('#view'+i).text(cnt);						
-		}
+/*        	$('#name'+i).html("<a href='reviewView.jsp?num="+data_list[i].num+"' onclick='incrementClick()'>"+data_list[i].name+"</a>");
+   		$('#writer'+i).text(data_list[i].writer);
+   		if($('#view'+i).val()==cnt){
+   			cnt += 1;
+   			$('#view'+i).text(cnt);			
+   		}else{
+   			$('#view'+i).text(cnt);			
+   		}  */   
+   		
+   		var cnt=0;
+   		$('#btn').click(function(){
+   			alert('클릭');
+   		});
+   		$('#name'+i).html("<a id='btn' href='reviewView.jsp?num="+data_list[i].num+"' onclick='incrementClick()'>"+data_list[i].name+"</a>");
+   		$('#writer'+i).text(data_list[i].writer);
+   		$('#view'+i).text(cnt);
+   		
+   		
+   		function incrementClick() {
+   			alert('클릭')
+   		    updateDisplay(++cnt);
+   		}
+
+   		function updateDisplay(val) {
+   			$('#view'+i).text(cnt);
+   		}
+   	    
 	}
 }
 

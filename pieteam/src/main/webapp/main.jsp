@@ -735,7 +735,7 @@ function displayPlaces(places) {
             };
 
             // 리스트 클릭시 이벤트 
-            itemEl.onclick = function () {
+            itemEl.onclick = function () {ㄴ
               var start = document.getElementById('start');
               var end = document.getElementById('end');
               infowindow.open(map, marker);

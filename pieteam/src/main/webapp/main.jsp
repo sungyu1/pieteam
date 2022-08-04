@@ -140,8 +140,8 @@
                     <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
                 </form>
             </div>
-      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색.png"></button></span>
-      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안전경로</span><span><img src="./images/안전경로.png"></button></span>
+      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
+      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로.png"></button></span>
         </div>
 								</section>
 			<div style="height: 600px; overflow: auto;">

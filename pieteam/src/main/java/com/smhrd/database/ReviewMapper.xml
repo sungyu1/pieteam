@@ -17,4 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectOne" parameterType="int" resultType="com.smhrd.model.Review">
 		select * from tbl_review where r_seq=#{r_seq}
 	</select>
+	
+	<!-- 리뷰 글 삭제 -->
+	<delete id="deleteReview" parameterType="int">
+		delete from tbl_review where r_seq=#{r_seq}
+	</delete>
 </mapper>

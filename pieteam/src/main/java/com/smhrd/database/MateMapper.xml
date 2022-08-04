@@ -22,4 +22,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateMate" parameterType="com.smhrd.model.Mate">
 		update tbl_schoolmate set mate_id=#{mate_id} where mate_seq=#{mate_seq} 
 	</update>
+	
+	<!-- 메이트 글 삭제 -->
+	<delete id="deleteMate" parameterType="int">
+		delete from tbl_schoolmate where mate_seq=#{mate_seq}
+	</delete>
 </mapper>

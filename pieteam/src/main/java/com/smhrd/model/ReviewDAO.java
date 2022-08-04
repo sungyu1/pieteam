@@ -57,4 +57,22 @@ public class ReviewDAO {
 		}
 		return vo;
 	}
+	
+	// 리뷰 게시글 삭제
+	public int deleteReview(int num) {
+		int cnt=0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.model.ReviewDAO.deleteReview", num);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

@@ -16,6 +16,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from tbl_cctv where cctv_seq>=#{cctv_seq} order by cctv_seq
 
 	</select>
+	
+	<!-- 관리자의 cctv삭제 -->
+	<delete id="deleteCctv" parameterType="int">
+		delete from tbl_cctv where cctv_seq=#{cctv_seq}
+	</delete>
 <!-- 	<select id="selectAll" resultType="com.smhrd.model.CCTV">
 		select * from tbl_cctv where cctv_name='동구'
 	</select> -->

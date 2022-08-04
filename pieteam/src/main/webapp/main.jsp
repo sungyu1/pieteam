@@ -86,7 +86,7 @@
 									<ul class="icons">
 										<li><button class="custom-btn btn-12" id="showall"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
 										<li><button class="custom-btn btn-12" id="cctv"><span>cctv</span><span><img src="./images/cctv.png"></span></button></li>
-										<li><button  class="custom-btn btn-12" id="police"><span>경찰</span><span><img src="./images/경찰.png"></span></button></li>
+										<li><button  class="custom-btn btn-12" id="police"><span>경찰서</span><span><img src="./images/경찰.png"></span></button></li>
 										<li><button class="custom-btn btn-12" id="fire"><span>소방서</span><span><img src="./images/소방서.png"></span></button></li>
 										<li><button class="custom-btn btn-12" id="safe"><span>안전</span><span><img src="./images/학교.png"></span></button></li>
 										<li><a href="reviewList.jsp"><button class="custom-btn btn-12"><span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
@@ -99,7 +99,7 @@
 								<ul class="icons">
 										<li><button class="custom-btn btn-12" id="showall"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
 										<li><button class="custom-btn btn-12" id="cctv"><span>cctv</span><span><img src="./images/cctv.png"></span></button></li>
-										<li><button  class="custom-btn btn-12" id="police"><span>경찰</span><span><img src="./images/경찰.png"></span></button></li>
+										<li><button  class="custom-btn btn-12" id="police"><span>경찰서</span><span><img src="./images/경찰.png"></span></button></li>
 										<li><button class="custom-btn btn-12" id="fire"><span>소방서</span><span><img src="./images/소방서.png"></span></button></li>
 										<li><button class="custom-btn btn-12" id="safe"><span>안전</span><span><img src="./images/학교.png"></span></button></li>
 										<li><a href="login.jsp"><button class="custom-btn btn-12"><span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
@@ -123,9 +123,9 @@
 									<div>
                 <form>
                      <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
-                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색파란.png"></button><br>
+                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
                      <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
-                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색녹색.png"></button> 
+                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
                 </form>
             </div>
       		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색.png"></button></span>

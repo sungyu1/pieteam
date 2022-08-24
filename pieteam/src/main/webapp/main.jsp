@@ -7,181 +7,295 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>안.길</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/main1.css" />
-		  <link rel="stylesheet" href="assets/css/safepath.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/main1.css" />
+<link rel="stylesheet" href="assets/css/safepath.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
- .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
-    .wrap * {padding: 0;margin: 0;}
-    .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
-    .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
-    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 18px;font-weight: bold;}
-    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
-    .info .close:hover {cursor: pointer;}
-    .info .body {position: relative;overflow: hidden;}
-    .info .desc {position: relative;margin: 13px 0 0 90px;height: 75px;}
-    .desc .ellipsis { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-   
-    /* 여러 줄 자르기 추가 스타일 */
-    white-space: normal; }
-    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
-    .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
-    .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
-    .info .link {color: #5085BB;} 
-  
-  .overlay {
-    position:absolute;
-    left: -50px;
-    top:0;
-    width:80px;
-    height: 40px;
-    background: #fff;
-    border:1px solid #ccc;
-    border-radius: 5px;
-    padding:5px;
-    font-size:12px;
-    text-align: center;
-    white-space: pre;
-    word-wrap: break-word;
+.wrap {
+	position: absolute;
+	left: 0;
+	bottom: 40px;
+	width: 288px;
+	height: 132px;
+	margin-left: -144px;
+	text-align: left;
+	overflow: hidden;
+	font-size: 12px;
+	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+	line-height: 1.5;
 }
-</style> 
+
+.wrap * {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap .info {
+	width: 286px;
+	height: 120px;
+	border-radius: 5px;
+	border-bottom: 2px solid #ccc;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+	background: #fff;
+}
+
+.wrap .info:nth-child(1) {
+	border: 0;
+	box-shadow: 0px 1px 2px #888;
+}
+
+.info .title {
+	padding: 5px 0 0 10px;
+	height: 30px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.info .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #888;
+	width: 17px;
+	height: 17px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+}
+
+.info .close:hover {
+	cursor: pointer;
+}
+
+.info .body {
+	position: relative;
+	overflow: hidden;
+}
+
+.info .desc {
+	position: relative;
+	margin: 13px 0 0 90px;
+	height: 75px;
+}
+
+.desc .ellipsis {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* 여러 줄 자르기 추가 스타일 */
+	white-space: normal;
+}
+
+.desc .jibun {
+	font-size: 11px;
+	color: #888;
+	margin-top: -2px;
+}
+
+.info .img {
+	position: absolute;
+	top: 6px;
+	left: 5px;
+	width: 73px;
+	height: 71px;
+	border: 1px solid #ddd;
+	color: #888;
+	overflow: hidden;
+}
+
+.info:after {
+	content: '';
+	position: absolute;
+	margin-left: -12px;
+	left: 50%;
+	bottom: 0;
+	width: 22px;
+	height: 12px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+.info .link {
+	color: #5085BB;
+}
+
+.overlay {
+	position: absolute;
+	left: -50px;
+	top: 0;
+	width: 80px;
+	height: 40px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 12px;
+	text-align: center;
+	white-space: pre;
+	word-wrap: break-word;
+}
+</style>
 </head>
 <body class="is-preload">
-<%
+	<%
 //session 값 가지고 오기
 		Member loginMember = (Member)session.getAttribute("loginMember");
 %>
-		<!-- Wrapper -->
-			 <div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<%if(loginMember!=null){ %>
-								<div style="text-align: right;">
-								<a href="update.jsp" style="color:black"><span>개인정보수정</span></a>
-								<a href="LogoutCon" style="color:black"><span>Logout</span></a>
-								</div>
-								<%if(loginMember.getM_id().equals("admin")){ %>
-									<header id="header">
-										<ul class="icons">
-											<li><button class="form_btn" onclick="changeIframe('selectMember.jsp')">회원정보관리</button></li>
-											<li><button class="form_btn" onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></li>
-											<li><button class="form_btn" onclick="changeIframe('selectPolice.jsp')">파출소관리</button></li>
-											<li><button class="form_btn" onclick="changeIframe('selectFire.jsp')">소방서관리</button></li>
-											<li><button class="form_btn" onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></li>
-											<li><button class="form_btn" onclick="changeIframe('selectReview.jsp')">커뮤니티관리</button></li>
-										</ul>
-									</header>
-							<%}else{ %>
-									<header id="header">
-									<ul class="icons">
-										<li><button class="custom-btn btn-12" id="showall"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
-										<li><button class="custom-btn btn-12" id="cctv"><span>cctv</span><span><img src="./images/cctv.png"></span></button></li>
-										<li><button  class="custom-btn btn-12" id="police"><span>경찰서</span><span><img src="./images/경찰.png"></span></button></li>
-										<li><button class="custom-btn btn-12" id="fire"><span>소방서</span><span><img src="./images/소방서.png"></span></button></li>
-										<li><button class="custom-btn btn-12" id="safe"><span>안전</span><span><img src="./images/학교.png"></span></button></li>
-										<li><a href="reviewList.jsp"><button class="custom-btn btn-12"><span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
-									</ul>
-									</header>
-								<%} %>
-							<%}else{ %>								
-								<div style="text-align: right;"><a href="login.jsp" style="color:black; text-decoration: none;"><span>Login</span></a></div>
-								<header id="header">
-								<ul class="icons">
-										<li><button class="custom-btn btn-12" id="showall"><span>전체보기</span><span><img src="./images/map.png"></span></button></a></li>
-										<li><button class="custom-btn btn-12" id="cctv"><span>cctv</span><span><img src="./images/cctv.png"></span></button></li>
-										<li><button  class="custom-btn btn-12" id="police"><span>경찰서</span><span><img src="./images/경찰.png"></span></button></li>
-										<li><button class="custom-btn btn-12" id="fire"><span>소방서</span><span><img src="./images/소방서.png"></span></button></li>
-										<li><button class="custom-btn btn-12" id="safe"><span>안전</span><span><img src="./images/학교.png"></span></button></li>
-										<li><a href="login.jsp"><button class="custom-btn btn-12"><span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span></button></a></li>
-								</ul>
-								</header>
-							<%} %>
-							<%if(loginMember !=null){
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<%if(loginMember!=null){ %>
+				<div style="text-align: right;">
+					<a href="update.jsp" style="color: black"><span>개인정보수정</span></a> 
+					<a href="LogoutCon" style="color: black"><span>Logout</span></a>
+				</div>
+				<%if(loginMember.getM_id().equals("admin")){ %>
+				<header id="header">
+					<ul class="icons">
+						<li><button class="form_btn"
+								onclick="changeIframe('selectMember.jsp')">회원정보관리</button></li>
+						<li><button class="form_btn"
+								onclick="changeIframe('selectCctv.jsp')">CCTV관리</button></li>
+						<li><button class="form_btn"
+								onclick="changeIframe('selectPolice.jsp')">파출소관리</button></li>
+						<li><button class="form_btn"
+								onclick="changeIframe('selectFire.jsp')">소방서관리</button></li>
+						<li><button class="form_btn"
+								onclick="changeIframe('selectSafe.jsp')">어린이보호관리</button></li>
+						<li><button class="form_btn"
+								onclick="changeIframe('selectReview.jsp')">커뮤니티관리</button></li>
+					</ul>
+				</header>
+				<%}else{ %>
+				<header id="header">
+					<ul class="icons">
+						<li><button class="custom-btn btn-12" id="showall">
+								<span>전체보기</span><span><img src="./images/map.png"></span>
+							</button>
+							</li>
+						<li><button class="custom-btn btn-12" id="cctv">
+								<span>cctv</span><span><img src="./images/cctv.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="police">
+								<span>경찰서</span><span><img src="./images/경찰.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="fire">
+								<span>소방서</span><span><img src="./images/소방서.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="safe">
+								<span>안전</span><span><img src="./images/학교.png"></span>
+							</button></li>
+						<li><a href="reviewList.jsp"><button
+									class="custom-btn btn-12">
+									<span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span>
+								</button></a></li>
+					</ul>
+				</header>
+				<%} %>
+				<%}else{ %>
+				<div style="text-align: right;">
+					<a href="login.jsp" style="color: black; text-decoration: none;"><span>Login</span></a>
+				</div>
+				<header id="header">
+					<ul class="icons">
+						<li><button class="custom-btn btn-12" id="showall">
+								<span>전체보기</span><span><img src="./images/map.png"></span>
+							</button>
+							</li>
+						<li><button class="custom-btn btn-12" id="cctv">
+								<span>cctv</span><span><img src="./images/cctv.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="police">
+								<span>경찰서</span><span><img src="./images/경찰.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="fire">
+								<span>소방서</span><span><img src="./images/소방서.png"></span>
+							</button></li>
+						<li><button class="custom-btn btn-12" id="safe">
+								<span>안전</span><span><img src="./images/학교.png"></span>
+							</button></li>
+						<li><a href="login.jsp"><button class="custom-btn btn-12">
+									<span>커뮤니티</span><span><img src="./images/커뮤니티.png"></span>
+								</button></a></li>
+					</ul>
+				</header>
+				<%} %>
+				<%if(loginMember !=null){
 								if(loginMember.getM_id().equals("admin")) {%>
-									<div>
-										<iframe src="selectMember.jsp" id="iframe" style="width: 1698px; height: 600px; margin-top: 50px;"></iframe>
-									</div>
-									
-									<script>
+				<div>
+					<iframe src="selectMember.jsp" id="iframe"
+						style="width: 1698px; height: 600px; margin-top: 50px;"></iframe>
+				</div>
+
+				<script>
 										function changeIframe(url){
 											$('#iframe').attr('src',url);
 										}
 									</script>
-								<%}else{%>
-																<!-- map-->
-								<section id="">
-													
-							<div id="map" style="width:1698px; height:800px;">
-							<div class="map_wrap">
-							</div>
-										</section>
-								</div>
-							</div>
-						<!-- Sidebar -->
-							<div id="sidebar">
-								<div class="inner">
-								
-										<section id="search" class="alt">
-											<div>
-		                <form>
-		                     <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
-		                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
-		                     <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
-		                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
-		                </form>
-		            </div>
-		      		<button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
-		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로1.png"></button></span>
-		        </div>
-										</section>
-					<div style="height: 600px; overflow: auto;">
-					<ul id="placesList"></ul>
-		        	<div id="pagination"></div>
+				<%}}%>
+				<!-- map-->
+				<section id="">
+
+					<div id="map" style="width: 1698px; height: 800px;">
+						<div class="map_wrap"></div>
+				</section>
+			</div>
+		</div>
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<section id="search" class="alt">
+					<div>
+						<form>
+							<input type="text" value="" id="start" size="15"
+								placeholder="출발지를 입력하세요">
+							<button type="button" id="search1" onclick="searchStart()">
+								<img src="./images/검색회색.png">
+							</button>
+							<br> <input type="text" value="" id="end" size="15"
+								placeholder="도착지를 입력하세요">
+							<button type="button" id="search2" onclick="searchEnd()">
+								<img src="./images/검색회색.png">
+							</button>
+						</form>
 					</div>
-								<%}}else{ %>
-							<!-- map-->
-								<section id="">
-													
-							<div id="map" style="width:1698px; height:800px;">
-							<div class="map_wrap">
-							</div>
-										</section>
-								</div>
-							</div>
-						<!-- Sidebar -->
-							<div id="sidebar">
-								<div class="inner">
-								
-										<section id="search" class="alt">
-											<div>
-		                <form>
-		                     <input type="text" value="" id="start" size="15" placeholder="출발지를 입력하세요"> 
-		                    <button type="button" id="search1" onclick="searchStart()"><img src="./images/검색회색.png"></button><br>
-		                     <input type="text" value="" id="end" size="15" placeholder="도착지를 입력하세요"> 
-		                    <button type="button" id="search2" onclick="searchEnd()"><img src="./images/검색회색.png"></button> 
-		                </form>
-		            </div>
-		      		<!-- <button type="button" id="reset1" onclick="reset()"class="custom-btn btn-13"><span>재검색</span><span><img src="./images/재검색1.png"></button></span>
-		      		<button type="button" id="saferoad" onclick="saferoad()"class="custom-btn btn-13"><span>안심경로</span><span><img src="./images/안심경로1.png"></button></span> -->
-		        </div>
-										</section>
-					<div style="height: 600px; overflow: auto;">
-					<ul id="placesList"></ul>
-		        	<div id="pagination"></div>
-					</div>
-					<%} %>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
-<script>
+					<button type="button" id="reset1" onclick="reset()"
+						class="custom-btn btn-13">
+						<span>재검색</span><span><img src="./images/재검색1.png"></span>
+					</button>
+					
+					<button type="button" id="saferoad" onclick="saferoad()"
+						class="custom-btn btn-13">
+						<span>안심경로</span><span><img src="./images/안심경로1.png"></span>
+					</button>
+					
+			</div>
+			</section>
+			<div style="height: 600px; overflow: auto;">
+				<ul id="placesList"></ul>
+				<div id="pagination"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=54fe48e5e772cf19d66aaa95bc9c7ba7&libraries=services"></script>
+		<script>
 // 마커를 담을 배열입니다
 var markers = [];
 var markerstart = [];
@@ -685,35 +799,27 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 } */
 
 function searchStart(){
-	if(<%=loginMember %> != null){
-	    var str_keyword = document.getElementById('start').value;
-	    if (!str_keyword.replace(/^\s+|\s+$/g, '')) {
-	        alert('키워드를 입력해주세요!');
-	        return false;
-	    }
-	    keyword00= "광주광역시"+str_keyword
-	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-	    ps.keywordSearch(keyword00, placesSearchCB);
-	    searchState = 'start';
-	}else{
-		alert('로그인을 해주세요')
-	}
+    var str_keyword = document.getElementById('start').value;
+    if (!str_keyword.replace(/^\s+|\s+$/g, '')) {
+        alert('키워드를 입력해주세요!');
+        return false;
+    }
+    keyword00= "광주광역시"+str_keyword
+    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+    ps.keywordSearch(keyword00, placesSearchCB);
+    searchState = 'start';
 }
 
 function searchEnd(){
-	if(<%=loginMember %> != null){
-	    var end_keyword = document.getElementById('end').value;
-	    if (!end_keyword.replace(/^\s+|\s+$/g, '')) {
-	        alert('키워드를 입력해주세요!');
-	        return false;
-	    }
-	    keyword01= "광주광역시"+end_keyword
-	    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-	    ps.keywordSearch(keyword01, placesSearchCB);
-	    searchState = 'end';
-	}else{
-		alert('로그인을 해주세요')
-	}
+    var end_keyword = document.getElementById('end').value;
+    if (!end_keyword.replace(/^\s+|\s+$/g, '')) {
+        alert('키워드를 입력해주세요!');
+        return false;
+    }
+    keyword01= "광주광역시"+end_keyword
+    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+    ps.keywordSearch(keyword01, placesSearchCB);
+    searchState = 'end';
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -787,7 +893,7 @@ function displayPlaces(places) {
             };
 
             // 리스트 클릭시 이벤트 
-            itemEl.onclick = function () {ㄴ
+            itemEl.onclick = function () {
               var start = document.getElementById('start');
               var end = document.getElementById('end');
               infowindow.open(map, marker);
@@ -971,7 +1077,7 @@ function removeAllChildNods(el) {
  
 </script>
 
-<script id="data" value="poly">
+		<script id="data" value="poly">
 
     var polylinePath1 = [
         new kakao.maps.LatLng(35.155028, 126.911664),
@@ -1003,7 +1109,7 @@ function removeAllChildNods(el) {
 
 </script>
 
-<script id="roadMap">
+		<script id="roadMap">
     var polyline1, polyline2, OverlaySaferoad, OverlayFastroad;
     function saferoad1() {
         polyline1 = new kakao.maps.Polyline({
@@ -1108,12 +1214,12 @@ function removeAllChildNods(el) {
         polyline2.setMap(null);
     }
     </script>
-    		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
 			function onClickSelect(e) {
 				  const isActive = e.currentTarget.className.indexOf("active") !== -1;
 				  if (isActive) {
@@ -1136,5 +1242,5 @@ function removeAllChildNods(el) {
 				  option.addEventListener("click", onClickOption);
 				}
 			</script>
-	</body>
+</body>
 </html>
